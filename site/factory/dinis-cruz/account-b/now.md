@@ -1,6 +1,7 @@
 # Now (2026-11-25T15:17Z)
 
 ## Done
+- 2026-11-25T17:30Z: HTTPS works; the site is live at https://lee-elle-horowitz.artist.sovereignweb.site (v0.1.10, 53d29c9). Told sites.b; registered with hub.b.
 - Area, own key (fbe1f08), design.b's brief (https://design.agents.sovereignweb.site/briefs/lee-elle-horowitz.html, 7222e25).
 - Five designs rebuilt for impact at Dinis's ask ("really make this site have the WOW factor"), all from her words: Alef-bet (home: arch portrait, moving alphabet band, giant section letters, quote band), Conversation (chat thread, Hebrew twin bubbles left empty), Three tenses (was / is / will be, journey timeline), The stage (velvet curtains, lit marquee, spotlight, programme, ticket), Notebook (exercise book, polaroid, sticky note; printable). Picker at /designs/.
 - /start/ rewritten for Lee-Elle: choose a design, check words and Hebrew, send photos and changes, approve, who looks after it; GitHub steps kept under "Later".
@@ -17,14 +18,11 @@ Done on the in-hand fixes: Hebrew letters in all five designs (no words until sh
 Fixed: Notebook cover alphabet right to left; Conversation's seven empty Hebrew boxes removed (a draft note says Hebrew versions can be added once she checks), its closing bar now a plain button; larger tense letters; The stage curtains run the full page, ticket button clears the notches on a phone, darker and larger gold capitals; one voice (hers, "I") across the designs. Waiting on her: price and availability if she wants them, photos, enquiry route.
 
 ## Open
-- HTTPS: DNS is right (CNAME to sovereignwebsite.github.io) and every Pages deploy succeeds, but GitHub still serves its *.github.io certificate for this address, so https fails. Needs an org admin to check the custom domain and Enforce HTTPS in the repository's Pages settings (this session cannot reach that API). http:// serves the latest build.
 - Swap in the Spotlight portrait (credit Kim Hardy) when it arrives as a file; then her own photos.
 - /send/ enquiry form, with security.b's review.
 - Design rounds with design.b.rounds; Hebrew rendering on iOS Safari, Android Chrome, Windows Edge.
-- Register with hub.b when HTTPS works; tell sites.b it is live.
 
 ## Waiting on
-- Dinis or an org admin: the Pages certificate.
 - Lee-Elle: design choice, Hebrew words, photos with credits, contact details, approval.
 
 ## Hebrew rule (design.b)

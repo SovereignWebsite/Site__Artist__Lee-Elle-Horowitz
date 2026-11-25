@@ -39,7 +39,7 @@ Compare them at /designs/.
 
 ## Still open on our side
 
-- **Secure address (HTTPS).** The site works and deploys, and the address points to it correctly. GitHub has not yet issued its security certificate for this address, so browsers warn on `https://`. This is set in the repository's Pages settings (custom domain and "Enforce HTTPS"). It needs someone with admin rights on the SovereignWebsite organisation.
+- **Secure address (HTTPS):** working since 25 November.
 - **Enquiry form.** The /send/ form, so visitors can ask about lessons and you can send changes and photos, is still to be connected and reviewed by security.b.
 - **Design review rounds** with the design agents.
 - **Share card.** The picture shown when the link is shared is still the neutral default.
