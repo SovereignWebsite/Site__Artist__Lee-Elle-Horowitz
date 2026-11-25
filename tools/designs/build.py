@@ -197,7 +197,7 @@ def tenses(L):
       f'<span class="conj"><span class="p">{w0}</span><span class="n">{w1}</span><span class="f">{w2}</span></span></h1>'
       f'<p class="lead">{L["lead"]} {L["tn_lead_more"]}</p></section>'
       f'<nav class="tabs" aria-label="{L["tn_tabs"]}"><a href="#past" class="p">{lab[0]}</a><a href="#present" class="n">{lab[1]}</a><a href="#future" class="f">{lab[2]}</a></nav>'
-      f'<div class="panels">'
+      f'<div class="panels" tabindex="0" role="region" aria-label="{L["tn_tabs"]}">'
       f'<section id="past" class="tense past" aria-labelledby="past-h"><p class="t-label">{lab[0]} {hel(L, "א", "t-he")}</p><h2 id="past-h">{hh[0]}</h2>' + fig(L, 'photo') + paras(L['about'][:1]) + journey + '</section>'
       f'<section id="present" class="tense present" aria-labelledby="present-h"><p class="t-label">{lab[1]} {hel(L, "ב", "t-he")}</p><h2 id="present-h">{hh[1]}</h2>' + fig(L, 'photo') + paras(L['about'][1:]) +
       f'<h3>{H["lessons"]}</h3>' + grid + f'<h3>{H["fmt"]}</h3>' + fmt + '</section>'

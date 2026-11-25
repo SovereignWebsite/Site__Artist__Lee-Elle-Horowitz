@@ -68,3 +68,4 @@ main{max-width:72rem;margin:0 auto;padding:0 1.25rem}
 .tabs{margin-top:.5rem}
 .hero .conj{font-size:clamp(2.6rem,12.5vw,9.5rem);flex-wrap:nowrap;white-space:nowrap}
 @media (max-width:30rem){.hero .lead{font-size:1rem;margin-bottom:.5rem}.tabs{padding:.4rem 0}.tabs a{padding:.35rem .3rem}}
+.panels:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
