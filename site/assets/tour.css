@@ -71,3 +71,4 @@
 .slide{min-height:calc(100vh - 3.4rem)}
 @media print{.s-nav{display:none!important}}
 @media (max-width:44rem){.s-nav a{min-width:0;padding:.55rem .9rem;font-size:.95rem}.s-nav .off{min-width:0}}
+.s-nav .s-count{color:#e2ddd1}
