@@ -15,4 +15,18 @@ for (const [n, u] of desk) { await pg.goto('http://localhost:8767' + u); await p
 await c.close();
 c = await b.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, reducedMotion: 'reduce', colorScheme: 'light' }); pg = await c.newPage();
 await pg.goto('http://localhost:8767/designs/alef-bet/'); await pg.screenshot({ path: `${out}/phone.png` });
+// Each design's first phone screen, in English and Hebrew, and a close-up of the detail that makes it.
+const detail = { 'alef-bet': '.wall', 'conversation': '.quick', 'three-tenses': '.panels', 'the-stage': '.bill', 'notebook': '.ex' };
+c = await b.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, reducedMotion: 'reduce', colorScheme: 'light' }); pg = await c.newPage();
+for (const lang of ['', '/he']) for (const s of Object.keys(detail)) {
+  await pg.goto(`http://localhost:8767${lang}/designs/${s}/`); await pg.addStyleTag({ content: '.lang-fab{display:none!important}' });
+  await pg.screenshot({ path: `${out}/phone-${s}${lang ? '-he' : ''}.png` });
+}
+await c.close();
+c = await b.newContext({ viewport: { width: 1280, height: 800 }, deviceScaleFactor: 1, reducedMotion: 'reduce', colorScheme: 'light' }); pg = await c.newPage();
+for (const [s, sel] of Object.entries(detail)) {
+  await pg.goto(`http://localhost:8767/designs/${s}/`);
+  if (s === 'conversation') await pg.click('.quick details:first-child summary');
+  await pg.locator(sel).first().screenshot({ path: `${out}/detail-${s}.png` });
+}
 await b.close(); srv.close(); console.log('shots written to', out);

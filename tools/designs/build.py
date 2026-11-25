@@ -278,22 +278,44 @@ def start():
 TOUR = load('tour.json')
 def slide(d, sl, n, total):
     t = sl['type']; k = f'<p class="s-kicker">{sl.get("kicker", "")}</p>'; num = f'<p class="s-num" aria-hidden="true">{n} / {total}</p>'
-    img = lambda name, cls='shot': f'<img class="{cls}" src="/tour/img/{name}.webp" alt="" width="1280" height="800" loading="lazy">'
-    if t == 'title':
-        inner = f'<div class="s-text">{k}<h2 class="s-h big">{sl["h"]}</h2><p class="s-sub">{sl["sub"]}</p><p class="s-note">{sl["note"]}</p></div><div class="s-art">{img(sl["img"])}</div>'
+    img = lambda src, cls='shot', w=1280, h=800: f'<img class="{cls}" src="{src if src.startswith("/") else "/tour/img/" + src + ".webp"}" alt="" width="{w}" height="{h}" loading="lazy">'
+    pts = lambda xs, cls='s-points': f'<ul class="{cls}">' + ''.join(f'<li>{x}</li>' for x in xs) + '</ul>'
+    if t == 'cover':
+        fan = '<div class="s-fan" aria-hidden="true">' + ''.join(f'<span style="--i:{i}">{img(x, "fan", 640, 400)}</span>' for i, x in enumerate(sl['imgs'])) + '</div>'
+        inner = f'<div class="s-text">{k}<h2 class="s-h big">{sl["h"]}</h2><p class="s-sub">{sl["sub"]}</p><p class="s-note">{sl["note"]}</p></div>{fan}'
+    elif t == 'brief':
+        col = lambda c: f'<div class="s-col"><h3 class="s-h3">{c["title"]}</h3>{pts(c["points"])}</div>'
+        inner = f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><div class="s-cols">{col(sl["left"])}{col(sl["right"])}</div></div>'
+    elif t == 'map':
+        head_ = ''.join(f'<th scope="col">{c}</th>' for c in sl['cols'])
+        rows = ''.join('<tr>' + f'<th scope="row">{r[0]}</th>' + ''.join(f'<td>{x}</td>' for x in r[1:]) + '</tr>' for r in sl['rows'])
+        inner = f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><p class="s-p">{sl["intro"]}</p><table class="s-map"><thead><tr>{head_}</tr></thead><tbody>{rows}</tbody></table></div>'
+    elif t == 'design':
+        im = sl['imgs']
+        col = (f'<div class="s-collage">{img(im["desk"], "c-desk", 640, 400)}{img(im["phone"], "c-phone", 390, 844)}'
+               f'{img(im["he"], "c-he", 390, 844)}{img(im["detail"], "c-detail", 1200, 400)}'
+               '<span class="c-tag c-tag-en">English</span><span class="c-tag c-tag-he" lang="he">עברית</span></div>')
+        inner = (f'<div class="s-text">{k}<h2 class="s-h">{sl["h"]}</h2><p class="s-why">Why it suits Lee-Elle</p>{pts(sl["why"], "s-points tight")}'
+                 f'<p class="s-sees">{sl["sees"]}</p></div>{col}')
+    elif t in ('hebrew', 'phones'):
+        row = f'<div class="s-row s-row-{len(sl["imgs"])}">' + ''.join(img(x, "p-phone", 390, 844) for x in sl['imgs']) + '</div>'
+        extra = pts(sl['points'], 's-points tight') if sl.get('points') else ''
+        inner = f'<div class="s-text">{k}<h2 class="s-h{" he-h" if t == "hebrew" else ""}">{sl["h"]}</h2><p class="s-p">{sl["p"]}</p>{extra}</div>{row}'
+    elif t == 'capabilities':
+        inner = f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><ul class="s-caps">' + ''.join(f'<li><strong>{a}</strong><span>{b}</span></li>' for a, b in sl['items']) + '</ul></div>'
+    elif t == 'team':
+        inner = (f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><p class="s-p">{sl["intro"]}</p><ol class="s-team">' +
+                 ''.join(f'<li><span class="verb">{v}</span><strong>{a}</strong><span>{b}</span></li>' for a, v, b in sl['steps']) + '</ol></div>')
+    elif t == 'rounds':
+        inner = (f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><p class="s-p">{sl["intro"]}</p><ol class="s-rounds">' +
+                 ''.join(f'<li><strong>{a}</strong><span>{b}</span></li>' for a, b in sl['rounds']) + '</ol></div>')
     elif t == 'points':
         code = f'<p class="s-code"><code>{sl["code"]}</code></p>' if sl.get('code') else ''
-        inner = f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><ul class="s-points">' + ''.join(f'<li>{x}</li>' for x in sl['points']) + f'</ul>{code}</div>'
-    elif t == 'grid':
-        inner = f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><ul class="s-grid">' + ''.join(f'<li>{img(a)}<strong>{b}</strong><span>{c}</span></li>' for a, b, c in sl['items']) + '</ul></div>'
-    elif t == 'image':
-        cls = 'phone' if sl.get('tall') else 'shot'
-        src = f'<img class="{cls}" src="/tour/img/{sl["img"]}.webp" alt="" width="{390 if sl.get("tall") else 1280}" height="{844 if sl.get("tall") else 800}" loading="lazy">'
-        inner = f'<div class="s-text">{k}<h2 class="s-h">{sl["h"]}</h2><p class="s-p">{sl["p"]}</p></div><div class="s-art{" tall" if sl.get("tall") else ""}">{src}</div>'
+        inner = f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2>{pts(sl["points"])}{code}</div>'
     elif t == 'flow':
         inner = f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><ol class="s-flow">' + ''.join(f'<li><strong>{a}</strong><span>{b}</span></li>' for a, b in sl['steps']) + '</ol></div>'
     else:
-        inner = f'<div class="s-text wide center">{k}<h2 class="s-h big">{sl["h"]}</h2><p class="s-p">{sl["p"]}</p><p class="s-links">' + ''.join(f'<a href="{h}">{x}</a>' for h, x in sl['links']) + '</p></div>'
+        inner = f'<div class="s-text wide center">{k}<h2 class="s-h big">{sl["h"]}</h2><p class="s-p">{sl["p"]}</p><p class="s-links">' + ''.join(f'<a href="{h}"{" lang=\"he\"" if any("֐" <= ch <= "׿" for ch in x) else ""}>{x}</a>' for h, x in sl['links']) + '</p></div>'
     T = TOUR['index']; lbl = T['slide_of'].replace('{n}', str(n)).replace('{total}', str(total))
     prev = f'<a class="s-prev" href="#slide-{n - 1}" rel="prev"><span aria-hidden="true">&#8592;</span> {T["prev"]}</a>' if n > 1 else '<span class="s-prev off" aria-hidden="true"></span>'
     nxt = f'<a class="s-next" href="#slide-{n + 1}" rel="next">{T["next"]} <span aria-hidden="true">&#8594;</span></a>' if n < total else '<span class="s-next off" aria-hidden="true"></span>'

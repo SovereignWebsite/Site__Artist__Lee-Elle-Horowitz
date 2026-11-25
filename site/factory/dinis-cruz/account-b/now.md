@@ -52,6 +52,12 @@ Fixed: Notebook cover alphabet right to left; Conversation's seven empty Hebrew 
 - Asked b.maestro for an earlier slide deck to align with.
 - learnings.md: all of Dinis's comments today, for every keeper; sent to design.b, sites.b and b.maestro.
 
+## Tour decks, richer (Dinis: "very vanilla", "more meat", "explain the philosophy")
+- Your-site deck: a fan of the five designs; who she is and what the site must do; a map of the five ideas (taken from her words, the idea, the parent it serves); one slide per design with why it suits her, what a parent sees, and a collage (desktop, phone, Hebrew phone, the detail that makes it); Hebrew in every design; five phone first screens; what we can do; her decisions; close.
+- Behind-the-scenes deck: the team with each agent's verb, the pipeline, the design rounds as a timeline, JSON content, right to left properly, quality, trust, close.
+- PDF fixes: no shadows in print (they printed as grey bands); one slide per page.
+- Asked design.b for a deck design brief; started studio.b (session_01Kw9UwBRfW5naDzfcr53Hji) and instagram.b (session_01Kw9UwBa9zYU6ssjUx87NWX) at Dinis's word, on Sonnet, to bring in our characters and personas.
+
 ## Open
 - Swap in the Spotlight portrait (credit Kim Hardy) when it arrives as a file; then her own photos.
 - /send/ enquiry form, with security.b's review.

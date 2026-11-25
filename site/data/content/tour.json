@@ -19,109 +19,245 @@
    "id": "your-site",
    "title": "Your website: a guided tour",
    "for": "For Lee-Elle",
-   "desc": "What is on the new site, the five designs, English and Hebrew, and what happens next.",
+   "desc": "Who Lee-Elle is, the thinking behind each of the five designs and why it suits her, Hebrew in every design, and what we can do.",
    "accent": "#a8461f",
    "slides": [
     {
-     "type": "title",
+     "type": "cover",
      "kicker": "A guided tour",
      "h": "Your website",
      "sub": "Private Hebrew Tuition with Lee-Elle Horowitz",
-     "note": "A draft, 25 November 2026",
-     "img": "alef"
-    },
-    {
-     "type": "points",
-     "kicker": "Where it comes from",
-     "h": "Built from your own words",
-     "points": [
-      "Every word comes from the text you supplied, and a few facts from your Spotlight profile.",
-      "Nothing is invented: no prices, no pupils, no reviews, no qualifications you did not give.",
-      "No contact details are shown until you choose them.",
-      "Every page says Draft until you approve it."
+     "note": "Five designs, in English and in Hebrew. A draft, 25 November 2026.",
+     "imgs": [
+      "/assets/designs/alef-bet.en.webp",
+      "/assets/designs/conversation.en.webp",
+      "/assets/designs/three-tenses.en.webp",
+      "/assets/designs/the-stage.en.webp",
+      "/assets/designs/notebook.en.webp"
      ]
     },
     {
-     "type": "grid",
-     "kicker": "Five ideas",
-     "h": "Five designs, each built around its own idea",
-     "items": [
+     "type": "brief",
+     "kicker": "The starting point",
+     "h": "One person, and one minute on a phone",
+     "left": {
+      "title": "Who Lee-Elle is, in her words",
+      "points": [
+       "South African-born and Israel-raised, a fluent Hebrew speaker who later moved to the UK",
+       "Teaches Hebrew to children, teenagers and adults, in London and on Zoom",
+       "Experience with children aged 7 to 11; Enhanced DBS checked",
+       "First Class Honours BA, Guildford School of Acting: an actor-musician who also teaches singing, trombone and guitar"
+      ]
+     },
+     "right": {
+      "title": "What the site has to do",
+      "points": [
+       "A parent arrives on a phone, usually from a recommendation, and decides in about a minute",
+       "They look for: who teaches, what ages, where, whether it is safe",
+       "So every design puts her photo, the lessons and the facts on the first screen, and one action: ask about lessons"
+      ]
+     }
+    },
+    {
+     "type": "map",
+     "kicker": "The thinking",
+     "h": "Five ideas, each taken from her own life",
+     "intro": "Not five colour schemes on one layout: each design starts from a different part of who she is and how she teaches, and speaks to a different parent.",
+     "cols": [
+      "Design",
+      "Taken from",
+      "The idea",
+      "For the parent who"
+     ],
+     "rows": [
       [
-       "alef",
        "Alef-bet",
-       "An alphabet chart"
+       "\"complete beginners\", \"reading and writing\"",
+       "Hebrew starts with its letters; she is the way in",
+       "has a young child starting from nothing"
       ],
       [
-       "conv",
        "Conversation",
-       "A chat with a parent"
+       "\"conversational skills\", \"communicate naturally\"",
+       "The page talks, as her lessons do",
+       "arrives with questions and wants answers"
       ],
       [
-       "tense",
        "Three tenses",
-       "Past, present, future"
+       "\"past, present and future tenses\"",
+       "Grammar as a story: her past, lessons now, your goal",
+       "wants to know where lessons lead"
       ],
       [
-       "stage",
        "The stage",
-       "A theatre programme"
+       "First Class Honours BA, Guildford School of Acting",
+       "A theatre programme: Hebrew is the main act",
+       "has a teenager who performs, or wants music too"
       ],
       [
-       "note",
        "Notebook",
-       "An exercise book"
+       "\"Hebrew support for school\"",
+       "A ruled exercise book: just the facts",
+       "wants it plain, printable, for the fridge"
       ]
      ]
     },
     {
-     "type": "image",
-     "kicker": "Design 1",
-     "h": "Alef-bet",
-     "p": "The home page for now. A large Hebrew letter opens each section, the whole alphabet runs across the page, and your nine kinds of lesson are letter tiles.",
-     "img": "alef"
+     "type": "design",
+     "n": 1,
+     "slug": "alef-bet",
+     "kicker": "Design 1 · Alef-bet",
+     "h": "Her photo, seen through the first letter",
+     "imgs": {
+      "desk": "/assets/designs/alef-bet.en.webp",
+      "phone": "/tour/img/phone-alef-bet.webp",
+      "he": "/tour/img/phone-alef-bet-he.webp",
+      "detail": "/tour/img/detail-alef-bet.webp"
+     },
+     "why": [
+      "Hebrew starts with alef. She teaches complete beginners and reading and writing, so the page is built from the alphabet.",
+      "Her photo inside the alef says, before a word is read: this is the teacher who opens the language.",
+      "All 22 letters arrive across the page, right to left; every section opens on its own letter, with its English name."
+     ],
+     "sees": "A parent of a young beginner sees a teacher and the letters their child will learn."
     },
     {
-     "type": "image",
-     "kicker": "Design 2",
-     "h": "Conversation",
-     "p": "The page as a chat: the questions a parent asks, and your answers, one by one.",
-     "img": "conv"
+     "type": "design",
+     "n": 2,
+     "slug": "conversation",
+     "kicker": "Design 2 · Conversation",
+     "h": "The page is a conversation, like her lessons",
+     "imgs": {
+      "desk": "/assets/designs/conversation.en.webp",
+      "phone": "/tour/img/phone-conversation.webp",
+      "he": "/tour/img/phone-conversation-he.webp",
+      "detail": "/tour/img/detail-conversation.webp"
+     },
+     "why": [
+      "Her approach is conversation: \"building confidence, developing conversational skills\".",
+      "So there is no headline, only a chat: a parent's first question, her reply typing in, her photo beside it.",
+      "The facts are quick replies (ages, London, Zoom, DBS), and the button is the reply box."
+     ],
+     "sees": "A parent with questions gets them answered in the order they would ask."
     },
     {
-     "type": "image",
-     "kicker": "Design 3",
-     "h": "Three tenses",
-     "p": "Past, present and future, the way you teach grammar: your story, lessons today, and where a student wants to get to.",
-     "img": "tense"
+     "type": "design",
+     "n": 3,
+     "slug": "three-tenses",
+     "kicker": "Design 3 · Three tenses",
+     "h": "was → is → will be",
+     "imgs": {
+      "desk": "/assets/designs/three-tenses.en.webp",
+      "phone": "/tour/img/phone-three-tenses.webp",
+      "he": "/tour/img/phone-three-tenses-he.webp",
+      "detail": "/tour/img/detail-three-tenses.webp"
+     },
+     "why": [
+      "She teaches past, present and future tenses, so the page is organised by them.",
+      "Past is her story, in sepia: South Africa, Israel, the UK, Guildford. Present is lessons today, in colour. Future is an empty frame marked \"you\".",
+      "The headline is grammar itself; the page ends on the student's goal and the button."
+     ],
+     "sees": "A parent sees where their child would start, and where lessons lead."
     },
     {
-     "type": "image",
-     "kicker": "Design 4",
-     "h": "The stage",
-     "p": "From your acting training: a theatre programme, with Hebrew as the main act and music in the second half.",
-     "img": "stage"
+     "type": "design",
+     "n": 4,
+     "slug": "the-stage",
+     "kicker": "Design 4 · The stage",
+     "h": "A theatre programme, from her training",
+     "imgs": {
+      "desk": "/assets/designs/the-stage.en.webp",
+      "phone": "/tour/img/phone-the-stage.webp",
+      "he": "/tour/img/phone-the-stage-he.webp",
+      "detail": "/tour/img/detail-the-stage.webp"
+     },
+     "why": [
+      "She trained as an actor-musician at the Guildford School of Acting, with a First Class Honours BA.",
+      "The page is a playbill: her name like a poster, her photo under a spotlight, curtains that open once.",
+      "Hebrew is the main act; music and audition preparation are act two; a ticket stub asks about lessons."
+     ],
+     "sees": "A teenager who sings or acts, or their parent, sees a teacher who has been on stage."
     },
     {
-     "type": "image",
-     "kicker": "Design 5",
-     "h": "Notebook",
-     "p": "A ruled exercise book: one plain column, for a parent who wants the facts, and it prints cleanly.",
-     "img": "note"
+     "type": "design",
+     "n": 5,
+     "slug": "notebook",
+     "kicker": "Design 5 · Notebook",
+     "h": "An exercise book: just the facts",
+     "imgs": {
+      "desk": "/assets/designs/notebook.en.webp",
+      "phone": "/tour/img/phone-notebook.webp",
+      "he": "/tour/img/phone-notebook-he.webp",
+      "detail": "/tour/img/detail-notebook.webp"
+     },
+     "why": [
+      "She supports Hebrew at school and in supplementary Jewish education, so the page is a school exercise book.",
+      "The cover is filled in (Name, Subject: Hebrew, Also: Music) with her photo taped on; the lessons are ticked in red pen.",
+      "One plain column, which prints cleanly."
+     ],
+     "sees": "A parent who wants facts, not effects, gets them on one page to print."
     },
     {
-     "type": "image",
-     "kicker": "Two languages",
-     "h": "Every design, in English and in Hebrew",
-     "p": "The English / עברית switch sits at the top of every page, with a button that stays in the corner. The Hebrew pages read right to left. The Hebrew is a translation of your text, marked as not yet checked by you.",
-     "img": "he"
+     "type": "hebrew",
+     "kicker": "Every design, in Hebrew",
+     "h": "עברית, in every single design",
+     "p": "Not a translation pasted on: each of the five designs is rebuilt right to left, with Hebrew type, the layout mirrored, and the letters used as material. One switch at the top of every page changes the language, and the same design stays on screen.",
+     "points": [
+      "Ten pages from one set of words: five designs, two languages",
+      "For Hebrew-speaking parents in the UK, and for children growing up between two languages",
+      "The translation is marked on every page as not yet checked by her, until she has corrected it"
+     ],
+     "imgs": [
+      "/tour/img/phone-alef-bet-he.webp",
+      "/tour/img/phone-conversation-he.webp",
+      "/tour/img/phone-three-tenses-he.webp",
+      "/tour/img/phone-the-stage-he.webp",
+      "/tour/img/phone-notebook-he.webp"
+     ]
     },
     {
-     "type": "image",
+     "type": "phones",
      "kicker": "On any screen",
-     "h": "Made for phones first",
-     "p": "Most parents arrive on a phone. Every page fits a phone screen, works in light and dark mode, and passes the accessibility checks.",
-     "img": "phone",
-     "tall": true
+     "h": "Five different first screens, on a phone",
+     "p": "Most parents arrive on a phone, so each design is made phone first, with her photo, the lessons and one button on the very first screen. Every page passes accessibility checks in light and dark mode.",
+     "imgs": [
+      "/tour/img/phone-alef-bet.webp",
+      "/tour/img/phone-conversation.webp",
+      "/tour/img/phone-three-tenses.webp",
+      "/tour/img/phone-the-stage.webp",
+      "/tour/img/phone-notebook.webp"
+     ]
+    },
+    {
+     "type": "capabilities",
+     "kicker": "What we can do",
+     "h": "A sovereign website, made for one person",
+     "items": [
+      [
+       "Five ideas from one text",
+       "Five designs, each from a different part of her life, all from the words she supplied"
+      ],
+      [
+       "Two languages, both directions",
+       "Every design in English and Hebrew, right to left, with a switch on every page"
+      ],
+      [
+       "Every word in one place",
+       "All content in JSON files; the pages are built from them, so a change is made once"
+      ],
+      [
+       "An admin area",
+       "Status, tasks, photos and credits, quality checks and every change, at /admin/"
+      ],
+      [
+       "Checked before it goes live",
+       "Links, accessibility in light and dark, phone and desktop, every time"
+      ],
+      [
+       "Hers, and portable",
+       "No server, no cookies, no tracking; plain files she owns and can move anywhere"
+      ]
+     ]
     },
     {
      "type": "points",
@@ -136,28 +272,22 @@
      ]
     },
     {
-     "type": "points",
-     "kicker": "Next",
-     "h": "How to send changes",
-     "points": [
-      "For now, send them to Dinis.",
-      "A form on the site, for changes, photos and visitors' enquiries, is on its way.",
-      "Later, your own Claude can make changes for you, following the rules this site keeps."
-     ]
-    },
-    {
      "type": "end",
      "kicker": "It is yours",
      "h": "Plain files, in a place you own",
      "p": "No server, no cookies, no tracking. The files, the history and the address can move anywhere, at any time.",
      "links": [
       [
-       "/start/",
-       "Start here"
-      ],
-      [
        "/designs/",
        "Compare the designs"
+      ],
+      [
+       "/he/designs/",
+       "השוואת העיצובים"
+      ],
+      [
+       "/start/",
+       "Start here"
       ],
       [
        "/admin/",
@@ -176,41 +306,54 @@
    "accent": "#1b2744",
    "slides": [
     {
-     "type": "title",
+     "type": "cover",
      "kicker": "Behind the scenes",
      "h": "How this site was made",
      "sub": "lee-elle-horowitz.artist.sovereignweb.site",
      "note": "Built on 25 November 2026 by a team of AI agents working for Dinis Cruz",
-     "img": "stage"
+     "imgs": [
+      "/assets/designs/the-stage.en.webp",
+      "/assets/designs/alef-bet.he.webp",
+      "/assets/designs/conversation.en.webp",
+      "/assets/designs/notebook.he.webp",
+      "/assets/designs/three-tenses.en.webp"
+     ]
     },
     {
-     "type": "flow",
+     "type": "team",
      "kicker": "The team",
-     "h": "One request, a team of agents",
+     "h": "One request, a team of agents, each with one job",
+     "intro": "Each agent does one job and keeps its notes in public, so its thinking stays sharp and anyone can see who did what.",
      "steps": [
       [
        "sites.b",
-       "takes the request and starts a keeper"
+       "routes",
+       "Takes the request, checks it is complete, starts a dedicated keeper. Never builds."
       ],
       [
        "factory.b",
-       "creates the repository and the address"
-      ],
-      [
-       "The keeper",
-       "b.site.lee-elle-horowitz builds and keeps the site"
+       "creates",
+       "Makes the repository, the address and its certificate."
       ],
       [
        "design.b",
-       "writes the design brief"
+       "briefs",
+       "Writes the design brief: five ideas, not colour skins."
+      ],
+      [
+       "The keeper",
+       "builds",
+       "b.site.lee-elle-horowitz builds and keeps the site, in its own session."
       ],
       [
        "design.b.rounds",
-       "reviews each round with synthetic parents"
+       "tests",
+       "Reviews each round with synthetic personas, including an Israeli-born parent reading the Hebrew."
       ],
       [
        "hub.b",
-       "lists the site once she approves it"
+       "lists",
+       "Lists the site in the hub once she approves it."
       ]
      ]
     },
@@ -233,7 +376,7 @@
       ],
       [
        "Build",
-       "pages generated from JSON"
+       "every page generated from JSON"
       ],
       [
        "Checks",
@@ -242,6 +385,34 @@
       [
        "Live",
        "a push to dev publishes in a minute or two"
+      ]
+     ]
+    },
+    {
+     "type": "rounds",
+     "kicker": "Design",
+     "h": "Five ideas, then rounds with synthetic parents",
+     "intro": "design.b.rounds puts each version in front of synthetic personas and asks one question: would you book a Hebrew lesson for your child here?",
+     "rounds": [
+      [
+       "Brief",
+       "Five designs, each from its own idea"
+      ],
+      [
+       "Round 1",
+       "Hebrew letters in every design; the facts parents look for higher up"
+      ],
+      [
+       "Round 2",
+       "The alphabet right to left; no empty placeholders; one voice, hers"
+      ],
+      [
+       "Wow pass",
+       "Each design opens differently, with her photo on the first screen"
+      ],
+      [
+       "Round 3",
+       "Conversation and Notebook rise to 3 of 5; phone fixes"
       ]
      ]
     },
@@ -255,7 +426,23 @@
       "site.json, start.json, tour.json and admin.json: everything else.",
       "tools/designs/build.py turns them into plain HTML pages, in both languages. It holds no words of its own."
      ],
-     "code": "en.json + he.json  →  build.py  →  10 design pages, 2 home pages, 2 pickers"
+     "code": "en.json + he.json  →  build.py  →  10 design pages, 2 home pages, 2 pickers, the tour and the admin area"
+    },
+    {
+     "type": "hebrew",
+     "kicker": "Two languages",
+     "h": "Right to left, properly",
+     "p": "The Hebrew pages are not a mirror image of the English ones: the html element is marked lang=\"he\" dir=\"rtl\", the CSS uses start and end instead of left and right, English names inside Hebrew sit in their own direction, and Hebrew type is set heavier and larger.",
+     "points": [
+      "One stylesheet per design, plus one that turns any of them right to left",
+      "A switch at the top of every page, and a button that appears as you scroll",
+      "Checked by a Hebrew-speaking persona in every round"
+     ],
+     "imgs": [
+      "/tour/img/phone-alef-bet-he.webp",
+      "/tour/img/phone-three-tenses-he.webp",
+      "/tour/img/phone-notebook-he.webp"
+     ]
     },
     {
      "type": "points",
@@ -263,21 +450,10 @@
      "h": "Checked before every push",
      "points": [
       "Build, link previews and internal links.",
-      "HTML validity, and accessibility (axe) on every page, in light and in dark mode.",
-      "No em dashes, no family strip, a leak scan for secrets.",
+      "HTML validity, and accessibility (axe) on every page, at desktop and phone width, in light and in dark mode.",
+      "No em dashes, a leak scan for secrets.",
       "No page longer than 8,000 px on a phone, and no sideways scrolling.",
       "Nothing loaded from another website: no fonts, scripts or trackers."
-     ]
-    },
-    {
-     "type": "points",
-     "kicker": "Design",
-     "h": "Five ideas, then review rounds",
-     "points": [
-      "design.b's brief asked for five designs, each from its own idea, not colour skins of one layout.",
-      "design.b.rounds asked synthetic parents: would you book a Hebrew lesson for your child here?",
-      "Round 1 put Hebrew letters in every design, the facts parents look for higher up, and a light version of The stage.",
-      "Round 2 fixed the alphabet direction, removed empty placeholders and gave the site one voice: hers."
      ]
     },
     {

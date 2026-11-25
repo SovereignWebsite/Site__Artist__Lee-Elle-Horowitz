@@ -5,5 +5,6 @@ from PIL import Image
 src = sys.argv[1]; dst = os.path.join(os.path.dirname(__file__), '..', '..', 'site', 'tour', 'img'); os.makedirs(dst, exist_ok=True)
 for f in glob.glob(os.path.join(src, '*.png')):
     im = Image.open(f).convert('RGB'); n = os.path.splitext(os.path.basename(f))[0]
-    if n == 'phone': im = im.resize((390, 844))
+    if n == 'phone' or n.startswith('phone-'): im = im.resize((390, 844))
+    elif n.startswith('detail-') and im.width > 1200: im = im.resize((1200, round(im.height * 1200 / im.width)))
     im.save(os.path.join(dst, n + '.webp'), quality=82); print(n, im.size)
