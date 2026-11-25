@@ -48,7 +48,7 @@
 .s-links a{font:700 1.6cqw/1 var(--sans);padding:1.2cqw 2cqw;border-radius:999px;background:var(--deck);color:#fff;text-decoration:none}
 .d-deck .foot{color:#c9c4b8;border-color:#2c3040;max-width:72rem}.d-deck .foot-name{color:#f4f1ea}.d-deck .foot a{color:#f0b99a}
 .d-deck .family-credit{--family-fg:#c9c4b8;--family-fg-strong:#fff;--family-bg:#1d2029}
-@media (max-width:44rem){.frame{grid-template-columns:1fr;aspect-ratio:auto;padding:7% 6%;gap:4cqw}
+@media (max-width:66rem){.frame{grid-template-columns:1fr;aspect-ratio:auto;padding:7% 6%;gap:4cqw}
   .s-kicker{font-size:3.2cqw}.s-h{font-size:7.5cqw}.s-h.big{font-size:10cqw}.s-sub{font-size:4.6cqw}.s-note,.s-p,.s-points li{font-size:4cqw}
   .s-grid{grid-template-columns:repeat(2,1fr);gap:3cqw}.s-grid strong{font-size:4cqw}.s-grid span{font-size:3.4cqw}
   .s-flow{grid-template-columns:1fr;gap:2.5cqw}.s-flow strong{font-size:4.6cqw}.s-flow span{font-size:3.6cqw}.s-flow li::before{font-size:3cqw}
@@ -70,7 +70,7 @@
 .slide .frame{min-height:0}
 .slide{min-height:calc(100vh - 3.4rem)}
 @media print{.s-nav{display:none!important}}
-@media (max-width:44rem){.s-nav a{min-width:0;padding:.55rem .9rem;font-size:.95rem}.s-nav .off{min-width:0}}
+@media (max-width:66rem){.s-nav a{min-width:0;padding:.55rem .9rem;font-size:.95rem}.s-nav .off{min-width:0}}
 .s-nav .s-count{color:#e2ddd1}
 /* Richer slides: a fan of designs on the cover, two columns, the map, collages, rows of phones, capabilities, the team, the rounds. */
 .frame{gap:3.5%}
@@ -115,7 +115,7 @@
 .s-rounds li{margin:0;padding:3.2cqw 1.2cqw 0;position:relative;display:grid;gap:.6cqw}
 .s-rounds li::before{content:"";position:absolute;top:.3cqw;inset-inline-start:1.2cqw;width:2cqw;height:2cqw;border-radius:50%;background:var(--deck);border:.4cqw solid #fbf8f2}
 .s-rounds strong{font:700 2cqw/1.2 var(--serif);color:#1b2744}.s-rounds span{font:1.35cqw/1.4 var(--sans);color:#4a5168}
-@media (max-width:44rem){.s-cols,.s-caps,.s-team,.s-rounds{grid-template-columns:1fr}.s-map{font-size:2.6cqw}.s-map thead th{font-size:2.2cqw}.s-map tbody th{font-size:3cqw;white-space:normal}
+@media (max-width:66rem){.s-cols,.s-caps,.s-team,.s-rounds{grid-template-columns:1fr}.s-map{font-size:2.6cqw}.s-map thead th{font-size:2.2cqw}.s-map tbody th{font-size:3cqw;white-space:normal}
   .s-h3,.s-caps strong,.s-team strong,.s-rounds strong{font-size:4.2cqw}.s-caps span,.s-team li>span:last-child,.s-rounds span,.s-points.tight li,.s-sees{font-size:3.6cqw}
   .s-collage,.s-fan{height:auto;aspect-ratio:4/3;min-height:60cqw}.s-why{font-size:2.6cqw}.c-tag{font-size:2.4cqw}.p-phone{max-width:none}.s-row{height:auto;flex-wrap:nowrap}
   .s-rounds::before{display:none}.s-team .verb{font-size:2.2cqw}}
@@ -128,7 +128,7 @@
 .s-av{display:inline-grid;place-items:center;width:2.2cqw;height:2.2cqw;border-radius:50%;background:#a8461f;color:#fff;font-size:1.2cqw}
 .s-lbl{font-weight:400;font-size:.95cqw;color:#cfd5e4}
 .s-line{margin:0;font:italic 1.45cqw/1.4 var(--serif)}
-@media (max-width:44rem){.s-says{max-width:none;padding:3cqw}.s-who{font-size:3.2cqw;gap:2cqw}.s-av{width:5cqw;height:5cqw;font-size:3cqw}.s-lbl{font-size:2.8cqw}.s-line{font-size:3.8cqw}}
+@media (max-width:66rem){.s-says{max-width:none;padding:3cqw}.s-who{font-size:3.2cqw;gap:2cqw}.s-av{width:5cqw;height:5cqw;font-size:3cqw}.s-lbl{font-size:2.8cqw}.s-line{font-size:3.8cqw}}
 .frame .s-says .s-who .s-lbl,.frame .s-says .s-who strong{color:#cfd5e4}.frame .s-says .s-who strong{color:#fff}.frame .s-says .s-line{color:#f4efe4}
 /* the slide grid gets a full-width column: a size-contained frame reports no width of its own, so an auto column collapsed (design.b, 25 Nov) */
 .slide{grid-template-columns:minmax(0,1fr)}.slide>.frame{justify-self:center}
@@ -184,7 +184,7 @@
 .ld-list li.at{background:#1b2744;border-color:#1b2744}.ld-list li.at strong{color:#fff}.ld-list li.at span{color:#cfd5e4}
 .ld-list .here{position:absolute;inset-block-start:-3.2cqw;inset-inline-start:0;font:700 1.1cqw/1 var(--sans);font-style:normal;color:#fff;background:#a8461f;padding:.5cqw .8cqw;border-radius:99px;white-space:nowrap}
 .ld-list li:nth-child(n+6):not(.at){border-style:dashed}
-@media (max-width:44rem){
+@media (max-width:66rem){
   .flip .s-text{order:0}.s-h.huge{font-size:10cqw}.slide-statement .s-sub{font-size:4.4cqw}
   .s-graph{display:none}.s-graph + .s-team{display:grid}
   .m-split{grid-template-columns:1fr}.m-axis{display:none}.m-side figcaption{font-size:3.4cqw}
@@ -196,7 +196,7 @@
 .s-caps{gap:1.2cqw;margin-top:1cqw}.slide-capabilities .s-caps li{padding:1.1cqw 1.3cqw;gap:.4cqw}
 .s-caps .cap-img{aspect-ratio:16/6.4;margin:0 0 .3cqw}.slide-capabilities .s-caps strong{font-size:1.7cqw}.slide-capabilities .s-caps span{font-size:1.2cqw;line-height:1.35}
 .frame .s-says .s-who .s-av{color:#fff;font:700 1.2cqw/1 var(--sans)}.frame .s-says .s-who strong{font:700 1.15cqw/1.2 var(--sans)}
-@media (max-width:44rem){.frame .s-says .s-who .s-av{font-size:3cqw}.frame .s-says .s-who strong{font-size:3.2cqw}.slide-capabilities .s-caps strong{font-size:4.2cqw}.slide-capabilities .s-caps span{font-size:3.4cqw}}
+@media (max-width:66rem){.frame .s-says .s-who .s-av{font-size:3cqw}.frame .s-says .s-who strong{font-size:3.2cqw}.slide-capabilities .s-caps strong{font-size:4.2cqw}.slide-capabilities .s-caps span{font-size:3.4cqw}}
 .slide-statement .s-kicker,.slide-statement .s-num{color:#fff}.th-the-stage .c-tag-he{color:#2a1508}
 .frame .s-p a{color:#8e3a17;text-decoration:underline}
 @media print{.slide{contain:strict;width:1280px}}
@@ -209,7 +209,8 @@
 .ph-list li{margin:0;display:grid;gap:.8cqw;justify-items:center}
 .ph-img{width:100%;height:auto;max-height:27cqw;aspect-ratio:390/844;object-fit:cover;object-position:top;border-radius:1.6cqw;border:.4cqw solid #1b2744;background:#fff}
 .ph-list span{font:700 1.5cqw/1.2 var(--serif);color:#1b2744}
-@media (max-width:44rem){.ph-list{grid-template-columns:repeat(3,1fr);gap:3cqw}.ph-img{max-height:none}.ph-list span{font-size:3.6cqw}}
+@media (max-width:66rem){.ph-list{grid-template-columns:repeat(3,1fr);gap:3cqw}.ph-img{max-height:none}.ph-list span{font-size:3.6cqw}}
 /* team graph: the role in plain words, the agent's name small underneath (design.b) */
 .g-node{white-space:normal;max-width:15cqw}.g-node strong{font-size:1.3cqw;line-height:1.2}.g-node span{font-size:.9cqw;letter-spacing:.04em;text-transform:none;font-weight:600}
 .s-team .verb{text-transform:none;letter-spacing:.02em}
+@media (min-width:36rem) and (max-width:66rem){.s-caps{grid-template-columns:1fr 1fr}.ph-list{grid-template-columns:repeat(5,1fr)}.ph-list span{font-size:2.2cqw}}
