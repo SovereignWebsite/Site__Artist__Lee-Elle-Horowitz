@@ -68,3 +68,4 @@ body{position:relative}
 /* round 2: the ticket button clears the notches on a phone; bigger gold capitals */
 @media (max-width:40rem){.ticket{padding-inline:2.4rem}.ticket .btn{font-size:.95rem}}
 .presents,.act-n,.act h3,.interval,.rule{font-size:1rem;letter-spacing:.18em}
+.switch{z-index:25}.switch ul a{background:var(--paper)}

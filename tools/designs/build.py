@@ -117,12 +117,15 @@ FAM = '''<details class="family-credit">
   </ul>
 </details>
 '''
-def foot(cur):
+def switcher(cur):
     cur_attr = ' aria-current="page"'
     links = ''.join(f'<li><a href="/designs/{s}/"{cur_attr if s == cur else ""}>{n}</a></li>' for s, n, _, _ in DESIGNS)
+    return (f'<nav class="switch" aria-label="Five designs for this site"><div class="switch-in">'
+            f'<p><strong>Draft</strong> in five designs. <a href="/designs/">Compare them</a></p><ul>{links}</ul></div></nav>\n')
+
+def foot(cur):
     return f'''<footer class="foot">
 <p class="foot-name">Lee-Elle Horowitz <span>Private Hebrew tuition, in London and online</span></p>
-<nav class="designs" aria-label="Five designs for this site"><p>This draft comes in five designs. <a href="/designs/">Compare them</a>:</p><ul>{links}</ul></nav>
 <nav class="site-links" aria-label="About this site">
   <a href="/start/">Start here</a>
   <a href="/agents/">Use with your AI</a>
@@ -133,7 +136,8 @@ def foot(cur):
 </footer>
 '''
 def page(path, title, desc, css, theme, body, cur, cls):
-    return head(path, title, desc, css, theme) + f'<body class="{cls}">\n<a class="skip" href="#main">Skip to content</a>\n' + FAM + body + foot(cur) + '</body>\n</html>\n'
+    top = '' if cls == 'd-start' else switcher(cur)
+    return head(path, title, desc, css, theme) + f'<body class="{cls}">\n<a class="skip" href="#main">Skip to content</a>\n' + FAM + top + body + foot(cur) + '</body>\n</html>\n'
 def brand(extra=''):
     return f'<header class="top"><a class="brand" href="/">Lee-Elle Horowitz</a>{extra}</header>\n'
 

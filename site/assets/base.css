@@ -62,3 +62,12 @@ figcaption a{color:inherit}
 .family-credit .family-gap{border-bottom:1px solid rgba(127,127,127,.25);padding-bottom:.3rem;margin-bottom:.3rem}
 [data-family-credit="off"] .family-credit{display:none}
 @media print{.family-credit{display:none}}
+/* The design switcher, at the top of every design page. The family credit sits in its top strip. */
+.switch{position:relative;z-index:45;background:var(--paper);border-bottom:1px solid var(--line);font-size:.9rem}
+.switch-in{max-width:72rem;margin:0 auto;padding:2.1rem 1.25rem .65rem;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem}
+.switch p{margin:0;color:var(--muted)}.switch p strong{color:var(--fg)}.switch p a{font-weight:700}
+.switch ul{list-style:none;padding:0;margin:0;display:flex;gap:.4rem;overflow-x:auto;max-width:100%;scrollbar-width:thin;padding-bottom:2px}
+.switch li{margin:0;flex:none}
+.switch ul a{display:inline-block;padding:.3rem .8rem;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-weight:600;background:var(--bg);white-space:nowrap}
+.switch ul a[aria-current]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+@media (min-width:52rem){.switch-in{padding-top:.65rem;padding-inline-end:11rem}}
