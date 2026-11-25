@@ -1,6 +1,7 @@
 # Now (2026-11-25T11:57Z)
 
 ## Done
+- Photo received from Dinis in this session (one portrait, from the GSA UK 2026 BA (Hons) Actor Musician graduates page, not Spotlight; the page names no photographer). In all five designs with alt text and that credit, at site/assets/photo/lee-elle-horowitz.webp. Not used for the share card yet (still the seed's neutral card).
 - design.b's brief received (https://design.agents.sovereignweb.site/briefs/lee-elle-horowitz.html, 7222e25).
 - First version (root, Alef-bet) and all five designs built at /designs/, from her words only, with a draft notice. tools/check.sh passes; no sideways scroll on a phone.
 - Read the brief, the Factory guidance and the how-it-works page.
@@ -17,7 +18,7 @@
 - Handover to Lee-Elle: docs/handover.md, docs/prompt-for-your-claude.md and the /start/ page.
 
 ## Waiting on
-- Dinis: her Spotlight photos, handed over in my session. No other photos are used; The stage shows a placeholder until then.
+- Dinis: any further photos; ask whether the Spotlight profile credit wording is wanted. No other photos are used.
 
 ## Content rules for this site
 - Use only her words and facts from the brief. No invented fact, price or customer.

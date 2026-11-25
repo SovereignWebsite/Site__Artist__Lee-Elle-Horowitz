@@ -7,3 +7,4 @@ p,ul,ol{margin:0 0 1.5rem}li{margin:0}.lead{font-size:1rem;color:var(--fg)}
 .pick li{margin-bottom:.75rem}
 .draft{background:var(--paper)}.btn{border-radius:2px}
 @media print{.skip,.family-credit,.cta,footer .designs{display:none}main{background:none;border:0}body{font-size:12pt}}
+.portrait{margin-bottom:1.5rem}.portrait img{border-radius:2px}

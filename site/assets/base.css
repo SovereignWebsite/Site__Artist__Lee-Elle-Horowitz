@@ -38,3 +38,5 @@ footer{max-width:46rem;margin:0 auto;padding:1rem 1rem 3rem;border-top:1px solid
 .family-credit .family-gap{border-bottom:1px solid rgba(127,127,127,.25);padding-bottom:.3rem;margin-bottom:.3rem}
 [data-family-credit="off"] .family-credit{display:none}
 @media print{.family-credit{display:none}}
+.portrait{margin:1rem 0 1.5rem;max-width:16rem}.portrait img{display:block;width:100%;height:auto;border-radius:10px}
+.portrait figcaption{font-size:.8rem;line-height:1.4;color:var(--muted);margin-top:.4rem}
