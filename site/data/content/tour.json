@@ -385,105 +385,105 @@
     {
      "type": "team",
      "kicker": "The team",
-     "h": "A team of AI helpers built your site, each with one job",
-     "intro": "Each agent does one job and keeps its notes in public, so its thinking stays sharp and anyone can see who did what.",
+     "h": "The team that made your site",
+     "intro": "Each helper does one job and writes down what it did, in public, so anyone can see who did what.",
      "steps": [
       [
+       "Takes the request",
        "sites.b",
-       "routes",
-       "Takes the request, checks it is complete, starts a dedicated keeper. Never builds."
+       "Checks the request is complete and starts a helper for your site"
       ],
       [
+       "Sets up the address",
        "factory.b",
-       "creates",
-       "Makes the repository, the address and its certificate."
+       "Makes the folder of files and the web address, with its security certificate"
       ],
       [
+       "Writes the design brief",
        "design.b",
-       "briefs",
-       "Writes the design brief: five ideas, not colour skins."
+       "Five ideas from your own story, not five colour schemes"
       ],
       [
-       "The keeper",
-       "builds",
-       "b.site.lee-elle-horowitz builds and keeps the site, in its own session."
+       "Builds and looks after your site",
+       "the keeper",
+       "Builds every page and keeps it working"
       ],
       [
+       "Tests it on synthetic parents",
        "design.b.rounds",
-       "tests",
-       "Reviews each round with synthetic personas, including an Israeli-born parent reading the Hebrew."
+       "Made-up but realistic parents say whether they would book"
       ],
       [
+       "Lists it once you approve",
        "hub.b",
-       "lists",
-       "Lists the site in the hub once she approves it."
+       "Adds your site to the public list, only after your yes"
       ]
      ],
-     "says": "Each agent does one job, writes it down in public, and hands on to the next.",
+     "says": "Each helper does one job, writes it down in public, and hands on to the next.",
      "graph": {
       "nodes": [
        [
         "dinis",
+        "Asks for the site",
         "Dinis Cruz",
-        "asks",
-        8,
+        9,
         50
        ],
        [
         "sites",
+        "Takes the request",
         "sites.b",
-        "routes",
-        27,
-        22
+        26,
+        20
        ],
        [
         "factory",
+        "Sets up the address",
         "factory.b",
-        "creates",
-        27,
-        78
+        26,
+        80
        ],
        [
         "design",
+        "Writes the design brief",
         "design.b",
-        "briefs",
         50,
-        14
+        12
        ],
        [
         "keeper",
-        "The keeper",
-        "builds",
+        "Builds and looks after your site",
+        "the keeper",
         50,
         50
        ],
        [
         "rounds",
+        "Tests it on synthetic parents",
         "design.b.rounds",
-        "tests",
-        73,
-        14
+        76,
+        12
        ],
        [
         "security",
+        "Checks it is safe",
         "security.b",
-        "rules",
         50,
-        86
+        88
        ],
        [
         "lee",
+        "You: approve it",
         "Lee-Elle",
-        "approves",
-        73,
-        72
+        76,
+        76
        ],
        [
         "hub",
+        "Lists it once you approve",
         "hub.b",
-        "lists",
-        92,
-        50
+        91,
+        46
        ]
       ],
       "edges": [
@@ -532,46 +532,46 @@
         "hub"
        ]
       ],
-      "alt": "Diagram: Dinis Cruz asks sites.b, which routes to factory.b and starts the keeper; design.b briefs the keeper; design.b.rounds tests each version; security.b rules on questions; Lee-Elle approves; hub.b lists the site once she does."
+      "alt": "Diagram of the team: Dinis Cruz asks for the site; one helper takes the request and another sets up the address; one writes the design brief; the keeper builds and looks after the site; one tests it on synthetic parents; one checks it is safe; Lee-Elle approves it; and one lists it once she does."
      }
     },
     {
      "type": "flow",
-     "kicker": "The pipeline",
+     "kicker": "How it works",
      "h": "From your request to a live site, in checked steps",
      "steps": [
       [
        "Request",
-       "filed in the Sovereign Website factory"
+       "Dinis asks for a site for you"
       ],
       [
-       "Repository",
-       "seeded with checks and a deploy workflow"
+       "A home for the files",
+       "your site's own folder, with its checks built in"
       ],
       [
-       "Own key",
-       "the keeper signs every commit with its own key"
+       "A signature",
+       "the helper signs every change it makes"
       ],
       [
        "Build",
-       "every page generated from JSON"
+       "every page made from your words"
       ],
       [
        "Checks",
-       "run before every push"
+       "run before anything goes live"
       ],
       [
        "Live",
-       "a push to dev publishes in a minute or two"
+       "a change is online in a minute or two"
       ]
      ],
-     "says": "A request becomes a repository, and the repository becomes a live site, through checked steps."
+     "says": "A request becomes a folder of files, and the files become a live site, with checks at every step."
     },
     {
      "type": "rounds",
      "kicker": "Design",
      "h": "Five ideas, then rounds with synthetic parents",
-     "intro": "design.b.rounds puts each version in front of synthetic personas and asks one question: would you book a Hebrew lesson for your child here?",
+     "intro": "A testing helper shows each version to synthetic parents, made-up but realistic, and asks one question: would you book a Hebrew lesson for your child here?",
      "rounds": [
       [
        "Brief",
@@ -598,16 +598,15 @@
     },
     {
      "type": "points",
-     "kicker": "Content, in JSON",
+     "kicker": "Your words",
      "h": "Your words live in one place, so a change is made once",
      "points": [
-      "site/data/content/en.json: her words, as she supplied them.",
-      "site/data/content/he.json: the Hebrew translation, for her to check.",
-      "site.json, start.json, tour.json and admin.json: everything else.",
-      "tools/designs/build.py turns them into plain HTML pages, in both languages. It holds no words of its own."
+      "Your words are kept, as you gave them, in one English file",
+      "The Hebrew translation sits in a matching file, for you to check",
+      "Every page, in every design and both languages, is made from those two files",
+      "So a word is changed once, by you or your AI, and every design follows"
      ],
-     "code": "en.json + he.json → build.py → 10 design pages, 2 home pages, 2 pickers, the start page, the tour (3 pages) and the admin page",
-     "says": "Every word of Lee-Elle's is in a content file, one per language. The pages are built from those files, so the HTML holds none of her words."
+     "says": "Every word of Lee-Elle's is kept in one place, one file per language. The pages are made from it, so nothing is typed twice."
     },
     {
      "type": "hebrew",
@@ -615,7 +614,7 @@
      "h": "Your Hebrew pages read right to left, properly",
      "p": "Not a mirror image: each Hebrew page is marked as Hebrew and right to left, and the layout follows.",
      "points": [
-      "One stylesheet turns any of the five designs right to left",
+      "One setting turns any of the five designs right to left",
       "English names keep their own direction inside Hebrew",
       "Checked by a synthetic Hebrew-speaking persona, and by Lee-Elle once she reads it"
      ],
@@ -640,27 +639,27 @@
     },
     {
      "type": "score",
-     "kicker": "Checked before every push",
+     "kicker": "Checked every time",
      "h": "Checked every time, before anything goes live",
      "items": [
       [
        "{pages}",
-       "pages built from JSON, in English and Hebrew"
+       "pages, all made from your words, in English and in Hebrew"
       ],
       [
        "0",
-       "accessibility problems: light and dark, desktop and phone"
+       "accessibility problems: every page works for everyone, on a phone or a computer, light or dark"
       ],
       [
        "390 px",
-       "phone width, with no sideways scroll"
+       "the width of a small phone: nothing spills off the side"
       ],
       [
        "5",
-       "checks the deploy runs: build, link previews, quality, HTML, accessibility"
+       "checks run before any change goes live"
       ]
      ],
-     "note": "The push stops if any number is wrong."
+     "note": "If any check fails, the change does not go live."
     },
     {
      "type": "ladder",
@@ -706,7 +705,7 @@
      ],
      "at": "M3",
      "here": "This site",
-     "next": "Next: a design rating of 4 from design.b.rounds. From M5 on, the steps are hers.",
+     "next": "Next: the testing helper rates the design 4 out of 5. From M5 on, the steps are yours: approve it, take it over, grow it.",
      "source": [
       "https://design.agents.sovereignweb.site/maturity.html",
       "design.b's maturity model"
@@ -717,9 +716,9 @@
      "kicker": "Trust",
      "h": "Every change is signed, so anyone can see who made it",
      "points": [
-      "Each agent makes its own signing key; only the public half is published.",
-      "Every commit is signed and carries the agent's name and session.",
-      "The keeper's notes, open work and decisions are in the repository, for anyone to read."
+      "Each helper has its own digital signature; only the public half is shared",
+      "Every change carries that signature and the name of the helper that made it",
+      "All the notes, open work and decisions are kept with your files, for anyone to read"
      ],
      "says": "Every agent signs its work with its own key, and the history is public."
     },

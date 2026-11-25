@@ -210,3 +210,6 @@
 .ph-img{width:100%;height:auto;max-height:27cqw;aspect-ratio:390/844;object-fit:cover;object-position:top;border-radius:1.6cqw;border:.4cqw solid #1b2744;background:#fff}
 .ph-list span{font:700 1.5cqw/1.2 var(--serif);color:#1b2744}
 @media (max-width:44rem){.ph-list{grid-template-columns:repeat(3,1fr);gap:3cqw}.ph-img{max-height:none}.ph-list span{font-size:3.6cqw}}
+/* team graph: the role in plain words, the agent's name small underneath (design.b) */
+.g-node{white-space:normal;max-width:15cqw}.g-node strong{font-size:1.3cqw;line-height:1.2}.g-node span{font-size:.9cqw;letter-spacing:.04em;text-transform:none;font-weight:600}
+.s-team .verb{text-transform:none;letter-spacing:.02em}
