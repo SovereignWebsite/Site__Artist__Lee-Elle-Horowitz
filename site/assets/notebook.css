@@ -29,3 +29,13 @@ mark{background:linear-gradient(100deg,transparent .2em,var(--hi) .3em,var(--hi)
 .sticky p{margin:0;font-size:1.3rem}.sticky .soon{font-size:1rem}
 .foot{color:var(--muted)}
 @media print{.skip,.family-credit,.sticky,.foot .designs,.draft{display:none}body{background:#fff;font-size:12pt}.book{filter:none}.page{background-image:none;padding-inline-start:1rem}}
+/* round 1: larger text over lighter rules, hanging ticks, letters on the cover and the exercise list */
+.page{font-size:1.1rem;line-height:1.9rem;background-image:linear-gradient(90deg,transparent 2.9rem,var(--margin) 2.9rem,var(--margin) 3.05rem,transparent 3.05rem),linear-gradient(transparent calc(1.9rem - 1px),var(--rule) calc(1.9rem - 1px));background-size:100% 100%,100% 1.9rem}
+:root{--rule:#d9e3f0}@media (prefers-color-scheme:dark){:root{--rule:#232c39}}
+.page h1{line-height:3.8rem}.page h2{line-height:1.9rem;margin-top:1.9rem}.page p,.page ul,.page ol{margin-bottom:1.9rem}
+.ticks li{padding-inline-start:1.6rem;text-indent:-1.6rem}.ticks li::before{display:inline-block;width:1rem;text-indent:0}
+.ex{list-style:none;padding-inline-start:0}.ex li{padding-inline-start:2.2rem;text-indent:-2.2rem}
+.ex-g{display:inline-block;width:2.2rem;text-indent:0;font:700 1.3rem/1 var(--he-serif);color:var(--accent)}
+.cover-ab{margin:1.2rem 0 0 1rem;font:1.4rem/1.6 var(--he-serif);letter-spacing:.35em;opacity:.85;word-spacing:.2em}
+.page .chips{margin:0 0 1rem}.page .chips li{background:var(--paper)}
+.page .cta{margin:0 0 1.9rem}

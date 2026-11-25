@@ -36,3 +36,11 @@ main{max-width:52rem;margin:0 auto;padding:0 1.25rem}
 .compose .cta{margin:0}.compose .btn{padding:.65rem 1.1rem;font-size:.95rem}
 @media (max-width:30rem){.compose .field{display:none}.compose{justify-content:center;padding:.35rem}}
 .chips li{background:var(--paper)}
+/* round 1: letter markers, stronger bars, no sticky button over the first answer on a phone */
+.mk{display:flex;align-items:baseline;gap:.4rem;margin:0 0 .4rem}
+.mk-g{font:700 1.6rem/1 var(--he-serif);color:var(--accent)}
+.mk-n{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+:root{--bar:#7fb8a3}
+@media (prefers-color-scheme:dark){:root{--bar:#4f8f78}}
+.hl{font-size:.9rem;font-style:normal;font-weight:600}
+@media (max-width:44rem){.compose{position:static}}

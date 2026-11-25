@@ -61,7 +61,7 @@ CREDIT2 = 'Still from her showreel on Spotlight, cropped. A stand-in until she a
 def fig(cls, img=PH, credit=CREDIT): return f'<figure class="{cls}">{img}<figcaption>{credit}</figcaption></figure>'
 CTA = '<p class="cta"><span class="btn" role="note">Ask about lessons <span class="soon">Enquiries open soon</span></span></p>'
 DRAFT = '<p class="draft" role="note"><strong>Draft.</strong> Lee-Elle Horowitz has not yet approved this site. Nothing here is final.</p>'
-CHIPS = '<ul class="chips"><li>' + icon('pin') + 'In person in London</li><li>' + icon('screen') + 'Online via Zoom</li><li>' + icon('check') + 'Enhanced DBS checked</li></ul>'
+CHIPS = '<ul class="chips"><li>' + icon('one') + 'Children, teenagers and adults</li><li>' + icon('pin') + 'In person in London</li><li>' + icon('screen') + 'Online via Zoom</li><li>' + icon('check') + 'Enhanced DBS checked</li></ul>'
 
 DESIGNS = [('alef-bet', 'Alef-bet', 'The page as an alphabet chart: a large Hebrew letter opens each section.', 'א'),
  ('conversation', 'Conversation', 'The page as a conversation: questions a parent asks, and her answers.', '…'),
@@ -163,9 +163,11 @@ def alef():
 # ---------- 2 Conversation ----------
 def convo():
     def you(t): return f'<li class="msg you"><p>{e(t)}</p></li>'
+    n = [0]
     def her(inner, he_lines=3):
         bars = ''.join('<span class="bar"></span>' for _ in range(he_lines))
-        return (f'<li class="msg her"><div class="pair"><div class="en">{inner}</div>'
+        c, nm = ALEFBET[n[0]]; n[0] += 1
+        return (f'<li class="msg her"><div class="pair"><div class="en"><p class="mk"><span class="mk-g" lang="he" dir="rtl">{c}</span> <span class="mk-n">{nm}</span></p>{inner}</div>'
                 f'<div class="hebrew" dir="rtl"><span class="bars" aria-hidden="true">{bars}</span><span class="hl" dir="ltr">Her Hebrew goes here once she has checked it</span></div></div></li>')
     chips = '<ul class="replies">' + ''.join(f'<li>{e(l)}</li>' for l in LESSONS) + '</ul>'
     return ('<header class="chat-top"><a class="brand" href="/">' + PH.replace('<img ', '<img class="ava" ').replace('width="750" height="995"', 'width="48" height="64"').replace(' alt="Lee-Elle Horowitz: a smiling young woman with long, wavy light-brown hair, in a burgundy knitted top, against a grey background."', ' alt=""') +
@@ -191,31 +193,29 @@ def tenses():
     return (brand() + '<main id="main">\n' + DRAFT +
       f'<section class="hero" aria-labelledby="h1"><p class="eyebrow">Private Hebrew tuition</p><h1 id="h1">{e(TITLE)}</h1>'
       '<p class="conj" aria-hidden="true"><span class="p">was</span><span class="n">is</span><span class="f">will be</span></p>'
-      f'<p class="lead">{e(LEAD)} Past, present and future: the three tenses she teaches, and the three parts of this page.</p>' + CHIPS + '</section>'
+      f'<p class="lead">{e(LEAD)} Past, present and future: the three tenses she teaches, and the three parts of this page.</p>' + CHIPS + CTA + '</section>'
       '<nav class="tabs" aria-label="The three tenses"><a href="#past" class="p">Past</a><a href="#present" class="n">Present</a><a href="#future" class="f">Future</a></nav>'
-      '<section id="past" class="tense past" aria-labelledby="past-h"><p class="t-label">Past</p><h2 id="past-h">Where I come from</h2><div class="split">' + fig('photo') +
+      '<section id="past" class="tense past" aria-labelledby="past-h"><p class="t-label">Past <span class="t-he" lang="he" dir="rtl">א</span></p><h2 id="past-h">Where I come from</h2><div class="split">' + fig('photo') +
       '<div>' + paras(ABOUT[:1]) + journey + '</div></div></section>'
-      '<section id="present" class="tense present" aria-labelledby="present-h"><p class="t-label">Present</p><h2 id="present-h">Lessons today</h2>' + paras(ABOUT[1:]) +
+      '<section id="present" class="tense present" aria-labelledby="present-h"><p class="t-label">Present <span class="t-he" lang="he" dir="rtl">ב</span></p><h2 id="present-h">Lessons today</h2>' + paras(ABOUT[1:]) +
       '<h3>Hebrew lessons can include</h3>' + grid + f'<h3>Teaching approach</h3><p>{e(APPROACH1)}</p><h3>Lesson format</h3>' + fmt +
       '<h3>Qualifications and background</h3>' + ul(QUALS, 'ticks') +
       '<div class="music"><h3>Music tuition too</h3><p>A smaller part of what I teach.</p>' + ul(MUSIC) + '</div></section>'
-      f'<section id="future" class="tense future" aria-labelledby="future-h"><p class="t-label">Future</p><h2 id="future-h">Where you want to get to</h2><p class="big">{e(QUOTE)}</p>' + CTA + '</section></main>\n')
+      f'<section id="future" class="tense future" aria-labelledby="future-h"><p class="t-label">Future <span class="t-he" lang="he" dir="rtl">ג</span></p><h2 id="future-h">Where you want to get to</h2><p class="big">{e(QUOTE)}</p>' + CTA + '</section></main>\n')
 
 # ---------- 4 The stage ----------
 def stage():
     return ('<main id="main">\n<div class="curtain l" aria-hidden="true"></div><div class="curtain r" aria-hidden="true"></div>\n' + DRAFT +
       '<section class="cover" aria-labelledby="h1"><p class="presents">Lee-Elle Horowitz presents</p>'
       '<div class="marquee"><h1 id="h1">Private Hebrew Tuition</h1><p class="with">with Lee-Elle Horowitz</p></div>'
-      f'<p class="lead">{e(LEAD)}</p><div class="spot">' + fig('portrait') + '</div>' + CHIPS + CTA + '</section>\n'
-      '<section class="programme" aria-labelledby="prog"><h2 id="prog" class="rule">Tonight\'s programme</h2><ol class="running">'
-      '<li><span>Act one</span>Hebrew lessons</li><li><span>Interval</span></li><li><span>Act two</span>Music and audition preparation</li><li><span>Curtain call</span>About the teacher</li></ol></section>'
-      '<section class="act" aria-labelledby="a1"><p class="act-n">Act one</p><h2 id="a1">Hebrew lessons</h2>' + paras(ABOUT) +
-      '<h3>Hebrew lessons can include</h3><ol class="scenes">' + ''.join(f'<li><span>Scene {i+1}</span>{e(t)}</li>' for i, t in enumerate(LESSONS)) + '</ol>'
+      f'<p class="lead">{e(LEAD)}</p>' + CHIPS + CTA + '<div class="spot">' + fig('portrait') + '</div></section>\n'
+      '<section class="act" aria-labelledby="a1"><p class="act-n">Act one <span class="act-he" lang="he" dir="rtl">א</span></p><h2 id="a1">Hebrew lessons</h2>'
+      '<h3>Hebrew lessons can include</h3><ol class="scenes">' + ''.join(f'<li><span><span lang="he" dir="rtl">{c}</span> Scene {i+1}</span>{e(t)}</li>' for i, ((c, _), t) in enumerate(zip(ALEFBET, LESSONS))) + '</ol>' + paras(ABOUT) +
       f'<h3>Teaching approach</h3><p>{e(APPROACH)}</p><h3>Lesson format</h3>' + ul([b for _, _, b in FORMAT]) + '</section>'
       '<p class="interval" role="separator">Interval</p>'
-      '<section class="act two" aria-labelledby="a2"><p class="act-n">Act two</p><h2 id="a2">Music and audition preparation</h2><p>A smaller part of what she teaches.</p><div class="split">' +
+      '<section class="act two" aria-labelledby="a2"><p class="act-n">Act two <span class="act-he" lang="he" dir="rtl">ב</span></p><h2 id="a2">Music and audition preparation</h2><p>A smaller part of what she teaches.</p><div class="split">' +
       fig('still', PH2, CREDIT2) + ul(MUSIC, 'notes') + '</div></section>'
-      '<section class="act bio" aria-labelledby="a3"><p class="act-n">Curtain call</p><h2 id="a3">About the teacher</h2>' + ul(QUALS) +
+      '<section class="act bio" aria-labelledby="a3"><p class="act-n">Curtain call <span class="act-he" lang="he" dir="rtl">ג</span></p><h2 id="a3">About the teacher</h2>' + ul(QUALS) +
       '<h3>On stage</h3><p class="from">From her Spotlight profile.</p>' + ul(STAGE) +
       f'<p><a class="reel" href="{SHOWREELS}" rel="noopener">Watch her showreels on Spotlight</a> <span class="ext">(opens Spotlight, another website)</span></p></section>'
       '<section class="ticket" aria-labelledby="tk"><h2 id="tk">Admit one</h2><p>Lessons tailored to each student\'s age, ability and goals.</p>' + CTA + '</section></main>\n')
@@ -224,9 +224,9 @@ def stage():
 def notebook():
     return ('<main id="main">\n' + DRAFT +
       '<div class="book"><div class="cover"><p class="label-k">Exercise book</p>'
-      '<dl class="label"><div><dt>Name</dt><dd>Lee-Elle Horowitz</dd></div><div><dt>Subject</dt><dd>Hebrew</dd></div><div><dt>Also</dt><dd>Music</dd></div></dl></div>'
-      f'<section class="page" aria-labelledby="h1"><h1 id="h1">{e(TITLE)}</h1><p class="lead"><mark>{e(LEAD)}</mark></p>' + fig('polaroid') +
-      '<h2>About me</h2>' + paras(ABOUT) + '<h2>Hebrew lessons can include</h2><ol class="ex">' + ''.join(f'<li>{e(t)}</li>' for t in LESSONS) + '</ol>'
+      '<dl class="label"><div><dt>Name</dt><dd>Lee-Elle Horowitz</dd></div><div><dt>Subject</dt><dd>Hebrew</dd></div><div><dt>Also</dt><dd>Music</dd></div></dl><p class="cover-ab" aria-hidden="true">' + ' '.join(f'<span lang="he" dir="rtl">{c}</span>' for c, _ in ALEFBET) + '</p></div>'
+      f'<section class="page" aria-labelledby="h1"><h1 id="h1">{e(TITLE)}</h1><p class="lead"><mark>{e(LEAD)}</mark></p>' + CHIPS + CTA + fig('polaroid') +
+      '<h2>About me</h2>' + paras(ABOUT) + '<h2>Hebrew lessons can include</h2><ol class="ex">' + ''.join(f'<li><span class="ex-g" lang="he" dir="rtl">{c}</span> {e(t)}</li>' for (c, _), t in zip(ALEFBET, LESSONS)) + '</ol>'
       f'<h2>Teaching approach</h2><p>{e(APPROACH1)}</p><p><mark>{e(QUOTE)}</mark></p>'
       '<h2>Qualifications and background</h2>' + ul(QUALS, 'ticks') + '<h2>Lesson format</h2>' + ul([b for _, _, b in FORMAT]) +
       '<h2>Music tuition too</h2><p>A smaller part of what I teach.</p>' + ul(MUSIC) +

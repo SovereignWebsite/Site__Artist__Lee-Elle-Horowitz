@@ -28,11 +28,11 @@ Compare them at /designs/.
 ## Decisions that are yours
 
 1. **Which design** becomes the home page, or which parts of which.
-2. **Hebrew.** Only single letters are used. No Hebrew words go up until you have checked them. Send any you want, for example your name in Hebrew.
+2. **Hebrew.** Every design now uses Hebrew letters, but no Hebrew words, until you have checked them. Suggestions to correct or strike out are in `docs/hebrew-to-check.md`: your name, a verb in three tenses, a word for the Notebook cover, and your own Hebrew for the Conversation answers.
 3. **Photos.** The current photos are stand-ins, to show what can be done:
    - a portrait from the Guildford School of Acting graduates page, which does not name the photographer;
    - a cropped still from your showreel on Spotlight.
-   Send your own, with the photographer's name for each credit.
+   Send your own, with the photographer's name for each credit. Whether the site may reuse the two stand-ins is not settled: please confirm, or they come off before the draft notice does.
 4. **Contact details.** None are shown. The enquiry button says "Enquiries open soon" until you choose what visitors see, or until the site's enquiry form is connected.
 5. **Prices.** None are shown, and none will be unless you give them.
 6. **Approval.** When you are happy, say so and the draft notice comes off.
