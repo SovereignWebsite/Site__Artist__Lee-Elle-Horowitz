@@ -67,12 +67,14 @@ DESIGNS = [('alef-bet', 'Alef-bet', 'The page as an alphabet chart: a large Hebr
  ('conversation', 'Conversation', 'The page as a conversation: questions a parent asks, and her answers.', '…'),
  ('three-tenses', 'Three tenses', 'Past, present and future, the way she teaches grammar.', '→'),
  ('the-stage', 'The stage', 'A theatre programme, from her acting training: Hebrew first, music in the second half.', '★'),
- ('notebook', 'Notebook', 'A ruled exercise book: one column, plain and printable.', '✎')]
+ ('notebook', 'Notebook', 'A ruled exercise book: one column, plain and printable.', '✎'),
+ ('ivrit', 'Ivrit (Hebrew)', 'The whole page in Hebrew, right to left. Translated for her to check.', 'ע')]
+WORD = {5: 'five', 6: 'six'}[len(DESIGNS)]
 
-def head(path, title, desc, css, theme):
+def head(path, title, desc, css, theme, lang='en-GB', dir_='ltr', locale='en_GB'):
     url = BASE + path; t = e(title); d = e(desc)
     return f'''<!doctype html>
-<html lang="en-GB">
+<html lang="{lang}" dir="{dir_}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -81,7 +83,7 @@ def head(path, title, desc, css, theme):
 <meta name="theme-color" content="{theme}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{NAME}">
-<meta property="og:locale" content="en_GB">
+<meta property="og:locale" content="{locale}">
 <meta property="og:url" content="{url}">
 <meta property="og:title" content="{t}">
 <meta property="og:description" content="{d}">
@@ -96,10 +98,10 @@ def head(path, title, desc, css, theme):
 <meta name="twitter:image" content="{BASE}/assets/share/card-1200x630.jpg">
 <link rel="canonical" href="{url}">
 <link rel="stylesheet" href="/assets/base.css">
-<link rel="stylesheet" href="{css}">
+''' + ''.join(f'<link rel="stylesheet" href="{c}">\n' for c in css.split()) + f'''
 </head>
 '''
-FAM = '''<details class="family-credit">
+FAM = '''<details class="family-credit" lang="en-GB" dir="ltr">
   <summary>Sovereign Website</summary>
   <ul>
     <li><a href="/start/">Start here</a></li>
@@ -120,11 +122,11 @@ FAM = '''<details class="family-credit">
 def switcher(cur):
     cur_attr = ' aria-current="page"'
     links = ''.join(f'<li><a href="/designs/{s}/"{cur_attr if s == cur else ""}>{n}</a></li>' for s, n, _, _ in DESIGNS)
-    return (f'<nav class="switch" aria-label="Five designs for this site"><div class="switch-in">'
-            f'<p><strong>Draft</strong> in five designs. <a href="/designs/">Compare them</a></p><ul>{links}</ul></div></nav>\n')
+    return (f'<nav class="switch" lang="en-GB" dir="ltr" aria-label="{WORD.capitalize()} designs for this site"><div class="switch-in">'
+            f'<p><strong>Draft</strong> in {WORD} designs. <a href="/designs/">Compare them</a></p><ul>{links}</ul></div></nav>\n')
 
 def foot(cur):
-    return f'''<footer class="foot">
+    return f'''<footer class="foot" lang="en-GB" dir="ltr">
 <p class="foot-name">Lee-Elle Horowitz <span>Private Hebrew tuition, in London and online</span></p>
 <nav class="site-links" aria-label="About this site">
   <a href="/start/">Start here</a>
@@ -135,9 +137,9 @@ def foot(cur):
 <p class="small">A sovereign website, made with the <a href="https://sovereignwebsite.org/">open pattern</a>. Source: <a href="https://github.com/SovereignWebsite/Site__Artist__Lee-Elle-Horowitz">github.com/SovereignWebsite/Site__Artist__Lee-Elle-Horowitz</a>.</p>
 </footer>
 '''
-def page(path, title, desc, css, theme, body, cur, cls):
+def page(path, title, desc, css, theme, body, cur, cls, lang='en-GB', dir_='ltr', locale='en_GB'):
     top = '' if cls == 'd-start' else switcher(cur)
-    return head(path, title, desc, css, theme) + f'<body class="{cls}">\n<a class="skip" href="#main">Skip to content</a>\n' + FAM + top + body + foot(cur) + '</body>\n</html>\n'
+    return head(path, title, desc, css, theme, lang, dir_, locale) + f'<body class="{cls}">\n<a class="skip" href="#main">Skip to content</a>\n' + FAM + top + body + foot(cur) + '</body>\n</html>\n'
 def brand(extra=''):
     return f'<header class="top"><a class="brand" href="/">Lee-Elle Horowitz</a>{extra}</header>\n'
 
@@ -236,13 +238,60 @@ def notebook():
       '<div class="sticky" role="note"><p>Ask about lessons</p><p class="soon">Enquiries open soon</p></div></section></div></main>\n')
 
 
+# ---------- 6 Ivrit: the whole page in Hebrew, translated from her text for her to check ----------
+NAME_EN = '<bdi lang="en">Lee-Elle Horowitz</bdi>'
+H = dict(
+ title='שיעורים פרטיים בעברית', with_='עם ' + NAME_EN,
+ lead='שיעורי עברית פרטיים לילדים, לבני נוער ולמבוגרים.',
+ eyebrow='שיעורים פרטיים בעברית · לונדון ואונליין',
+ chips=['ילדים, בני נוער ומבוגרים', 'פנים אל פנים בלונדון', 'שיעורים בזום', 'בדיקת DBS מורחבת'],
+ about=['נולדתי בדרום אפריקה וגדלתי בישראל, ואני דוברת עברית שוטפת. בהמשך עברתי לבריטניה. יש לי ניסיון בהוראת עברית לילדים ולמתחילים, גם בשיעורים מקוונים וגם פנים אל פנים.',
+        'אני מציעה שיעורי עברית מותאמים אישית, שמתמקדים בבניית ביטחון, בפיתוח מיומנויות שיחה ובהבנה של האופן שבו השפה פועלת בחיי היומיום.',
+        'הגישה שלי יצירתית, אינטראקטיבית וממוקדת בתלמיד. במקום רק לשנן אוצר מילים, אני עוזרת לתלמידים להבין איך בונים משפטים, איך לתקשר באופן טבעי ואיך לפתח הבנה מעשית של העברית.'],
+ lessons=['מתחילים מאפס', 'עברית מדוברת', 'קריאה וכתיבה', 'הרחבת אוצר המילים', 'בניית משפטים ודקדוק', 'זמני עבר, הווה ועתיד', 'עברית לילדים שגדלים בבריטניה', 'שיפור השטף למי שכבר יודע קצת עברית', 'תמיכה בעברית לבית הספר ולחינוך יהודי משלים'],
+ approach='השיעורים מותאמים לגיל, ליכולת ולמטרות של כל תלמיד. אני שואפת שהלמידה תהיה מהנה, מעשית ומעניינת, בעזרת שיחה, פעילויות ודוגמאות מהחיים.',
+ quote='חשוב לי שהתלמידים ירגישו בנוח לטעות, לשאול שאלות ולפתח בהדרגה ביטחון בשימוש עצמאי בעברית.',
+ quals=['דוברת עברית שוטפת', 'גדלתי בישראל', 'שנתיים של ניסיון בהוראה פרטית', 'ניסיון בהוראת ילדים בגילאי 7 עד 11', 'תואר ראשון בהצטיינות (<bdi lang="en">First Class Honours BA</bdi>) מ־<bdi lang="en">Guildford School of Acting, University of Surrey</bdi>', 'עברתי בדיקת <bdi lang="en">Enhanced DBS</bdi>'],
+ fmt=[('pin', 'פנים אל פנים', 'שיעורים פנים אל פנים בלונדון'), ('screen', 'אונליין', 'שיעורים מקוונים בזום'), ('one', 'אחד על אחד', 'שיעורים פרטיים'), ('group', 'קבוצות קטנות', 'שיעורים בקבוצות קטנות, בתיאום מראש')],
+ music=['שיעורי שירה', 'שיעורי טרומבון', 'שיעורי גיטרה למתחילים', 'תיאטרון מוזיקלי והכנה לאודישנים'],
+ stats=[('7 עד 11', 'גילאי הילדים שלימדתי'), ('שנתיים', 'של הוראה פרטית'), ('הצטיינות', 'תואר ראשון, <bdi lang="en">Guildford School of Acting</bdi>'), ('DBS', 'בדיקה מורחבת')],
+)
+def ivrit():
+    hx = lambda t: t  # strings may hold <bdi> markup; all are written by the keeper, not by visitors
+    cta = '<p class="cta"><span class="btn" role="note">לבירורים על שיעורים <span class="soon">הפניות ייפתחו בקרוב</span></span></p>'
+    icons = ['one', 'pin', 'screen', 'check']
+    chips = '<ul class="chips">' + ''.join(f'<li>{icon(k)}{t}</li>' for k, t in zip(icons, H['chips'])) + '</ul>'
+    def sec(i, title, inner, cls=''):
+        c, n = ALEFBET[i]
+        return f'<section class="sec {cls}" aria-labelledby="s{i}"><div class="sec-head"><span class="sec-g">{c}</span></div><div class="sec-body"><h2 id="s{i}">{title}</h2>{inner}</div></section>'
+    tiles = '<ul class="tiles">' + ''.join(f'<li><span class="tile-g">{c}</span><span class="tile-t">{t}</span></li>' for (c, _), t in zip(ALEFBET, H['lessons'])) + '</ul>'
+    stats = '<ul class="stats">' + ''.join(f'<li><strong>{a}</strong><span>{b}</span></li>' for a, b in H['stats']) + '</ul>'
+    fmt = '<ul class="fmt">' + ''.join(f'<li>{icon(k)}<strong>{a}</strong><span>{b}</span></li>' for k, a, b in H['fmt']) + '</ul>'
+    band = '<div class="band" aria-hidden="true"><div class="band-track">' + ''.join(f'<span class="band-l"><span class="band-g">{c}</span></span>' for c, _ in ALEFBET * 2) + '</div></div>'
+    p = lambda ps: ''.join(f'<p>{x}</p>' for x in ps)
+    note = ('<p class="draft" role="note"><strong>טיוטה.</strong> הטקסט בעמוד הזה תורגם לעברית מהטקסט באנגלית של ' + NAME_EN + ', ועדיין לא נבדק על ידה. שום דבר כאן אינו סופי.'
+            '<span class="draft-en" lang="en-GB" dir="ltr">Draft: this Hebrew translation has not yet been checked by Lee-Elle Horowitz.</span></p>')
+    photo = f'<figure class="arch">{PH}<figcaption lang="en-GB" dir="ltr">{CREDIT}</figcaption></figure>'
+    return ('<header class="top"><a class="brand" href="/designs/ivrit/">' + NAME_EN + '</a><nav class="jump" aria-label="בעמוד הזה"><a href="#s1">שיעורים</a><a href="#s3">רקע</a><a href="#s5">מוזיקה</a></nav></header>\n'
+      '<main id="main">\n' + note +
+      f'<section class="hero" aria-labelledby="h1"><div class="hero-text"><p class="eyebrow">{H["eyebrow"]}</p><h1 id="h1">{H["title"]} <span>{H["with_"]}</span></h1><p class="lead">{H["lead"]}</p>' + chips + cta + '</div>'
+      '<div class="hero-art"><span class="hero-g" aria-hidden="true">א</span>' + photo + '</div></section>\n' + band + stats +
+      sec(0, 'קצת עליי', p(H['about'])) +
+      sec(1, 'השיעורים יכולים לכלול', tiles, 'wide') +
+      f'<blockquote class="quote"><p>{H["quote"]}</p><footer>' + NAME_EN + '</footer></blockquote>' +
+      sec(2, 'הגישה שלי', f'<p class="big">{H["approach"]}</p>') +
+      sec(3, 'כישורים ורקע', '<ul class="ticks">' + ''.join(f'<li>{icon("check")}<span>{q}</span></li>' for q in H['quals']) + '</ul>') +
+      sec(4, 'מבנה השיעורים', fmt) +
+      sec(5, 'גם שיעורי מוזיקה', '<p>חלק קטן יותר ממה שאני מלמדת.</p><ul class="music">' + ''.join(f'<li>{icon("note")}{m}</li>' for m in H['music']) + '</ul>', 'music') +
+      '<section class="end" aria-labelledby="end"><span class="end-g" aria-hidden="true">ת</span><h2 id="end">מא׳ ועד ת׳</h2><p>שיעורים שמותאמים לגיל, ליכולת ולמטרות של כל תלמיד.</p>' + cta + '</section></main>\n')
+
 REPO = 'https://github.com/SovereignWebsite/Site__Artist__Lee-Elle-Horowitz'
 def start():
     picks = ''.join(f'<li class="pc pc-{s}"><a href="/designs/{s}/"><span class="pc-mark" aria-hidden="true">{g}</span><strong>{i+1}. {e(n)}</strong><span>{e(b)}</span></a></li>' for i, (s, n, b, g) in enumerate(DESIGNS))
     step = lambda n, title, inner: f'<section class="step" aria-labelledby="st{n}"><p class="step-n" aria-hidden="true">{n}</p><div><h2 id="st{n}">{title}</h2>{inner}</div></section>'
     return (brand() + '<main id="main">\n<p class="eyebrow">Start here · for Lee-Elle</p><h1>Your website, and what happens next</h1>'
       '<p class="lead">This is a first draft of a website for your Hebrew tuition. Every word on it comes from the text you supplied, and nothing is final until you say so. Here is how to shape it.</p>'
-      + step(1, 'Choose a design', '<p>The same words, in five different pages. Open each one on your phone, then say which you like best, or which parts of which.</p>'
+      + step(1, 'Choose a design', f'<p>The same words, in {WORD} different pages. Open each one on your phone, then say which you like best, or which parts of which.</p>'
         f'<ol class="picker">{picks}</ol>')
       + step(2, 'Check the words, and the Hebrew', '<p>Read your text on the page and tell us anything to change. Your own words are kept as you wrote them.</p>'
         '<p>The pages use only single Hebrew letters for now. A wrong Hebrew word on a Hebrew tutor\'s site would cost trust, so no Hebrew words go up until you have checked them. If you would like some, for example your name in Hebrew or a phrase for the Conversation design, send them and they will be added exactly as you write them.</p>')
@@ -272,17 +321,20 @@ def start():
         f'<p>Tell Dinis, or <a href="{REPO}/issues/new">open an issue</a> saying what you would like changed. The site\'s agents work from that record.</p></details>'
         '</section></main>\n')
 
-FN = {'alef-bet': alef, 'conversation': convo, 'three-tenses': tenses, 'the-stage': stage, 'notebook': notebook}
-THEME = {'alef-bet': '#f6efe3', 'conversation': '#eef1f5', 'three-tenses': '#faf8f4', 'the-stage': '#14090b', 'notebook': '#fdfcf7'}
+FN = {'ivrit': ivrit, 'alef-bet': alef, 'conversation': convo, 'three-tenses': tenses, 'the-stage': stage, 'notebook': notebook}
+THEME = {'ivrit': '#f6efe3', 'alef-bet': '#f6efe3', 'conversation': '#eef1f5', 'three-tenses': '#faf8f4', 'the-stage': '#14090b', 'notebook': '#fdfcf7'}
 
 def main():
     for slug, n, blurb, _ in DESIGNS:
         p = f'/designs/{slug}/'
+        if slug == 'ivrit':
+            w(f'designs/{slug}/index.html', page(p, 'שיעורים פרטיים בעברית עם Lee-Elle Horowitz', 'שיעורי עברית פרטיים לילדים, לבני נוער ולמבוגרים, בלונדון ובזום. טיוטה, בתרגום שטרם נבדק.', '/assets/alef-bet.css /assets/ivrit.css', THEME[slug], FN[slug](), slug, 'd-ivrit d-alef-bet', 'he', 'rtl', 'he_IL'))
+            continue
         w(f'designs/{slug}/index.html', page(p, f'{n}: {NAME}', DESC + ' ' + blurb, f'/assets/{slug}.css', THEME[slug], FN[slug](), slug, 'd-' + slug))
     w('index.html', page('/', NAME, DESC, f'/assets/{HOME}.css', THEME[HOME], FN[HOME](), HOME, 'd-' + HOME))
     cards = ''.join(f'<li class="pc pc-{s}"><a href="/designs/{s}/"><span class="pc-mark" aria-hidden="true">{g}</span><strong>{i+1}. {e(n)}</strong><span>{e(b)}</span></a></li>' for i, (s, n, b, g) in enumerate(DESIGNS))
     body = (brand() + '<main id="main">\n' + DRAFT + '<p class="eyebrow">For Lee-Elle</p><h1>Choose a design</h1>'
-      '<p class="lead">The same words, five different pages. Open each one on your phone, then say which you like best, or which parts of which.</p>'
+      f'<p class="lead">The same words, {WORD} different pages. Open each one on your phone, then say which you like best, or which parts of which.</p>'
       f'<ol class="picker">{cards}</ol></main>\n')
     w('designs/index.html', page('/designs/', 'Choose a design: ' + NAME, 'Five designs for this site, built from the same words.', '/assets/picker.css', '#f6efe3', body, '', 'd-picker'))
 

@@ -1,6 +1,8 @@
 # Hebrew for Lee-Elle to check
 
-None of this is on the site. The pages use only single Hebrew letters until you have checked any words (design.b's rule: a wrong Hebrew word on a Hebrew tutor's site costs trust). The design review (design.b.rounds, round 1) found that parents who speak Hebrew want to see some on every design, so here are the places where Hebrew would help, with suggestions to correct, replace or strike out.
+**The Ivrit design (/designs/ivrit/) is a full Hebrew translation of your text, live as a draft and marked as unchecked.** Please read it first and send corrections; the source is the `H = dict(...)` block in `tools/designs/build.py`. Your name stays in English letters there until you give its Hebrew spelling.
+
+The suggestions below are not on the site. The pages use only single Hebrew letters until you have checked any words (design.b's rule: a wrong Hebrew word on a Hebrew tutor's site costs trust). The design review (design.b.rounds, round 1) found that parents who speak Hebrew want to see some on every design, so here are the places where Hebrew would help, with suggestions to correct, replace or strike out.
 
 Please check each one, write it as you want it (with or without vowel points), and send it back. Only what you approve goes live, exactly as you write it.
 

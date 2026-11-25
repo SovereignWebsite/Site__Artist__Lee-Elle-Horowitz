@@ -13,7 +13,7 @@ For Lee-Elle Horowitz, and for Dinis Cruz until she takes it over. Kept by b.sit
 
 Your own text, as you supplied it: private Hebrew tuition for children, teenagers and adults as the main service, with music tuition as a smaller section. A few facts from your Spotlight profile appear in The stage design only (your training, three theatre credits, the Laurence Olivier Bursary nomination, and the instruments you play).
 
-It comes in five designs, each built around its own idea:
+It comes in six designs, each built around its own idea:
 
 | Design | Idea | Address |
 |---|---|---|
@@ -22,13 +22,14 @@ It comes in five designs, each built around its own idea:
 | Three tenses | Past, present and future | /designs/three-tenses/ |
 | The stage | A theatre programme | /designs/the-stage/ |
 | Notebook | A plain, printable exercise book | /designs/notebook/ |
+| Ivrit (Hebrew) | The whole page in Hebrew, right to left, translated from your text for you to check | /designs/ivrit/ |
 
 Compare them at /designs/.
 
 ## Decisions that are yours
 
 1. **Which design** becomes the home page, or which parts of which.
-2. **Hebrew.** Every design now uses Hebrew letters, but no Hebrew words, until you have checked them. Suggestions to correct or strike out are in `docs/hebrew-to-check.md`: your name, a verb in three tenses, a word for the Notebook cover, and your own Hebrew for the Conversation answers.
+2. **Hebrew.** At Dinis's request, the Ivrit design has the whole page in Hebrew: a translation of your text, marked on the page as not yet checked by you. Please correct it. The other designs use Hebrew letters only, no words, until you have checked them. Suggestions to correct or strike out are in `docs/hebrew-to-check.md`: your name, a verb in three tenses, a word for the Notebook cover, and your own Hebrew for the Conversation answers.
 3. **Photos.** The current photos are stand-ins, to show what can be done:
    - a portrait from the Guildford School of Acting graduates page, which does not name the photographer;
    - a cropped still from your showreel on Spotlight.
