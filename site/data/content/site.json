@@ -1,0 +1,209 @@
+{
+ "_note": "Site-wide settings and links, shared by both languages.",
+ "base": "https://lee-elle-horowitz.artist.sovereignweb.site",
+ "repo": "https://github.com/SovereignWebsite/Site__Artist__Lee-Elle-Horowitz",
+ "name": "Lee-Elle Horowitz",
+ "home_design": "alef-bet",
+ "designs": [
+  "alef-bet",
+  "conversation",
+  "three-tenses",
+  "the-stage",
+  "notebook"
+ ],
+ "glyph": {
+  "alef-bet": "א",
+  "conversation": "…",
+  "three-tenses": "→",
+  "the-stage": "★",
+  "notebook": "✎"
+ },
+ "theme": {
+  "alef-bet": "#f6efe3",
+  "conversation": "#eef1f5",
+  "three-tenses": "#faf8f4",
+  "the-stage": "#f6ecd9",
+  "notebook": "#fdfcf7"
+ },
+ "photos": {
+  "portrait": {
+   "src": "/assets/photo/lee-elle-horowitz.webp",
+   "width": 750,
+   "height": 995
+  },
+  "bass": {
+   "src": "/assets/photo/lee-elle-horowitz-bass.webp",
+   "width": 274,
+   "height": 596
+  }
+ },
+ "share_card": "/assets/share/card-1200x630.jpg",
+ "showreels": "https://mediaviewer.spotlight.com/artist/showreels?artistRef=M387193&startClipId=1a147320-5850-4895-b12c-30f7cb9e4d9b",
+ "alefbet": [
+  {
+   "letter": "א",
+   "name": "alef"
+  },
+  {
+   "letter": "ב",
+   "name": "bet"
+  },
+  {
+   "letter": "ג",
+   "name": "gimel"
+  },
+  {
+   "letter": "ד",
+   "name": "dalet"
+  },
+  {
+   "letter": "ה",
+   "name": "he"
+  },
+  {
+   "letter": "ו",
+   "name": "vav"
+  },
+  {
+   "letter": "ז",
+   "name": "zayin"
+  },
+  {
+   "letter": "ח",
+   "name": "chet"
+  },
+  {
+   "letter": "ט",
+   "name": "tet"
+  },
+  {
+   "letter": "י",
+   "name": "yod"
+  },
+  {
+   "letter": "כ",
+   "name": "kaf"
+  },
+  {
+   "letter": "ל",
+   "name": "lamed"
+  },
+  {
+   "letter": "מ",
+   "name": "mem"
+  },
+  {
+   "letter": "נ",
+   "name": "nun"
+  },
+  {
+   "letter": "ס",
+   "name": "samekh"
+  },
+  {
+   "letter": "ע",
+   "name": "ayin"
+  },
+  {
+   "letter": "פ",
+   "name": "pe"
+  },
+  {
+   "letter": "צ",
+   "name": "tsadi"
+  },
+  {
+   "letter": "ק",
+   "name": "qof"
+  },
+  {
+   "letter": "ר",
+   "name": "resh"
+  },
+  {
+   "letter": "ש",
+   "name": "shin"
+  },
+  {
+   "letter": "ת",
+   "name": "tav"
+  }
+ ],
+ "footer_links": [
+  [
+   "/start/",
+   "Start here"
+  ],
+  [
+   "/agents/",
+   "Use with your AI"
+  ],
+  [
+   "/admin/",
+   "Admin"
+  ],
+  [
+   "/tour/",
+   "Guided tour"
+  ],
+  [
+   "/policy/",
+   "How this site is governed"
+  ]
+ ],
+ "footer_small": "A sovereign website, made with the <a href=\"https://sovereignwebsite.org/\">open pattern</a>. Source: <a href=\"https://github.com/SovereignWebsite/Site__Artist__Lee-Elle-Horowitz\">github.com/SovereignWebsite/Site__Artist__Lee-Elle-Horowitz</a>.",
+ "family": {
+  "summary": "Sovereign Website",
+  "links": [
+   [
+    "/start/",
+    "Start here"
+   ],
+   [
+    "/agents/",
+    "Use with your AI"
+   ],
+   [
+    "/admin/",
+    "How this site was made",
+    true
+   ],
+   [
+    "https://sovereignwebsite.ai/",
+    "Sovereign Website"
+   ],
+   [
+    "https://sovereignwebsite.org/",
+    "Principles"
+   ],
+   [
+    "https://sovereignwebsite.site/",
+    "Hosted"
+   ],
+   [
+    "https://hub.sovereignweb.site/",
+    "Hub"
+   ],
+   [
+    "https://agents.sovereignweb.site/",
+    "Agents"
+   ],
+   [
+    "https://vault.sovereignwebsite.site/",
+    "Vault"
+   ],
+   [
+    "https://agenticcells.ai/",
+    "AgentiCCells"
+   ],
+   [
+    "https://riskmandate.ai/",
+    "RiskMandate"
+   ],
+   [
+    "https://newsroom.sgit.ai/",
+    "Newsroom"
+   ]
+  ]
+ }
+}

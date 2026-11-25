@@ -1,0 +1,312 @@
+{
+ "_note": "The guided-tour presentations. Each deck is built into /tour/<id>/ (HTML slides) and /tour/<id>.pdf by tools/tour/build.py and tools/tour/pdf.mjs. Images are screenshots of this site, in /tour/img/.",
+ "index": {
+  "title": "Guided tour: Lee-Elle Horowitz: private Hebrew tuition",
+  "desc": "Two short presentations: a tour of Lee-Elle's new website, and how it was made.",
+  "eyebrow": "Guided tour",
+  "h1": "Two short presentations",
+  "lead": "A walk through the new website, and a look behind the scenes at how it was made. Each one opens here as slides, or downloads as a PDF to keep or print.",
+  "open": "Open the slides",
+  "pdf": "Download the PDF",
+  "slides_word": "slides",
+  "keys": "On a computer, scroll or use the arrow keys; on a phone, swipe up."
+ },
+ "decks": [
+  {
+   "id": "your-site",
+   "title": "Your website: a guided tour",
+   "for": "For Lee-Elle",
+   "desc": "What is on the new site, the five designs, English and Hebrew, and what happens next.",
+   "accent": "#a8461f",
+   "slides": [
+    {
+     "type": "title",
+     "kicker": "A guided tour",
+     "h": "Your website",
+     "sub": "Private Hebrew Tuition with Lee-Elle Horowitz",
+     "note": "A draft, 25 November 2026",
+     "img": "alef"
+    },
+    {
+     "type": "points",
+     "kicker": "Where it comes from",
+     "h": "Built from your own words",
+     "points": [
+      "Every word comes from the text you supplied, and a few facts from your Spotlight profile.",
+      "Nothing is invented: no prices, no pupils, no reviews, no qualifications you did not give.",
+      "No contact details are shown until you choose them.",
+      "Every page says Draft until you approve it."
+     ]
+    },
+    {
+     "type": "grid",
+     "kicker": "Five ideas",
+     "h": "Five designs, each built around its own idea",
+     "items": [
+      [
+       "alef",
+       "Alef-bet",
+       "An alphabet chart"
+      ],
+      [
+       "conv",
+       "Conversation",
+       "A chat with a parent"
+      ],
+      [
+       "tense",
+       "Three tenses",
+       "Past, present, future"
+      ],
+      [
+       "stage",
+       "The stage",
+       "A theatre programme"
+      ],
+      [
+       "note",
+       "Notebook",
+       "An exercise book"
+      ]
+     ]
+    },
+    {
+     "type": "image",
+     "kicker": "Design 1",
+     "h": "Alef-bet",
+     "p": "The home page for now. A large Hebrew letter opens each section, the whole alphabet runs across the page, and your nine kinds of lesson are letter tiles.",
+     "img": "alef"
+    },
+    {
+     "type": "image",
+     "kicker": "Design 2",
+     "h": "Conversation",
+     "p": "The page as a chat: the questions a parent asks, and your answers, one by one.",
+     "img": "conv"
+    },
+    {
+     "type": "image",
+     "kicker": "Design 3",
+     "h": "Three tenses",
+     "p": "Past, present and future, the way you teach grammar: your story, lessons today, and where a student wants to get to.",
+     "img": "tense"
+    },
+    {
+     "type": "image",
+     "kicker": "Design 4",
+     "h": "The stage",
+     "p": "From your acting training: a theatre programme, with Hebrew as the main act and music in the second half.",
+     "img": "stage"
+    },
+    {
+     "type": "image",
+     "kicker": "Design 5",
+     "h": "Notebook",
+     "p": "A ruled exercise book: one plain column, for a parent who wants the facts, and it prints cleanly.",
+     "img": "note"
+    },
+    {
+     "type": "image",
+     "kicker": "Two languages",
+     "h": "Every design, in English and in Hebrew",
+     "p": "The English / עברית switch sits at the top of every page, with a button that stays in the corner. The Hebrew pages read right to left. The Hebrew is a translation of your text, marked as not yet checked by you.",
+     "img": "he"
+    },
+    {
+     "type": "image",
+     "kicker": "On any screen",
+     "h": "Made for phones first",
+     "p": "Most parents arrive on a phone. Every page fits a phone screen, works in light and dark mode, and passes the accessibility checks.",
+     "img": "phone",
+     "tall": true
+    },
+    {
+     "type": "points",
+     "kicker": "Your decisions",
+     "h": "What we need from you",
+     "points": [
+      "Which design you like best, or which parts of which.",
+      "Corrections to the Hebrew, and your name in Hebrew if you want it.",
+      "Your own photos, with the photographer's name for each.",
+      "Which contact details, if any, visitors should see; prices and availability only if you want them shown.",
+      "Your approval, when you are happy."
+     ]
+    },
+    {
+     "type": "points",
+     "kicker": "Next",
+     "h": "How to send changes",
+     "points": [
+      "For now, send them to Dinis.",
+      "A form on the site, for changes, photos and visitors' enquiries, is on its way.",
+      "Later, your own Claude can make changes for you, following the rules this site keeps."
+     ]
+    },
+    {
+     "type": "end",
+     "kicker": "It is yours",
+     "h": "Plain files, in a place you own",
+     "p": "No server, no cookies, no tracking. The files, the history and the address can move anywhere, at any time.",
+     "links": [
+      [
+       "/start/",
+       "Start here"
+      ],
+      [
+       "/designs/",
+       "Compare the designs"
+      ],
+      [
+       "/admin/",
+       "Admin"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "behind-the-scenes",
+   "title": "Behind the scenes: how this site was made",
+   "for": "For anyone curious",
+   "desc": "The agents, the pipeline, content in JSON, the checks, the design rounds and what makes the site sovereign.",
+   "accent": "#1b2744",
+   "slides": [
+    {
+     "type": "title",
+     "kicker": "Behind the scenes",
+     "h": "How this site was made",
+     "sub": "lee-elle-horowitz.artist.sovereignweb.site",
+     "note": "Built on 25 November 2026 by a team of AI agents working for Dinis Cruz",
+     "img": "stage"
+    },
+    {
+     "type": "flow",
+     "kicker": "The team",
+     "h": "One request, a team of agents",
+     "steps": [
+      [
+       "sites.b",
+       "takes the request and starts a keeper"
+      ],
+      [
+       "factory.b",
+       "creates the repository and the address"
+      ],
+      [
+       "The keeper",
+       "b.site.lee-elle-horowitz builds and keeps the site"
+      ],
+      [
+       "design.b",
+       "writes the design brief"
+      ],
+      [
+       "design.b.rounds",
+       "reviews each round with synthetic parents"
+      ],
+      [
+       "hub.b",
+       "lists the site once she approves it"
+      ]
+     ]
+    },
+    {
+     "type": "flow",
+     "kicker": "The pipeline",
+     "h": "From request to live site",
+     "steps": [
+      [
+       "Request",
+       "filed in the Sovereign Website factory"
+      ],
+      [
+       "Repository",
+       "seeded with checks and a deploy workflow"
+      ],
+      [
+       "Own key",
+       "the keeper signs every commit with its own key"
+      ],
+      [
+       "Build",
+       "pages generated from JSON"
+      ],
+      [
+       "Checks",
+       "run before every push"
+      ],
+      [
+       "Live",
+       "a push to dev publishes in a minute or two"
+      ]
+     ]
+    },
+    {
+     "type": "points",
+     "kicker": "Content",
+     "h": "Every word lives in JSON",
+     "points": [
+      "site/data/content/en.json: her words, as she supplied them.",
+      "site/data/content/he.json: the Hebrew translation, for her to check.",
+      "site.json, start.json, tour.json and admin.json: everything else.",
+      "tools/designs/build.py turns them into plain HTML pages, in both languages. It holds no words of its own."
+     ],
+     "code": "en.json + he.json  →  build.py  →  10 design pages, 2 home pages, 2 pickers"
+    },
+    {
+     "type": "points",
+     "kicker": "Quality",
+     "h": "Checked before every push",
+     "points": [
+      "Build, link previews and internal links.",
+      "HTML validity, and accessibility (axe) on every page, in light and in dark mode.",
+      "No em dashes, no family strip, a leak scan for secrets.",
+      "No page longer than 8,000 px on a phone, and no sideways scrolling.",
+      "Nothing loaded from another website: no fonts, scripts or trackers."
+     ]
+    },
+    {
+     "type": "points",
+     "kicker": "Design",
+     "h": "Five ideas, then review rounds",
+     "points": [
+      "design.b's brief asked for five designs, each from its own idea, not colour skins of one layout.",
+      "design.b.rounds asked synthetic parents: would you book a Hebrew lesson for your child here?",
+      "Round 1 put Hebrew letters in every design, the facts parents look for higher up, and a light version of The stage.",
+      "Round 2 fixed the alphabet direction, removed empty placeholders and gave the site one voice: hers."
+     ]
+    },
+    {
+     "type": "points",
+     "kicker": "Trust",
+     "h": "Signed, and public",
+     "points": [
+      "Each agent makes its own signing key; only the public half is published.",
+      "Every commit is signed and carries the agent's name and session.",
+      "The keeper's notes, open work and decisions are in the repository, for anyone to read."
+     ]
+    },
+    {
+     "type": "end",
+     "kicker": "Sovereign",
+     "h": "A website its owner controls",
+     "p": "Static files in one repository: no server code, no cookies, no tracking. It belongs to Lee-Elle, and can move anywhere.",
+     "links": [
+      [
+       "/admin/",
+       "Admin"
+      ],
+      [
+       "https://github.com/SovereignWebsite/Site__Artist__Lee-Elle-Horowitz",
+       "The repository"
+      ],
+      [
+       "/tour/your-site/",
+       "The site tour"
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

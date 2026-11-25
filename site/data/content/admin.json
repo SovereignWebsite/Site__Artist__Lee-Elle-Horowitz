@@ -1,0 +1,151 @@
+{
+ "_note": "Labels for the admin area. The figures on it (commits, pages, photos, checks, tasks) are read from the repository when the site is built.",
+ "title": "Admin: Lee-Elle Horowitz: private Hebrew tuition",
+ "desc": "The admin area of Lee-Elle Horowitz's site: status, tasks, designs, content, photos, quality, activity and agents.",
+ "eyebrow": "Admin",
+ "h1": "The site at a glance",
+ "lead": "Everything about this site in one place: what is live, what is waiting on whom, where every word and photo comes from, and every change. It is built from the repository each time the site is built.",
+ "nav": [
+  [
+   "overview",
+   "Overview"
+  ],
+  [
+   "board",
+   "Tasks"
+  ],
+  [
+   "designs",
+   "Designs"
+  ],
+  [
+   "content",
+   "Content"
+  ],
+  [
+   "photos",
+   "Photos"
+  ],
+  [
+   "quality",
+   "Quality"
+  ],
+  [
+   "activity",
+   "Activity"
+  ],
+  [
+   "agents",
+   "Agents"
+  ],
+  [
+   "made",
+   "How it was made"
+  ]
+ ],
+ "status": [
+  [
+   "Status",
+   "Draft, awaiting Lee-Elle's approval"
+  ],
+  [
+   "Address",
+   "https://lee-elle-horowitz.artist.sovereignweb.site"
+  ],
+  [
+   "Languages",
+   "English and Hebrew (translation not yet checked by her)"
+  ],
+  [
+   "Design rating",
+   "3 of 5, maturity M3 (design.b.rounds, round 2)"
+  ]
+ ],
+ "h": {
+  "overview": "Overview",
+  "board": "Tasks",
+  "designs": "Designs",
+  "content": "Content",
+  "photos": "Photos",
+  "quality": "Quality",
+  "activity": "Activity",
+  "agents": "Agents",
+  "made": "How it was made"
+ },
+ "board_intro": "Every task is a Markdown file in the repository's <code>issues/</code> folder; the folder is the column. To move a card, move its file (for example <code>git mv issues/open/005-approve.md issues/done/</code>) and rebuild.",
+ "columns": [
+  [
+   "open",
+   "Open"
+  ],
+  [
+   "blocked",
+   "Blocked"
+  ],
+  [
+   "done",
+   "Done"
+  ]
+ ],
+ "waiting": "Waiting on",
+ "content_intro": "Every word on the site lives in these JSON files. The pages are built from them by <code>tools/designs/build.py</code>; edit a file, rebuild, and every page that uses it changes.",
+ "pages_intro": "Every page of the site, with its size.",
+ "photos_intro": "Every image on the site, with its size and credit.",
+ "quality_intro": "The checks that run before every push (<code>bash tools/check.sh</code>) and the extra ones the keeper runs.",
+ "checks": [
+  [
+   "Build, link previews and internal links",
+   "passed"
+  ],
+  [
+   "HTML validity",
+   "passed"
+  ],
+  [
+   "Accessibility (axe), light mode, every page",
+   "passed"
+  ],
+  [
+   "Accessibility (axe), dark mode, every page",
+   "passed"
+  ],
+  [
+   "No sideways scrolling at 390 px",
+   "passed"
+  ],
+  [
+   "Every design page under 8,000 px on a phone",
+   "passed"
+  ],
+  [
+   "Nothing loaded from another website",
+   "passed"
+  ],
+  [
+   "No em dashes; leak scan for secrets",
+   "passed"
+  ],
+  [
+   "Hebrew on a real iPhone, Android phone and Windows",
+   "not yet checked"
+  ]
+ ],
+ "activity_intro": "Every change to the site, newest first. Each is signed by the agent that made it.",
+ "agents_intro": "The agents that work on this site, each with its own signing key.",
+ "made": "<p>The site began as one request in the Sovereign Website factory on 25 November 2026, from the text Lee-Elle supplied. sites.b filed it and started a dedicated keeper; factory.b created this repository and its address; design.b wrote the design brief; the keeper built five designs, in English and in Hebrew; design.b.rounds reviewed them with synthetic parents, twice.</p><p>For the full story, see the <a href=\"/tour/behind-the-scenes/\">behind-the-scenes tour</a>, the <a href=\"https://github.com/SovereignWebsite/Site__Artist__Lee-Elle-Horowitz/tree/dev/site/factory/dinis-cruz/account-b\">keeper's notes</a> and the <a href=\"https://github.com/SovereignWebsite/Site__Artist__Lee-Elle-Horowitz/actions\">publishing runs</a>.</p>",
+ "photo_rows": [
+  [
+   "/assets/photo/lee-elle-horowitz.webp",
+   "credit"
+  ],
+  [
+   "/assets/photo/lee-elle-horowitz-bass.webp",
+   "credit2"
+  ],
+  [
+   "/assets/share/card-1200x630.jpg",
+   "Share card: made by the keeper from the portrait above and her words."
+  ]
+ ],
+ "tour": "Prefer a walk through? See the <a href=\"/tour/\">guided tour</a>, as slides or PDF."
+}

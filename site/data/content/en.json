@@ -1,0 +1,265 @@
+{
+ "lang": "en-GB",
+ "dir": "ltr",
+ "locale": "en_GB",
+ "code": "en",
+ "site_name": "Lee-Elle Horowitz: private Hebrew tuition",
+ "desc": "Private Hebrew lessons for children, teenagers and adults, in London and online; music tuition too.",
+ "name": "Lee-Elle Horowitz",
+ "title": "Private Hebrew Tuition with Lee-Elle Horowitz",
+ "title_a": "Private Hebrew Tuition",
+ "title_b": "with Lee-Elle Horowitz",
+ "lead": "Private Hebrew lessons for children, teenagers and adults.",
+ "eyebrow": "Private Hebrew tuition · London and online",
+ "chips": [
+  "Children, teenagers and adults",
+  "In person in London",
+  "Online via Zoom",
+  "Enhanced DBS checked"
+ ],
+ "about": [
+  "South African-born and Israel-raised, I am a fluent Hebrew speaker who grew up in Israel and later moved to the UK. I have experience teaching Hebrew to children and beginners, both online and in person.",
+  "I offer personalised Hebrew lessons that focus on building confidence, developing conversational skills and understanding how the language works in everyday life.",
+  "My approach is creative, interactive and student-centred. Rather than simply memorising vocabulary, I help students understand how to construct sentences, communicate naturally and develop a practical understanding of Hebrew."
+ ],
+ "lessons": [
+  "Complete beginners",
+  "Conversational Hebrew",
+  "Reading and writing",
+  "Vocabulary development",
+  "Sentence construction and grammar",
+  "Past, present and future tenses",
+  "Hebrew for children growing up in the UK",
+  "Improving fluency for students with some existing knowledge",
+  "Hebrew support for school and supplementary Jewish education"
+ ],
+ "approach": "Lessons are tailored to each student's age, ability and goals. I aim to make learning enjoyable, practical and engaging, using conversation, activities and real-life examples.",
+ "quote": "I want students to feel comfortable making mistakes, asking questions and gradually developing confidence using Hebrew independently.",
+ "quals": [
+  "Fluent Hebrew speaker",
+  "Grew up in Israel",
+  "Two years of private teaching experience",
+  "Experience teaching children aged 7 to 11",
+  "First Class Honours BA from the Guildford School of Acting, University of Surrey",
+  "Enhanced DBS checked"
+ ],
+ "fmt": [
+  [
+   "pin",
+   "In person",
+   "In-person lessons in London"
+  ],
+  [
+   "screen",
+   "Online",
+   "Online lessons via Zoom"
+  ],
+  [
+   "one",
+   "One to one",
+   "Individual tuition"
+  ],
+  [
+   "group",
+   "Small groups",
+   "Small group lessons, subject to arrangement"
+  ]
+ ],
+ "music": [
+  "Singing lessons",
+  "Trombone lessons",
+  "Beginner guitar lessons",
+  "Musical theatre and audition preparation"
+ ],
+ "music_note": "A smaller part of what I teach.",
+ "stage": [
+  "Trained in Actor-Musicianship at the Guildford School of Acting",
+  "Theatre credits include Stephen Sondheim's Saturday Night, She Loves Me and Vinegar Tom",
+  "Nominated for the Laurence Olivier Bursary Award during her training",
+  "Plays trombone, bass and guitar"
+ ],
+ "stats": [
+  [
+   "7 to 11",
+   "the ages of the children I have taught"
+  ],
+  [
+   "2 years",
+   "of private teaching"
+  ],
+  [
+   "First",
+   "Class Honours BA, Guildford School of Acting"
+  ],
+  [
+   "DBS",
+   "Enhanced DBS checked"
+  ]
+ ],
+ "who": [
+  [
+   "Children",
+   "including children growing up in the UK"
+  ],
+  [
+   "Teenagers",
+   "with school and supplementary Jewish education"
+  ],
+  [
+   "Adults",
+   "from complete beginners to improving fluency"
+  ]
+ ],
+ "journey": [
+  [
+   "Born",
+   "South Africa"
+  ],
+  [
+   "Raised",
+   "Israel, where I grew up"
+  ],
+  [
+   "Moved",
+   "to the UK"
+  ],
+  [
+   "Trained",
+   "First Class Honours BA, Guildford School of Acting, University of Surrey"
+  ]
+ ],
+ "h": {
+  "about": "About me",
+  "lessons": "Hebrew lessons can include",
+  "approach": "Teaching approach",
+  "quals": "Qualifications and background",
+  "fmt": "Lesson format",
+  "music": "Music tuition too"
+ },
+ "cta": "Ask about lessons",
+ "soon": "Enquiries open soon",
+ "draft": "<strong>Draft.</strong> Lee-Elle Horowitz has not yet approved this site. Nothing here is final.",
+ "jump": [
+  [
+   "s1",
+   "Lessons"
+  ],
+  [
+   "s3",
+   "Background"
+  ],
+  [
+   "s5",
+   "Music"
+  ]
+ ],
+ "jump_label": "On this page",
+ "ab_hint": "Nine starting points, one for each of the first nine letters.",
+ "ab_end": "From alef to tav",
+ "ab_end_p": "Lessons tailored to each student's age, ability and goals.",
+ "cv_status": "Private Hebrew tuition",
+ "cv_lead_more": "Lessons are a conversation, so this page is one too.",
+ "cv_day": "Today",
+ "cv_h": "The conversation",
+ "cv_q": [
+  "Hello! Who will be teaching me?",
+  "What are the lessons like?",
+  "What can we work on?",
+  "How do you teach?",
+  "Can I trust you with my child?",
+  "Where do we meet?",
+  "Do you teach music too?"
+ ],
+ "cv_can": "Hebrew lessons can include:",
+ "cv_music": "Yes, as a smaller part of what I teach:",
+ "cv_note": "<strong>Draft note:</strong> each answer is also on the Hebrew version of this page. Switch to it at the top.",
+ "tn_words": [
+  "was",
+  "is",
+  "will be"
+ ],
+ "tn_lead_more": "Past, present and future: the three tenses I teach, and the three parts of this page.",
+ "tn_labels": [
+  "Past",
+  "Present",
+  "Future"
+ ],
+ "tn_h": [
+  "Where I come from",
+  "Lessons today",
+  "Where you want to get to"
+ ],
+ "tn_tabs": "The three tenses",
+ "tn_bg": "Background",
+ "st_presents": "Lee-Elle Horowitz presents",
+ "st_acts": [
+  "Act one",
+  "Act two",
+  "Curtain call"
+ ],
+ "st_scene": "Scene",
+ "st_interval": "Interval",
+ "st_a1": "Hebrew lessons",
+ "st_a2": "Music and audition preparation",
+ "st_a3": "About me",
+ "st_on": "On stage",
+ "st_from": "From my Spotlight profile.",
+ "st_reel": "Watch my showreels on Spotlight",
+ "st_ext": "(opens Spotlight, another website)",
+ "st_ticket": "Admit one",
+ "st_ticket_p": "Lessons tailored to each student's age, ability and goals.",
+ "nb_book": "Exercise book",
+ "nb_label": [
+  [
+   "Name",
+   "Lee-Elle Horowitz"
+  ],
+  [
+   "Subject",
+   "Hebrew"
+  ],
+  [
+   "Also",
+   "Music"
+  ]
+ ],
+ "sw_draft": "<strong>Draft</strong> in five designs.",
+ "sw_compare": "Compare them",
+ "sw_label": "Five designs for this site",
+ "lang_label": "Language",
+ "other_lang": "עברית",
+ "other_lang_long": "Read this page in Hebrew",
+ "foot_line": "Private Hebrew tuition, in London and online",
+ "credit": "Photo: from the Guildford School of Acting page for its 2026 BA (Hons) Actor Musician graduates, <a href=\"https://gsauk.org/2026-ba-hons-actor-musician-graduates\">gsauk.org</a>, which does not name the photographer. A stand-in until she adds her own.",
+ "credit2": "Still from her showreel on Spotlight, cropped. A stand-in until she adds her own.",
+ "alt": "Lee-Elle Horowitz: a smiling young woman with long, wavy light-brown hair, in a burgundy knitted top, against a grey background.",
+ "alt2": "Lee-Elle Horowitz standing with a double bass in front of a black curtain, one hand on her chest.",
+ "designs": {
+  "alef-bet": [
+   "Alef-bet",
+   "The page as an alphabet chart: a large Hebrew letter opens each section."
+  ],
+  "conversation": [
+   "Conversation",
+   "The page as a conversation: questions a parent asks, and her answers."
+  ],
+  "three-tenses": [
+   "Three tenses",
+   "Past, present and future, the way she teaches grammar."
+  ],
+  "the-stage": [
+   "The stage",
+   "A theatre programme, from her acting training: Hebrew first, music in the second half."
+  ],
+  "notebook": [
+   "Notebook",
+   "A ruled exercise book: one column, plain and printable."
+  ]
+ },
+ "pk_eyebrow": "For Lee-Elle",
+ "pk_h": "Choose a design",
+ "pk_lead": "The same words, five different pages, each in English and in Hebrew. Open each one on your phone, then say which you like best, or which parts of which.",
+ "skip": "Skip to content",
+ "about_links_label": "About this site",
+ "_note": "Her words as she supplied them. Edit here; then run python3 tools/designs/build.py."
+}

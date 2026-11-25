@@ -1,0 +1,54 @@
+{
+ "_note": "The start page, for Lee-Elle (English only). {repo} is replaced with the repository address.",
+ "title": "Start here: Lee-Elle Horowitz: private Hebrew tuition",
+ "desc": "For Lee-Elle: how to choose a design, send changes and photos, and approve the site.",
+ "eyebrow": "Start here · for Lee-Elle",
+ "h1": "Your website, and what happens next",
+ "lead": "This is a first draft of a website for your Hebrew tuition. Every word on it comes from the text you supplied, and nothing is final until you say so. Here is how to shape it.",
+ "steps": [
+  {
+   "title": "Choose a design",
+   "html": "<p>The same words, in five different pages. Open each one on your phone, then say which you like best, or which parts of which.</p>",
+   "picker": true,
+   "after": "<p>Each design also has a Hebrew version: use the <strong>English / עברית</strong> switch at the top of any design.</p>"
+  },
+  {
+   "title": "Check the words, and the Hebrew",
+   "html": "<p>Read your text on the page and tell us anything to change. Your own words are kept as you wrote them.</p><p>Every design has a Hebrew version, translated from your text and marked as not yet checked by you. Please read the Hebrew pages and send corrections: a wrong Hebrew word on a Hebrew tutor's site would cost trust. If you would like your name written in Hebrew, send its spelling.</p>"
+  },
+  {
+   "title": "Send photos, text and changes",
+   "html": "<p>For now, send them to Dinis, who set this site up. A form on this site for sending changes and photos is on its way.</p><ul><li><strong>Photos.</strong> The photos on the drafts are stand-ins, to show what the pages can look like. Send your own, and for each one say who took it, so it can be credited.</li><li><strong>Contact details.</strong> None are shown. Say which, if any, you want visitors to see. Until then, the button on each page says <q>Enquiries open soon</q>.</li><li><strong>Prices.</strong> None are shown, and none will be unless you give them.</li></ul>"
+  },
+  {
+   "title": "Approve it",
+   "html": "<p>When you are happy, say so. The <q>Draft</q> notice comes off and the site is yours to share.</p>"
+  },
+  {
+   "title": "Who looks after the site",
+   "html": "<p>A dedicated site agent, b.site.lee-elle-horowitz, builds and keeps this site, working with the Sovereign Website design agents. Its notes on what it has done and what is open are public: <a href=\"{repo}/tree/dev/site/factory/dinis-cruz/account-b\">the keeper's notes</a>. For a walk through everything here, see the <a href=\"/tour/\">guided tour</a> and the <a href=\"/admin/\">admin area</a>.</p>"
+  }
+ ],
+ "later": {
+  "h2": "Later: changing it yourself",
+  "intro": "<p>You never have to, but you can. The whole site is a set of plain files in one place on GitHub that you will own: <a href=\"{repo}\">github.com/SovereignWebsite/Site__Artist__Lee-Elle-Horowitz</a>. No server, no cookies, no tracking, and you can move it anywhere. All the words are in two files, <code>site/data/content/en.json</code> and <code>site/data/content/he.json</code>.</p>",
+  "details": [
+   {
+    "summary": "Connect GitHub",
+    "html": "<ol><li>Make a GitHub account at <a href=\"https://github.com/signup\">github.com/signup</a>, if you do not have one.</li><li>Send your GitHub login to Dinis. You get two invitations: one to your site, with permission to change it, and one to join the SovereignWebsite organisation as a member. Membership gives you no access to anything else; it lets your own Claude work with your site.</li><li>Accept the first: signed in to GitHub, open <a href=\"{repo}\">your site's page on GitHub</a> and press <strong>View invitation</strong> on the banner, or use the link in the email.</li><li>Accept the second at <a href=\"https://github.com/orgs/SovereignWebsite/invitation\">github.com/orgs/SovereignWebsite/invitation</a> (\"Join SovereignWebsite\"). Use this address: the link in the email may not offer the button.</li><li>If you use Claude, open its GitHub settings and press <strong>Check again</strong> next to SovereignWebsite.</li></ol>"
+   },
+   {
+    "summary": "Change the words",
+    "html": "<ol><li>Open <a href=\"{repo}/blob/dev/site/data/content/en.json\">en.json</a> (English) or <a href=\"{repo}/blob/dev/site/data/content/he.json\">he.json</a> (Hebrew) on GitHub.</li><li>Press the pencil, change the words between the quotation marks, then press <strong>Commit changes</strong>.</li><li>Ask your Claude, or the site's agent, to rebuild the pages; the site updates in a minute or two.</li></ol>"
+   },
+   {
+    "summary": "Let your own Claude make changes",
+    "html": "<p>Give it <a href=\"{repo}/blob/dev/docs/prompt-for-your-claude.md\">this prompt</a>. It tells your Claude the rules this site keeps. See also <a href=\"/agents/\">Use with your AI</a>.</p>"
+   },
+   {
+    "summary": "Ask for another pass",
+    "html": "<p>Tell Dinis, or <a href=\"{repo}/issues/new\">open an issue</a> saying what you would like changed. The site's agents work from that record.</p>"
+   }
+  ]
+ }
+}
