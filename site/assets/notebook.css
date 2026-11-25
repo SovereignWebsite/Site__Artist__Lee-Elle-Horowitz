@@ -1,0 +1,9 @@
+/* Design 5: Notebook. One ruled column, plain and printable. Also used by the design picker. */
+:root{--rule:#c9d6e6;--margin:#d9534f}@media (prefers-color-scheme:dark){:root{--rule:#2a3442;--margin:#e58a86}}
+body{font-family:Georgia,"Times New Roman",serif;line-height:1.5rem;background:var(--paper)}
+main{background:linear-gradient(to bottom,transparent calc(1.5rem - 1px),var(--rule) calc(1.5rem - 1px)) 0 0/100% 1.5rem;border-inline-start:2px solid var(--margin);padding-inline-start:1.2rem}
+h1{font-size:2rem;line-height:3rem;margin:0}h2{font-size:1.15rem;line-height:1.5rem;margin:1.5rem 0 0;text-decoration:underline}
+p,ul,ol{margin:0 0 1.5rem}li{margin:0}.lead{font-size:1rem;color:var(--fg)}
+.pick li{margin-bottom:.75rem}
+.draft{background:var(--paper)}.btn{border-radius:2px}
+@media print{.skip,.family-credit,.cta,footer .designs{display:none}main{background:none;border:0}body{font-size:12pt}}

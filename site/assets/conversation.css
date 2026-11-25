@@ -1,0 +1,13 @@
+/* Design 2: Conversation. Each section is an exchange: English on the left, its Hebrew on the right (right to left), empty until she has checked it. */
+.ex{display:grid;grid-template-columns:minmax(0,1fr);gap:.8rem;margin:1.8rem 0}
+@media (min-width:44rem){.ex{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}main{max-width:62rem}.top{max-width:62rem}}
+.en,.he{border-radius:18px;padding:1rem 1.2rem}
+.en{background:var(--paper);border:1px solid var(--line);border-end-start-radius:4px}
+.he{background:var(--accent);color:var(--bg);border-end-end-radius:4px;direction:rtl;text-align:start;font-family:"Noto Sans Hebrew","Arial Hebrew","Segoe UI",Arial,sans-serif}
+.he *{direction:ltr}
+.he .who,.he p,.he li{color:inherit}
+.who{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:0 0 .4rem;color:var(--muted)}
+.q{font-weight:700;font-size:1.2rem;margin:0}
+.hold{font-style:italic}.he .hold{opacity:.95}
+.note{text-align:center;color:var(--muted)}
+@media (prefers-color-scheme:dark){.he{color:#10110f}}

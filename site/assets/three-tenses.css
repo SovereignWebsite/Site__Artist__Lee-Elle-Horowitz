@@ -1,0 +1,10 @@
+/* Design 3: Three tenses. Past is her story, present is lessons today, future is the student's goal and the action. */
+.tense{margin:2rem 0;padding:1.2rem 1.2rem 1.2rem 1.4rem;border-inline-start:8px solid var(--accent);background:var(--paper);border-radius:0 12px 12px 0}
+.tense h2{margin:0 0 .8rem;font-size:1.6rem}.tense h2 span{display:block;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.tense h3{font-size:1rem;margin:1.2rem 0 .3rem}
+.past{border-color:#8a6d3b;opacity:1}.past h2 span{color:#7a5d2c}
+.present{border-color:var(--accent)}
+.future{border-color:#7a4f8f}.future h2 span{color:#7a4f8f}
+@media (prefers-color-scheme:dark){.past{border-color:#d6b46c}.past h2 span{color:#d6b46c}.future{border-color:#c79ae0}.future h2 span{color:#c79ae0}}
+.tense ul{columns:1}
+@media (min-width:44rem){.present ul{columns:2}}
