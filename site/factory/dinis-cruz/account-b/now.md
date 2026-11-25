@@ -90,3 +90,8 @@ No Hebrew beyond single letters and her own words goes live until she has checke
 - "19 pages" now counted from what build.py writes, matching the JSON slide's list.
 - Fewer words on both Hebrew slides; the phones slide has its own layout, with five large phones and their names.
 - The floating language button steps aside over any enquiry button (site/assets/fab.js, own script), on every design, in both languages.
+
+## 25 Nov, night: decks closed by design.b.rounds (984fbe4); round 3 leftovers
+- The stage on a phone: smaller spotlight, so "Private Hebrew Tuition" is on the first screen in both languages.
+- Hebrew: the Actor-Musicianship line reworded without brackets. "(Hons)" stays inside its English island in the photo credit, which isolates it.
+- Still for round 4: her check of the Hebrew, her own photos and their rights.

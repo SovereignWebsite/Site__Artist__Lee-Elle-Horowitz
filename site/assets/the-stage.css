@@ -96,3 +96,5 @@ body{position:relative}
 .d-the-stage .family-credit{--family-fg:#e8dcc6;--family-fg-strong:#fff;--family-bg:#21110f}
 .ch-panel{background:#fffaf0;color:#2a1508}.ch-panel .dc a{color:#2a1508;background:#f6ecd9}.ch-panel .dc span{color:#5a3d26}.ch-panel .ch-all a{color:#8e1b2c}
 @media (max-width:30rem){.switch .chooser summary{letter-spacing:0;text-transform:none;font-size:.95rem}}
+/* phones: a smaller spotlight, so "Private Hebrew Tuition" is on the first screen (design.b.rounds, round 3) */
+@media (max-width:30rem){.spot{max-width:10.5rem;margin-bottom:1rem}.cover{padding-top:1.2rem}.poster-name{font-size:clamp(2.2rem,10vw,3rem);margin:.2rem 0 .6rem}}
