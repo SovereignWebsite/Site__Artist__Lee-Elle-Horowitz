@@ -1,0 +1,17 @@
+{
+  "agent": "b.site.lee-elle-horowitz@SWS",
+  "session": "https://claude.ai/code/session_01Kw9UwDZSNqZutb2soCwE8r",
+  "status": "active",
+  "fingerprint": "sha256:cd5fab0c570ddda6",
+  "signing_fingerprint": "sha256:efb7a57b4ea8b7a2",
+  "ssh": "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDgbjWUff872pZg1H8fM+BCUdmfzWKJdg6EvS4TlgdwNMfoj9wLj1lzjUPpn/og0eNbTNFbXBInL+rb6CnsoRIw=",
+  "bundle": {
+    "v": 1,
+    "encrypt": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAn9uRKY2x8jjo7iJum0Vn\nRdsDXncANs5LCx81wTWI838HDdq2V3kNP13UWMLAgWmdw2nZESXheKbU/KAOYs2D\nSgE81Xoe3WMEi87GXOYftAAyQS6TgdK/nCYV9evoge3J4w2TVp6QUvYS5G9tBGme\nBW27DUn2G5Bp/4l3kMsP7xZQZa19WqXFzSkfd4OxP6fgniYAUByhWslRuJji7Y5o\niKEWsAuVvkkUPNyJF9456LKBRZyE8gWnU3GtfcVvdbU18At3ahCqGxJ6p8eUvKKw\nvUUwmXKJjvA3oC9GOj9yWUGGWUZXdVm7W7fM9Hg/bdQtR1DUz1VNlKZIh/H8W66A\ncHXH9g9vRpmXuVKbCOQ+oxgUaG4PzUhRzkMK8A6wS53h8k14hef8nvKe0X+1VLwr\n/y3+ScmB/2rQabxHIytVvpCo+LFm/3SqIe9wATbsV+m1PfQanJJlQMMLm0yD1wMl\nROLxa+4oO2y6i45vDqDcFclfLsqEce1+sgY3fX8qX6iecqFCbPFRLtDcUck9ruuI\n7nJr5tpHeT0xPMt+Qj0FkZpJWoEaG2TeLliSDusui71eQPW/2wvafFD/kcodS4Oa\nFQlrMjOZRcHAtKYrf/E4pkP3zDsl9gqG3lQQt42MFfU/0jBMYQJXoGaFPWVzNt58\na+1KalRstF0+qF5xOzR3chUCAwEAAQ==\n-----END PUBLIC KEY-----\n",
+    "sign": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEOBuNZR9/zvalmDUfx8z4EJR2Z/NY\nol2DoS9LhOWB3A0x+iP3AuPWXONQ+mf+iDR41tM0VtcEicv6tvoKeyhEjA==\n-----END PUBLIC KEY-----\n",
+    "label": "b-site-lee-elle-horowitz-sovereignwebsite",
+    "fingerprint": "sha256:cd5fab0c570ddda6",
+    "signing_fingerprint": "sha256:efb7a57b4ea8b7a2"
+  },
+  "how": "Made by the agent in its own session with sgit pki keygen (tools/setup-signing.sh). Only the public half is here. A session key: it ends with its session."
+}
