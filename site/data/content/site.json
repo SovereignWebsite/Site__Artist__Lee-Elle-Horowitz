@@ -206,5 +206,9 @@
    ]
   ]
  },
- "thumbs": "/assets/designs/{slug}.{lang}.webp"
+ "thumbs": "/assets/designs/{slug}.{lang}.webp",
+ "lang_names": {
+  "en": "English",
+  "he": "עברית"
+ }
 }

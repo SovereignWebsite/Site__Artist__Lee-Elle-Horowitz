@@ -122,3 +122,11 @@
 @media print{.frame *,.frame{box-shadow:none!important;filter:none!important;text-shadow:none!important}.s-row .p-phone:nth-child(even){transform:translateY(4cqw)}}
 @media print{html,body{margin:0;padding:0}.deck-main{display:block}.slide{overflow:hidden;height:720px;max-height:720px;margin:0}.frame{overflow:hidden;max-height:720px}}
 .s-nav{margin-top:.8rem}.s-nav .s-count{background:#14161c;color:#e2ddd1;padding:.35rem .8rem;border-radius:999px}
+/* The narrator: a synthetic presenter's line, always labelled as synthetic */
+.s-says{margin:1.4cqw 0 0;padding:1cqw 1.3cqw;border-radius:1cqw;background:#1b2744;color:#f4efe4;max-width:52cqw}
+.s-who{display:flex;align-items:center;gap:.8cqw;margin:0 0 .5cqw;font:700 1.15cqw/1.2 var(--sans)}
+.s-av{display:inline-grid;place-items:center;width:2.2cqw;height:2.2cqw;border-radius:50%;background:#a8461f;color:#fff;font-size:1.2cqw}
+.s-lbl{font-weight:400;font-size:.95cqw;color:#cfd5e4}
+.s-line{margin:0;font:italic 1.45cqw/1.4 var(--serif)}
+@media (max-width:44rem){.s-says{max-width:none;padding:3cqw}.s-who{font-size:3.2cqw;gap:2cqw}.s-av{width:5cqw;height:5cqw;font-size:3cqw}.s-lbl{font-size:2.8cqw}.s-line{font-size:3.8cqw}}
+.frame .s-says .s-who .s-lbl,.frame .s-says .s-who strong{color:#cfd5e4}.frame .s-says .s-who strong{color:#fff}.frame .s-says .s-line{color:#f4efe4}

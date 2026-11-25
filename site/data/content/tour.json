@@ -12,7 +12,9 @@
   "keys": "Use the arrows on each slide, or the left and right arrow keys; on a phone, swipe up or tap the arrows.",
   "prev": "Previous",
   "next": "Next",
-  "slide_of": "Slide {n} of {total}"
+  "slide_of": "Slide {n} of {total}",
+  "why_label": "Why it suits Lee-Elle",
+  "says_note": "The narrators are synthetic presenters from the team's videos: made by code, no real person. They never speak as Lee-Elle; her own words are always in quotation marks."
  },
  "decks": [
   {
@@ -34,7 +36,8 @@
       "/assets/designs/three-tenses.en.webp",
       "/assets/designs/the-stage.en.webp",
       "/assets/designs/notebook.en.webp"
-     ]
+     ],
+     "says": "Hello, I'm The Guide. I'll walk you through Lee-Elle's new website: five designs, each in English and in Hebrew, and the reason behind each one."
     },
     {
      "type": "brief",
@@ -100,7 +103,8 @@
        "A ruled exercise book: just the facts",
        "wants it plain, printable, for the fridge"
       ]
-     ]
+     ],
+     "says": "Each design starts from something Lee-Elle teaches or has done. Read across a row to see where an idea came from, and which parent it is for."
     },
     {
      "type": "design",
@@ -119,7 +123,8 @@
       "Her photo inside the alef says, before a word is read: this is the teacher who opens the language.",
       "All 22 letters arrive across the page, right to left; every section opens on its own letter, with its English name."
      ],
-     "sees": "A parent of a young beginner sees a teacher and the letters their child will learn."
+     "sees": "A parent of a young beginner sees a teacher and the letters their child will learn.",
+     "says": "A big letter opens each section, because the first thing a Hebrew student meets is the alef-bet."
     },
     {
      "type": "design",
@@ -138,7 +143,8 @@
       "So there is no headline, only a chat: a parent's first question, her reply typing in, her photo beside it.",
       "The facts are quick replies (ages, London, Zoom, DBS), and the button is the reply box."
      ],
-     "sees": "A parent with questions gets them answered in the order they would ask."
+     "sees": "A parent with questions gets them answered in the order they would ask.",
+     "says": "Lee-Elle's lessons build conversation, so this page is one too."
     },
     {
      "type": "design",
@@ -157,7 +163,8 @@
       "Past is her story, in sepia: South Africa, Israel, the UK, Guildford. Present is lessons today, in colour. Future is an empty frame marked \"you\".",
       "The headline is grammar itself; the page ends on the student's goal and the button."
      ],
-     "sees": "A parent sees where their child would start, and where lessons lead."
+     "sees": "A parent sees where their child would start, and where lessons lead.",
+     "says": "Past, present and future tenses are on her list of lessons. Here they shape the whole page."
     },
     {
      "type": "design",
@@ -176,7 +183,8 @@
       "The page is a playbill: her name like a poster, her photo under a spotlight, curtains that open once.",
       "Hebrew is the main act; music and audition preparation are act two; a ticket stub asks about lessons."
      ],
-     "sees": "A teenager who sings or acts, or their parent, sees a teacher who has been on stage."
+     "sees": "A teenager who sings or acts, or their parent, sees a teacher who has been on stage.",
+     "says": "Lee-Elle trained on stage, so this page is a programme: Hebrew is the main act, and music comes after the interval."
     },
     {
      "type": "design",
@@ -195,7 +203,21 @@
       "The cover is filled in (Name, Subject: Hebrew, Also: Music) with her photo taped on; the lessons are ticked in red pen.",
       "One plain column, which prints cleanly."
      ],
-     "sees": "A parent who wants facts, not effects, gets them on one page to print."
+     "sees": "A parent who wants facts, not effects, gets them on one page to print.",
+     "says": "No decoration. The facts, in the order a parent asks for them, on a page that prints."
+    },
+    {
+     "type": "points",
+     "kicker": "How to choose",
+     "h": "Five questions, one for each design",
+     "points": [
+      "Should visitors meet the language first? <strong>Alef-bet</strong>",
+      "Should a parent's questions be answered one by one? <strong>Conversation</strong>",
+      "Should the page show a path, from first lesson to goal? <strong>Three tenses</strong>",
+      "Should they meet a teacher who performs? <strong>The stage</strong>",
+      "Just the facts, ready to print? <strong>Notebook</strong>"
+     ],
+     "says": "There is no wrong answer. Lee-Elle can pick one, or say which parts of which she likes."
     },
     {
      "type": "hebrew",
@@ -213,7 +235,8 @@
       "/tour/img/phone-three-tenses-he.webp",
       "/tour/img/phone-the-stage-he.webp",
       "/tour/img/phone-notebook-he.webp"
-     ]
+     ],
+     "says": "Same design, same words, read the other way. Press עברית at the top of any page and the design stays, now in Hebrew."
     },
     {
      "type": "phones",
@@ -296,7 +319,13 @@
      ]
     }
    ],
-   "pdf_name": "Lee-Elle-Horowitz-website-guided-tour.pdf"
+   "pdf_name": "Lee-Elle-Horowitz-website-guided-tour.pdf",
+   "narrator": {
+    "name": "The Guide",
+    "role": "warm, like a favourite teacher opening a picture book",
+    "label": "Synthetic presenter, made by code, no real person",
+    "initial": "G"
+   }
   },
   {
    "id": "behind-the-scenes",
@@ -317,7 +346,8 @@
       "/assets/designs/conversation.en.webp",
       "/assets/designs/notebook.he.webp",
       "/assets/designs/three-tenses.en.webp"
-     ]
+     ],
+     "says": "I'm Conductor. I call each agent in turn. Here is who did what to build this site, and how each step was checked."
     },
     {
      "type": "team",
@@ -355,7 +385,8 @@
        "lists",
        "Lists the site in the hub once she approves it."
       ]
-     ]
+     ],
+     "says": "Each agent does one job, writes it down in public, and hands on to the next."
     },
     {
      "type": "flow",
@@ -414,7 +445,8 @@
        "Round 3",
        "Conversation and Notebook rise to 3 of 5; phone fixes"
       ]
-     ]
+     ],
+     "says": "Synthetic parents read every version and said whether they would book. Their answers shaped the next round."
     },
     {
      "type": "points",
@@ -443,6 +475,18 @@
       "/tour/img/phone-three-tenses-he.webp",
       "/tour/img/phone-notebook-he.webp"
      ]
+    },
+    {
+     "type": "points",
+     "kicker": "Nothing invented",
+     "h": "What we left out, on purpose",
+     "points": [
+      "No prices, pupils or reviews: she has not given us any yet",
+      "No phone number or email until she chooses which to publish",
+      "Every fact comes from her own profile and her school's page; every photo is credited",
+      "The Hebrew is marked on every page as not yet checked by her"
+     ],
+     "says": "What we leave out matters as much as what we put in. Everything here can be traced to where it came from."
     },
     {
      "type": "points",
@@ -487,7 +531,13 @@
      ]
     }
    ],
-   "pdf_name": "Lee-Elle-Horowitz-website-how-it-was-made.pdf"
+   "pdf_name": "Lee-Elle-Horowitz-website-how-it-was-made.pdf",
+   "narrator": {
+    "name": "Conductor",
+    "role": "a friendly stage manager calling each role",
+    "label": "Synthetic presenter, made by code, no real person",
+    "initial": "C"
+   }
   }
  ]
 }

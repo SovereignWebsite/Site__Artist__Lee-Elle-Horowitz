@@ -68,3 +68,11 @@ Fixed: Notebook cover alphabet right to left; Conversation's seven empty Hebrew 
 
 ## Hebrew rule (design.b)
 No Hebrew beyond single letters and her own words goes live until she has checked it. Her Hebrew name spelling has not been supplied, so it is not used.
+
+## 25 Nov, evening: narrators in the decks (studio.b, instagram.b, maestro.b, security.b)
+- Took studio.b's proposal A (one narrator per deck, text only): The Guide narrates "Your website", Conductor narrates "how it was made". Each line is labelled "Synthetic presenter, made by code, no real person", speaks of Lee-Elle in the third person, and uses only facts already on the site.
+- Took proposal B7 ("How to choose", five questions) and D ("Nothing invented": what we left out on purpose). Most of B and C were already in a1626c4.
+- No character images yet: stills only from studio.c's reviewed path (security.b opinion 2026-11-25__presenters-in-public-reels.json). No library code on the site.
+- Moved the last hardcoded words out of build.py (language names, "Why it suits Lee-Elle") into JSON.
+- axe-phone.mjs now names the failing element and exits non-zero on a problem.
+- Waiting: Lee-Elle's consent to synthetic presenters, once, via Dinis.

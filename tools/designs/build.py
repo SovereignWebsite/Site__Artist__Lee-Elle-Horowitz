@@ -91,8 +91,8 @@ def langs(L, here, there):
     en_href, he_href = (there, here) if he_on(L) else (here, there)
     cur = ' aria-current="true"'
     return (f'<p class="langs" role="group" aria-label="{L["lang_label"]}">'
-            f'<a href="{en_href}" lang="en-GB" hreflang="en-GB"{cur if not he_on(L) else ""}>English</a>'
-            f'<a href="{he_href}" lang="he" hreflang="he"{cur if he_on(L) else ""}>עברית</a></p>')
+            f'<a href="{en_href}" lang="en-GB" hreflang="en-GB"{cur if not he_on(L) else ""}>{SITE["lang_names"]["en"]}</a>'
+            f'<a href="{he_href}" lang="he" hreflang="he"{cur if he_on(L) else ""}>{SITE["lang_names"]["he"]}</a></p>')
 
 def thumb(L, s): return SITE['thumbs'].replace('{slug}', s).replace('{lang}', L['code'])
 def card(L, s, i, cur=None, tag='li', lazy=True):
@@ -294,8 +294,8 @@ def slide(d, sl, n, total):
         im = sl['imgs']
         col = (f'<div class="s-collage">{img(im["desk"], "c-desk", 640, 400)}{img(im["phone"], "c-phone", 390, 844)}'
                f'{img(im["he"], "c-he", 390, 844)}{img(im["detail"], "c-detail", 1200, 400)}'
-               '<span class="c-tag c-tag-en">English</span><span class="c-tag c-tag-he" lang="he">עברית</span></div>')
-        inner = (f'<div class="s-text">{k}<h2 class="s-h">{sl["h"]}</h2><p class="s-why">Why it suits Lee-Elle</p>{pts(sl["why"], "s-points tight")}'
+               f'<span class="c-tag c-tag-en">{SITE["lang_names"]["en"]}</span><span class="c-tag c-tag-he" lang="he">{SITE["lang_names"]["he"]}</span></div>')
+        inner = (f'<div class="s-text">{k}<h2 class="s-h">{sl["h"]}</h2><p class="s-why">{TOUR["index"]["why_label"]}</p>{pts(sl["why"], "s-points tight")}'
                  f'<p class="s-sees">{sl["sees"]}</p></div>{col}')
     elif t in ('hebrew', 'phones'):
         row = f'<div class="s-row s-row-{len(sl["imgs"])}">' + ''.join(img(x, "p-phone", 390, 844) for x in sl['imgs']) + '</div>'
@@ -316,6 +316,11 @@ def slide(d, sl, n, total):
         inner = f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><ol class="s-flow">' + ''.join(f'<li><strong>{a}</strong><span>{b}</span></li>' for a, b in sl['steps']) + '</ol></div>'
     else:
         inner = f'<div class="s-text wide center">{k}<h2 class="s-h big">{sl["h"]}</h2><p class="s-p">{sl["p"]}</p><p class="s-links">' + ''.join(f'<a href="{h}"{" lang=\"he\"" if any("֐" <= ch <= "׿" for ch in x) else ""}>{x}</a>' for h, x in sl['links']) + '</p></div>'
+    if sl.get('says') and d.get('narrator'):
+        nr = d['narrator']
+        says = (f'<div class="s-says" role="note"><p class="s-who"><span class="s-av" aria-hidden="true">{nr["initial"]}</span>'
+                f'<strong>{nr["name"]}</strong> <span class="s-lbl">{nr["label"]}</span></p><p class="s-line">{sl["says"]}</p></div>')
+        inner = inner.replace('</div>', says + '</div>', 1) if inner.startswith('<div class="s-text') else inner + says
     T = TOUR['index']; lbl = T['slide_of'].replace('{n}', str(n)).replace('{total}', str(total))
     prev = f'<a class="s-prev" href="#slide-{n - 1}" rel="prev"><span aria-hidden="true">&#8592;</span> {T["prev"]}</a>' if n > 1 else '<span class="s-prev off" aria-hidden="true"></span>'
     nxt = f'<a class="s-next" href="#slide-{n + 1}" rel="next">{T["next"]} <span aria-hidden="true">&#8594;</span></a>' if n < total else '<span class="s-next off" aria-hidden="true"></span>'
@@ -330,7 +335,7 @@ def build_tour():
     cards = ''.join(f'<li class="deck" style="--deck:{d["accent"]}"><p class="d-for">{d["for"]}</p><h2>{d["title"]}</h2><p>{d["desc"]}</p>'
                     f'<p class="d-meta">{len(d["slides"])} {T["slides_word"]}</p><p class="d-act"><a class="d-open" href="/tour/{d["id"]}/">{T["open"]}</a>'
                     f'<a class="d-pdf" href="/tour/{d["pdf_name"]}" download="{d["pdf_name"]}">{T["pdf"]}</a></p></li>' for d in TOUR['decks'])
-    body = (brand(EN) + f'<main id="main" class="tour-index"><p class="eyebrow">{T["eyebrow"]}</p><h1>{T["h1"]}</h1><p class="lead">{T["lead"]}</p><ul class="decks">{cards}</ul><p class="hint">{T["keys"]}</p></main>\n')
+    body = (brand(EN) + f'<main id="main" class="tour-index"><p class="eyebrow">{T["eyebrow"]}</p><h1>{T["h1"]}</h1><p class="lead">{T["lead"]}</p><ul class="decks">{cards}</ul><p class="hint">{T["keys"]}</p><p class="hint">{T["says_note"]}</p></main>\n')
     w('tour/index.html', tour_head('/tour/', T['title'], T['desc']) + f'<body class="d-tour">\n<a class="skip" href="#main">{EN["skip"]}</a>\n' + FAM + body + foot(EN) + '</body>\n</html>\n')
     for d in TOUR['decks']:
         n = len(d['slides'])

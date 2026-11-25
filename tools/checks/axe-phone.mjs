@@ -7,5 +7,5 @@ const srv=http.createServer((q,r)=>{let p=path.join(root,decodeURIComponent(q.ur
 await new Promise(o=>srv.listen(8772,o)); const b=await chromium.launch(); let bad=0;
 const pages=['/','/he/',...['alef-bet','conversation','three-tenses','the-stage','notebook'].flatMap(s=>[`/designs/${s}/`,`/he/designs/${s}/`]),'/designs/','/he/designs/','/start/','/admin/','/tour/','/tour/your-site/','/tour/behind-the-scenes/'];
 for (const sch of ['light','dark']) for (const u of pages) { const c=await b.newContext({viewport:{width:390,height:844},colorScheme:sch}); const pg=await c.newPage(); await pg.goto('http://localhost:8772'+u); await pg.waitForTimeout(1800);
- const res=await new AxeBuilder({page:pg}).analyze(); for (const v of res.violations){bad++;console.log(sch,u,v.id,v.impact,v.nodes.length)} await c.close(); }
-console.log('phone axe problems:',bad); await b.close(); srv.close();
+ const res=await new AxeBuilder({page:pg}).analyze(); for (const v of res.violations){bad++;console.log(sch,u,v.id,v.impact,v.nodes.length,v.nodes.map(n=>n.target.join(' ')+' '+(n.any[0]?.message||'')).join(' | '))} await c.close(); }
+console.log('phone axe problems:',bad); await b.close(); srv.close(); if (bad) process.exitCode=1;
