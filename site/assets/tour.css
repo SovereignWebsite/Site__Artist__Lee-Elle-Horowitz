@@ -203,3 +203,4 @@
 @media print{.slide{display:flow-root!important}.slide>.frame{margin:0}}
 /* each slide is exactly one 720 px page and clipped, so no forced break is needed; a forced break added blank pages after some slides */
 @media print{.slide{break-after:auto!important;page-break-after:auto!important}}
+.center .s-says{margin-inline:auto;text-align:start}
