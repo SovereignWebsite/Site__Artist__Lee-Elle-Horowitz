@@ -1,13 +1,38 @@
-/* Design 2: Conversation. Each section is an exchange: English on the left, its Hebrew on the right (right to left), empty until she has checked it. */
-.ex{display:grid;grid-template-columns:minmax(0,1fr);gap:.8rem;margin:1.8rem 0}
-@media (min-width:44rem){.ex{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}main{max-width:62rem}.top{max-width:62rem}}
-.en,.he{border-radius:18px;padding:1rem 1.2rem}
-.en{background:var(--paper);border:1px solid var(--line);border-end-start-radius:4px}
-.he{background:var(--accent);color:var(--bg);border-end-end-radius:4px;direction:rtl;text-align:start;font-family:"Noto Sans Hebrew","Arial Hebrew","Segoe UI",Arial,sans-serif}
-.he *{direction:ltr}
-.he .who,.he p,.he li{color:inherit}
-.who{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:0 0 .4rem;color:var(--muted)}
-.q{font-weight:700;font-size:1.2rem;margin:0}
-.hold{font-style:italic}.he .hold{opacity:.95}
-.note{text-align:center;color:var(--muted)}
-@media (prefers-color-scheme:dark){.he{color:#10110f}}
+/* Design 2: Conversation. The page as a chat: a parent asks, Lee-Elle answers. Each answer has a Hebrew twin on the
+   right, set right to left, left empty until she has checked any Hebrew. */
+:root{--bg:#e9eef4;--fg:#15202b;--muted:#4b5866;--accent:#1f5fb8;--on-accent:#fff;--paper:#fff;--line:#d3dbe5;--twin:#dff0ea;--twin-fg:#1c4a3b;--bar:#b7d9cc}
+@media (prefers-color-scheme:dark){:root{--bg:#0e141b;--fg:#e8eef5;--muted:#a9b6c4;--accent:#7fb0ff;--on-accent:#0b1626;--paper:#1a232e;--line:#2a3542;--twin:#173129;--twin-fg:#bfe6d7;--bar:#2c5547}}
+body{background:var(--bg);background-image:radial-gradient(circle at 1px 1px,rgba(120,135,155,.18) 1px,transparent 0);background-size:22px 22px}
+.chat-top{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.chat-top .brand{display:flex;align-items:center;gap:.8rem;max-width:52rem;margin:0 auto;padding:.7rem 7.5rem .7rem 1.25rem}
+.ava{width:2.6rem;height:2.6rem;border-radius:50%;object-fit:cover;object-position:50% 18%;flex:none;box-shadow:0 0 0 2px var(--paper),0 0 0 4px #33c27a}
+.chat-top strong{display:block;line-height:1.2}.status{font-weight:400;font-size:.85rem;color:var(--muted)}
+main{max-width:52rem;margin:0 auto;padding:0 1.25rem}
+.intro{padding:2.5rem 0 1rem}.intro h1{font-size:clamp(2.2rem,7vw,3.6rem);letter-spacing:-.02em;margin:0 0 1rem}
+.thread{list-style:none;padding:0;margin:2rem 0;display:grid;gap:.9rem}
+.day{justify-self:center;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:var(--paper);padding:.2rem .8rem;border-radius:999px;margin:0}
+.msg{margin:0;animation:pop both ease-out;animation-timeline:view();animation-range:entry 0% entry 60%}
+@keyframes pop{from{transform:translateY(22px) scale(.97)}}
+.you{justify-self:end;max-width:min(30rem,88%)}
+.you p{margin:0;background:var(--accent);color:var(--on-accent);padding:.75rem 1.1rem;border-radius:1.3rem 1.3rem .35rem 1.3rem;font-weight:600;box-shadow:0 6px 18px -10px var(--accent)}
+.her{max-width:100%}
+.pair{display:grid;gap:.5rem}
+@media (min-width:44rem){.pair{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);align-items:start}}
+.en{background:var(--paper);border:1px solid var(--line);padding:1rem 1.2rem;border-radius:1.3rem 1.3rem 1.3rem .35rem;box-shadow:0 8px 24px -20px rgba(20,32,43,.6)}
+.en>:last-child,.en li:last-child{margin-bottom:0}
+.hebrew{background:var(--twin);color:var(--twin-fg);padding:1rem 1.2rem;border-radius:1.3rem 1.3rem .35rem 1.3rem;display:grid;gap:.7rem;text-align:start}
+.bars{display:grid;gap:.5rem}
+.bar{display:block;height:.7rem;border-radius:999px;background:var(--bar);width:100%;animation:shimmer 2.4s ease-in-out infinite}
+.bar:nth-child(2){width:78%}.bar:nth-child(3){width:90%}.bar:nth-child(4){width:55%}
+@keyframes shimmer{50%{opacity:.55}}
+.hl{font-size:.8rem;font-style:italic;text-align:right}
+.inline{margin-top:1rem;max-width:12rem}.inline img{border-radius:1rem;aspect-ratio:3/4;object-fit:cover}
+.replies{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.45rem}
+.replies li{margin:0;padding:.4rem .85rem;border:1.5px solid var(--accent);color:var(--accent);border-radius:999px;font-weight:600;font-size:.9rem;background:var(--paper)}
+.ticks{padding-inline-start:1.1rem}
+.note{text-align:center;color:var(--muted);font-size:.9rem;max-width:34rem;margin:1.5rem auto}
+.compose{position:sticky;bottom:.8rem;display:flex;align-items:center;gap:.6rem;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:.35rem .35rem .35rem 1.2rem;box-shadow:0 12px 30px -16px rgba(20,32,43,.55);margin:2rem 0 0}
+.compose .field{flex:1;color:var(--muted)}
+.compose .cta{margin:0}.compose .btn{padding:.65rem 1.1rem;font-size:.95rem}
+@media (max-width:30rem){.compose .field{display:none}.compose{justify-content:center;padding:.35rem}}
+.chips li{background:var(--paper)}

@@ -1,23 +1,47 @@
-/* Shared by every page: tokens, skip link, draft notice, button, footer, and the Sovereign Website credit. */
-:root{--bg:#fbfaf7;--fg:#1d1d1b;--muted:#4f4e49;--accent:#2f6b4f;--line:#e4e1d8;--paper:#fff}
-@media (prefers-color-scheme:dark){:root{--bg:#141513;--fg:#ecebe6;--muted:#b4b2aa;--accent:#7fc3a0;--line:#2c2d29;--paper:#1b1c19}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.6 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
-.skip{position:absolute;inset-inline-start:-999px}.skip:focus{inset-inline-start:1rem;top:1rem;background:var(--bg);padding:.4rem .7rem;z-index:60}
-a{color:var(--accent)}img{max-width:100%;height:auto}
-p{margin:0 0 1rem}ul{padding-inline-start:1.2rem;margin:0 0 1rem}li{margin:.3rem 0}
-.top{max-width:46rem;margin:0 auto;padding:2.2rem 1rem 0}.top .name{font-weight:700;color:var(--fg);text-decoration:none}
-main{max-width:46rem;margin:0 auto;padding:1.5rem 1rem 3rem}
-.draft{border:2px dashed var(--accent);padding:.6rem .9rem;border-radius:8px;background:var(--paper);color:var(--fg)}
-.mark{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:1.5rem 0 .2rem}
-h1{font-size:clamp(2rem,7vw,3.2rem);line-height:1.1;margin:.3rem 0 1rem}
-.lead{font-size:1.15rem;color:var(--muted)}
-.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:999px;border:2px solid var(--accent);color:var(--fg);background:var(--paper);font-weight:600}
-.cta{margin:1.2rem 0}
-footer{max-width:46rem;margin:0 auto;padding:1rem 1rem 3rem;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
-.site-links{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;margin:0 0 .8rem}.site-links a,.designs a{font-weight:600}
-.designs{margin:0 0 .8rem}
-@media (max-width:599px){footer,.family-credit{font-size:15px}}
+/* Shared by every page of Lee-Elle Horowitz's site. Each design sets its own tokens and layout in its own file.
+   System fonts only, Hebrew-capable stacks; nothing is loaded from another site. */
+:root{--bg:#faf7f2;--fg:#1c1b19;--muted:#55524b;--accent:#2f6b4f;--on-accent:#fff;--paper:#fff;--line:#e3ddd2;
+  --sans:"Segoe UI",system-ui,-apple-system,"Noto Sans Hebrew","Arial Hebrew",Arial,sans-serif;
+  --serif:Georgia,"Noto Serif Hebrew","David","Times New Roman",serif;
+  --he-sans:"Noto Sans Hebrew","Arial Hebrew","Segoe UI",Arial,sans-serif;
+  --he-serif:"Noto Serif Hebrew","David","Times New Roman",serif}
+@media (prefers-color-scheme:dark){:root{--bg:#141412;--fg:#efece6;--muted:#bab5ab;--accent:#7fc3a0;--on-accent:#0f1a14;--paper:#1d1d1a;--line:#34322d}}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:18px/1.6 var(--sans);overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent);text-underline-offset:.18em}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+p{margin:0 0 1rem}ul,ol{margin:0 0 1rem;padding-inline-start:1.2rem}li{margin:.3rem 0}
+h1,h2,h3{line-height:1.15;text-wrap:balance}
+[lang=he]{font-family:var(--he-sans)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.skip{position:absolute;inset-inline-start:-999px;top:.5rem;z-index:70;background:var(--paper);color:var(--fg);padding:.5rem .8rem;border-radius:6px}
+.skip:focus{inset-inline-start:1rem}
+.top{max-width:72rem;margin:0 auto;padding:2.4rem 1.25rem 0;display:flex;flex-wrap:wrap;gap:.5rem 2rem;align-items:baseline}
+.brand{font-weight:700;color:var(--fg);text-decoration:none;letter-spacing:.01em}
+.jump{display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.95rem}.jump a{color:var(--muted);text-decoration:none}.jump a:hover{color:var(--accent)}
+main{display:block}
+.draft{max-width:72rem;margin:1rem auto;padding:.6rem 1rem;border:1.5px dashed var(--accent);border-radius:10px;background:var(--paper);color:var(--fg);font-size:.95rem}
+.eyebrow{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--accent);margin:0 0 .6rem}
+.lead{font-size:clamp(1.1rem,2.6vw,1.35rem);color:var(--muted);max-width:36rem}
+.chips{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0}
+.chips li{display:inline-flex;align-items:center;gap:.4rem;margin:0;padding:.35rem .8rem;border:1px solid var(--line);border-radius:999px;background:var(--paper);font-size:.9rem;font-weight:600}
+.ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cta{margin:1.4rem 0}
+.btn{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:.15rem .6rem;padding:.85rem 1.4rem;border-radius:999px;background:var(--accent);color:var(--on-accent);font-weight:700;font-size:1.05rem;box-shadow:0 8px 24px -12px var(--accent)}
+.btn .soon{font-weight:500;font-size:.85rem;opacity:.95}
+figure{margin:0}figcaption{font-size:.78rem;line-height:1.45;color:var(--muted);margin-top:.5rem}
+figcaption a{color:inherit}
+.foot{max-width:72rem;margin:4rem auto 0;padding:2rem 1.25rem 2.5rem;border-top:1px solid var(--line);font-size:.92rem;color:var(--muted)}
+.foot-name{font-weight:700;color:var(--fg);font-size:1.05rem}.foot-name span{display:block;font-weight:400;color:var(--muted);font-size:.92rem}
+.designs p{margin:0 0 .4rem}.designs ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1.2rem}
+.designs li{margin:0}.designs a{display:inline-block;padding:.25rem .75rem;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-weight:600}
+.designs a[aria-current]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.site-links{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;margin:0 0 .8rem}.site-links a{font-weight:600}
+.small{font-size:.85rem}
+@media (max-width:599px){.foot,.family-credit{font-size:15px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 /* The Sovereign Website credit on a customer's site: one small, muted control at the far top right that opens a
    pop-up menu of the family links. Not a strip and not a menu bar: the site is about its owner (Dinis, 20 November
    2026: "It needs to fundamentally be about the site and who is it about ... top right pop-up menu").
@@ -38,5 +62,3 @@ footer{max-width:46rem;margin:0 auto;padding:1rem 1rem 3rem;border-top:1px solid
 .family-credit .family-gap{border-bottom:1px solid rgba(127,127,127,.25);padding-bottom:.3rem;margin-bottom:.3rem}
 [data-family-credit="off"] .family-credit{display:none}
 @media print{.family-credit{display:none}}
-.portrait{margin:1rem 0 1.5rem;max-width:16rem}.portrait img{display:block;width:100%;height:auto;border-radius:10px}
-.portrait figcaption{font-size:.8rem;line-height:1.4;color:var(--muted);margin-top:.4rem}

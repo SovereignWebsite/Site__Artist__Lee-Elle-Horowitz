@@ -1,0 +1,27 @@
+/* The design picker: one card per design. */
+:root{--bg:#f6efe3;--fg:#1b2744;--muted:#4a5168;--accent:#a8461f;--on-accent:#fff;--paper:#fffaf2;--line:#e2d6c2}
+@media (prefers-color-scheme:dark){:root{--bg:#10182b;--fg:#f3ead9;--muted:#c3bba9;--accent:#f2a27a;--on-accent:#1d1006;--paper:#18223a;--line:#2b3654}}
+main{max-width:72rem;margin:0 auto;padding:2rem 1.25rem 0}
+main h1{font:700 clamp(2.4rem,7vw,4rem)/1 var(--serif);margin:0 0 1rem}
+.picker{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:1.2rem;margin-top:2.5rem}
+.pc{margin:0}.pc a{display:grid;gap:.4rem;height:100%;padding:1.4rem;border-radius:1.2rem;text-decoration:none;color:var(--fg);background:var(--paper);border:1px solid var(--line);transition:transform .2s,box-shadow .2s}
+.pc a:hover{transform:translateY(-4px);box-shadow:0 20px 34px -24px rgba(0,0,0,.6)}
+.pc strong{font-size:1.3rem}.pc span:last-child{color:var(--muted);line-height:1.45}
+.pc-mark{display:grid;place-items:center;height:7rem;border-radius:.8rem;font:700 4rem/1 var(--he-serif);margin-bottom:.6rem}
+.pc-alef-bet .pc-mark{background:#1b2744;color:#e0b452}
+.pc-conversation .pc-mark{background:#1f5fb8;color:#fff}
+.pc-three-tenses .pc-mark{background:linear-gradient(90deg,#f6ecdd 33%,#e9f3ec 33% 66%,#f1eaf8 66%);color:#6b3d93}
+.pc-the-stage .pc-mark{background:radial-gradient(circle at 50% 30%,#5c1a20,#14090b);color:#e9bd5b}
+.pc-notebook .pc-mark{background:#fdfcf7 linear-gradient(transparent 1.2rem,#bfd0e6 1.2rem) 0 0/100% 1.3rem;color:#b0262e;border:1px solid #d8d0bf}
+/* The start page for Lee-Elle: numbered steps. */
+.d-start main{max-width:56rem}
+.step{display:grid;grid-template-columns:3.2rem minmax(0,1fr);gap:1rem;margin:3rem 0;align-items:start}
+.step-n{margin:0;width:3.2rem;height:3.2rem;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:var(--on-accent);font:700 1.4rem/1 var(--serif)}
+.step h2{font:700 clamp(1.5rem,4vw,2rem)/1.2 var(--serif);margin:.3rem 0 .9rem}
+.step .picker{grid-template-columns:repeat(auto-fill,minmax(min(100%,14rem),1fr));margin-top:1.2rem}
+.step .pc-mark{height:5rem;font-size:3rem}
+.later{margin:4rem 0 0;padding:1.8rem;border-radius:1.2rem;background:var(--paper);border:1px solid var(--line)}
+.later h2{font:700 1.6rem/1.2 var(--serif);margin:0 0 .8rem}
+.later details{border-top:1px solid var(--line);padding:.8rem 0}
+.later summary{cursor:pointer;font-weight:700;color:var(--accent)}
+.later ol{margin-top:.8rem}

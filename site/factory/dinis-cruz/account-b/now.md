@@ -1,34 +1,25 @@
-# Now (2026-11-25T11:57Z)
+# Now (2026-11-25T15:17Z)
 
 ## Done
-- Dinis (in this session): the photos are stand-ins to show Lee-Elle what can be done; she will upload her own. Added a cropped showreel still (her with a double bass, others cropped out) to The stage's music section, credited to her showreel on Spotlight. Not used: other showreel frames (other performers in shot; player button over the picture).
-- Showreels link from Dinis added to The stage as a plain outbound link (no embed: nothing is loaded from outside the site).
-- Spotlight profile text received from Dinis. Used only in The stage (On stage: training, credits, Olivier Bursary nomination, instruments). Not published anywhere: her agent's contact details, age, height, and the Spotlight link.
-- Photo received from Dinis in this session (one portrait, from the GSA UK 2026 BA (Hons) Actor Musician graduates page, not Spotlight; the page names no photographer). In all five designs with alt text and that credit, at site/assets/photo/lee-elle-horowitz.webp. Not used for the share card yet (still the seed's neutral card).
-- design.b's brief received (https://design.agents.sovereignweb.site/briefs/lee-elle-horowitz.html, 7222e25).
-- First version (root, Alef-bet) and all five designs built at /designs/, from her words only, with a draft notice. tools/check.sh passes; no sideways scroll on a phone.
-- Read the brief, the Factory guidance and the how-it-works page.
-- Attached the repository, read CLAUDE.md and README.md.
-- Made my own signing key; public half published in its own signed commit (fbe1f08).
-- conductor.b: my key in this repository is the one that counts; no team/keys.json entry is needed.
-- Asked design.b for the design brief.
+- Area, own key (fbe1f08), design.b's brief (https://design.agents.sovereignweb.site/briefs/lee-elle-horowitz.html, 7222e25).
+- Five designs rebuilt for impact at Dinis's ask ("really make this site have the WOW factor"), all from her words: Alef-bet (home: arch portrait, moving alphabet band, giant section letters, quote band), Conversation (chat thread, Hebrew twin bubbles left empty), Three tenses (was / is / will be, journey timeline), The stage (velvet curtains, lit marquee, spotlight, programme, ticket), Notebook (exercise book, polaroid, sticky note; printable). Picker at /designs/.
+- /start/ rewritten for Lee-Elle: choose a design, check words and Hebrew, send photos and changes, approve, who looks after it; GitHub steps kept under "Later".
+- docs/handover.md and docs/prompt-for-your-claude.md (90c20f3).
+- Share card made from her photo and words (site/assets/share/card-1200x630.jpg).
+- Generator kept at tools/designs/build.py (designs, picker, start page). Stop using it once she edits pages by hand.
+- Checks: tools/check.sh passes; axe also clean in dark mode; no sideways scroll at 390 px; all pages under 8,000 px on a phone.
+- Photos: stand-ins only (Dinis: "just to give LEH a view of what can be done, she will then upload more photos"). GSA graduates-page portrait (no photographer named) and a cropped showreel still in The stage. Spotlight text used only in The stage; no agent contact, age or height published.
 
 ## Open
-- When she uploads her own photos: replace all stand-in photos, credit each as she says, and say so in the handover.
-- Replace the GSA photo with the Spotlight portrait (credit: Kim Hardy, via Spotlight). Dinis showed it in chat, but it was not saved as a file I can read and Spotlight's page is script-rendered. Need it re-sent as an attachment or a direct image address.
-- Design rounds with design.b.rounds once the five are live; design.b wants M4 before she sees them.
-- Check Hebrew letters on iOS Safari, Android Chrome and Windows Edge (this container has no Hebrew font, so I could not).
-- Dark mode axe run; then /send/ enquiry form (until wired the button says Enquiries open soon).
-- Register with hub.b when live.
-- Handover to Lee-Elle: docs/handover.md, docs/prompt-for-your-claude.md and the /start/ page.
+- HTTPS: DNS is right (CNAME to sovereignwebsite.github.io) and every Pages deploy succeeds, but GitHub still serves its *.github.io certificate for this address, so https fails. Needs an org admin to check the custom domain and Enforce HTTPS in the repository's Pages settings (this session cannot reach that API). http:// serves the latest build.
+- Swap in the Spotlight portrait (credit Kim Hardy) when it arrives as a file; then her own photos.
+- /send/ enquiry form, with security.b's review.
+- Design rounds with design.b.rounds; Hebrew rendering on iOS Safari, Android Chrome, Windows Edge.
+- Register with hub.b when HTTPS works; tell sites.b it is live.
 
 ## Waiting on
-- Dinis: any further photos; ask whether the Spotlight profile credit wording is wanted. No other photos are used.
-
-## Content rules for this site
-- Use only her words and facts from the brief. No invented fact, price or customer.
-- No contact details until she chooses to publish any.
-- Credit every photo. Hebrew tuition is the main service; music tuition a smaller section.
+- Dinis or an org admin: the Pages certificate.
+- Lee-Elle: design choice, Hebrew words, photos with credits, contact details, approval.
 
 ## Hebrew rule (design.b)
-No Hebrew beyond single letters and her own words goes live until she has checked it. Conversation leaves its Hebrew side empty for that reason. Her Hebrew name spelling has not been supplied, so it is not used.
+No Hebrew beyond single letters and her own words goes live until she has checked it. Her Hebrew name spelling has not been supplied, so it is not used.

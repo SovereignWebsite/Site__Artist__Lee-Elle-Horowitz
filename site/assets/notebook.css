@@ -1,10 +1,31 @@
-/* Design 5: Notebook. One ruled column, plain and printable. Also used by the design picker. */
-:root{--rule:#c9d6e6;--margin:#d9534f}@media (prefers-color-scheme:dark){:root{--rule:#2a3442;--margin:#e58a86}}
-body{font-family:Georgia,"Times New Roman",serif;line-height:1.5rem;background:var(--paper)}
-main{background:linear-gradient(to bottom,transparent calc(1.5rem - 1px),var(--rule) calc(1.5rem - 1px)) 0 0/100% 1.5rem;border-inline-start:2px solid var(--margin);padding-inline-start:1.2rem}
-h1{font-size:2rem;line-height:3rem;margin:0}h2{font-size:1.15rem;line-height:1.5rem;margin:1.5rem 0 0;text-decoration:underline}
-p,ul,ol{margin:0 0 1.5rem}li{margin:0}.lead{font-size:1rem;color:var(--fg)}
-.pick li{margin-bottom:.75rem}
-.draft{background:var(--paper)}.btn{border-radius:2px}
-@media print{.skip,.family-credit,.cta,footer .designs{display:none}main{background:none;border:0}body{font-size:12pt}}
-.portrait{margin-bottom:1.5rem}.portrait img{border-radius:2px}
+/* Design 5: Notebook. A ruled exercise book: one column, plain, printable. */
+:root{--bg:#e8e2d4;--fg:#1f2430;--muted:#4c5260;--accent:#b0262e;--on-accent:#fff;--paper:#fdfcf7;--line:#d8d0bf;--rule:#bfd0e6;--margin:#e07a7a;--hi:#fff07a;--hand:"Segoe Print","Bradley Hand","Chalkboard SE","Comic Sans MS",cursive}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--fg:#e9e6dd;--muted:#b8b4aa;--accent:#ff8f8f;--on-accent:#2a0d0d;--paper:#1c1e22;--line:#30333a;--rule:#2b3646;--margin:#a14a4a;--hi:#6b5f12}}
+body{font-family:var(--serif);background:var(--bg)}
+main{max-width:46rem;margin:0 auto;padding:2.5rem 1rem 0}
+.book{filter:drop-shadow(0 25px 30px rgba(0,0,0,.25))}
+.cover{background:linear-gradient(135deg,#2c4a7a,#1d3358);color:#f4efe4;border-radius:.6rem .6rem 0 0;padding:2rem 1.5rem 1.5rem;position:relative}
+.cover::before{content:"";position:absolute;inset:0 auto 0 0;width:1.1rem;background:repeating-linear-gradient(#1a2b4a 0 .5rem,#2c4a7a .5rem 1rem);border-radius:.6rem 0 0 0;opacity:.8}
+.label-k{font:700 .8rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;margin:0 0 1rem;padding-inline-start:1rem}
+.label{background:#fdfcf7;color:#1f2430;border-radius:.4rem;padding:.6rem 1rem;margin:0 0 0 1rem;max-width:22rem;box-shadow:inset 0 0 0 2px #1d3358,inset 0 0 0 4px #fdfcf7,inset 0 0 0 5px #1d3358}
+.label div{display:flex;gap:.8rem;align-items:baseline;border-bottom:1px solid #9fb3cf;padding:.3rem 0}.label div:last-child{border:0}
+.label dt{font:700 .72rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;min-width:4.2rem}
+.label dd{margin:0;font:1.15rem/1.3 var(--hand);color:#1a3d8f}
+.page{background:var(--paper);padding:1.5rem 1.2rem 3rem calc(1.2rem + 3rem);position:relative;border-radius:0 0 .6rem .6rem;line-height:1.75rem;
+  background-image:linear-gradient(90deg,transparent 2.9rem,var(--margin) 2.9rem,var(--margin) 3.05rem,transparent 3.05rem),linear-gradient(transparent calc(1.75rem - 1px),var(--rule) calc(1.75rem - 1px));background-size:100% 100%,100% 1.75rem}
+.page h1{font-size:clamp(1.8rem,6vw,2.6rem);line-height:3.5rem;margin:0}
+.page h2{font:700 1.15rem/1.75rem var(--sans);margin:1.75rem 0 0;color:var(--accent)}
+.page p,.page ul,.page ol{margin:0 0 1.75rem}.page li{margin:0}
+.lead{font-size:1.1rem;color:var(--fg);max-width:none}
+mark{background:linear-gradient(100deg,transparent .2em,var(--hi) .3em,var(--hi) calc(100% - .3em),transparent calc(100% - .2em));color:inherit;padding:0 .15em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.polaroid{float:right;width:min(11rem,40%);margin:0 0 1rem 1.2rem;background:#fff;padding:.5rem .5rem 1.6rem;box-shadow:0 10px 20px -10px rgba(0,0,0,.5);transform:rotate(3deg);position:relative;line-height:1.3}
+.polaroid::before{content:"";position:absolute;top:-.7rem;left:50%;width:4.5rem;height:1.4rem;transform:translateX(-50%) rotate(-4deg);background:rgba(255,240,170,.75)}
+.polaroid img{aspect-ratio:3/4;object-fit:cover;object-position:50% 20%}
+.polaroid figcaption{font-size:.7rem;color:#555;margin-top:.4rem}
+.polaroid figcaption a{color:#555}
+.ex{padding-inline-start:1.6rem}.ex li::marker{font:700 .95rem var(--hand);color:var(--accent)}
+.ticks{list-style:none;padding:0}.ticks li::before{content:"\2713";font-family:var(--hand);color:var(--accent);font-weight:700;margin-inline-end:.6rem}
+.sticky{clear:both;width:min(17rem,100%);margin:2rem 0 0 auto;padding:1rem 1.2rem 1.2rem;background:#ffe76b;color:#3a2f00;transform:rotate(-2.5deg);box-shadow:0 14px 22px -12px rgba(0,0,0,.55);line-height:1.4;font-family:var(--hand)}
+.sticky p{margin:0;font-size:1.3rem}.sticky .soon{font-size:1rem}
+.foot{color:var(--muted)}
+@media print{.skip,.family-credit,.sticky,.foot .designs,.draft{display:none}body{background:#fff;font-size:12pt}.book{filter:none}.page{background-image:none;padding-inline-start:1rem}}

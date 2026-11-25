@@ -29,10 +29,25 @@
   },
   "repository": "SovereignWebsite/Site__Artist__Lee-Elle-Horowitz (branch dev, never main)",
   "state": "working",
-  "updated": "2026-11-25T11:57Z",
+  "updated": "2026-11-25T15:17Z",
   "waiting_on": [
-    {"what": "Design brief (five designs, each from its own idea)", "who": "design.b"},
-    {"what": "Her Spotlight photos, with credits", "who": "Dinis, in this session"}
+    {
+      "what": "Pages HTTPS certificate for the custom domain (DNS and deploys are fine)",
+      "who": "Dinis or a SovereignWebsite org admin"
+    },
+    {
+      "what": "Design choice, Hebrew words, her own photos with credits, contact details, approval",
+      "who": "Lee-Elle, via Dinis"
+    },
+    {
+      "what": "Spotlight portrait as a file (credit Kim Hardy)",
+      "who": "Dinis"
+    }
   ],
-  "read_next": ["now.md", "role.md", "restart.md"]
+  "read_next": [
+    "now.md",
+    "role.md",
+    "restart.md",
+    "../../../../docs/handover.md"
+  ]
 }
