@@ -3,5 +3,13 @@
  "repository": "https://github.com/SovereignWebsite/Site__Artist__Lee-Elle-Horowitz",
  "made_by": "https://github.com/SovereignWebsite/SovereignWebsite__IaC",
  "about": "The agents that work on this site. Each site agent adds its own entry: its name (role@project.person), its role and its session. Their keys are published at https://agents.sovereignweb.site/.",
- "agents": []
+ "agents": [
+  {
+   "name": "b.site.lee-elle-horowitz@SWS",
+   "role": "Keeper: builds and keeps this site, takes design rounds, prepares the handover",
+   "session": "https://claude.ai/code/session_01Kw9UwDZSNqZutb2soCwE8r",
+   "key": "site/keys/b.site.lee-elle-horowitz.json",
+   "area": "site/factory/dinis-cruz/account-b/"
+  }
+ ]
 }

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-GB" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Behind the scenes: how this site was made: Lee-Elle Horowitz: private Hebrew tuition</title>
+<meta name="description" content="The agents, the pipeline, content in JSON, the checks, the design rounds and what makes the site sovereign.">
+<meta name="theme-color" content="#14161c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lee-Elle Horowitz: private Hebrew tuition">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://lee-elle-horowitz.artist.sovereignweb.site/tour/behind-the-scenes/">
+<meta property="og:title" content="Behind the scenes: how this site was made: Lee-Elle Horowitz: private Hebrew tuition">
+<meta property="og:description" content="The agents, the pipeline, content in JSON, the checks, the design rounds and what makes the site sovereign.">
+<meta property="og:image" content="https://lee-elle-horowitz.artist.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lee-Elle Horowitz: private Hebrew tuition">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Behind the scenes: how this site was made: Lee-Elle Horowitz: private Hebrew tuition">
+<meta name="twitter:description" content="The agents, the pipeline, content in JSON, the checks, the design rounds and what makes the site sovereign.">
+<meta name="twitter:image" content="https://lee-elle-horowitz.artist.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://lee-elle-horowitz.artist.sovereignweb.site/tour/behind-the-scenes/">
+<link rel="stylesheet" href="/assets/base.css">
+<link rel="stylesheet" href="/assets/tour.css">
+</head>
+<body class="d-deck" style="--deck:#1b2744">
+<a class="skip" href="#main">Skip to content</a>
+<details class="family-credit" lang="en-GB" dir="ltr">
+  <summary>Sovereign Website</summary>
+  <ul>
+    <li><a href="/start/">Start here</a></li>
+    <li><a href="/agents/">Use with your AI</a></li>
+    <li class="family-gap"><a href="/admin/">How this site was made</a></li>
+    <li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li>
+    <li><a href="https://sovereignwebsite.org/">Principles</a></li>
+    <li><a href="https://sovereignwebsite.site/">Hosted</a></li>
+    <li><a href="https://hub.sovereignweb.site/">Hub</a></li>
+    <li><a href="https://agents.sovereignweb.site/">Agents</a></li>
+    <li><a href="https://vault.sovereignwebsite.site/">Vault</a></li>
+    <li><a href="https://agenticcells.ai/">AgentiCCells</a></li>
+    <li><a href="https://riskmandate.ai/">RiskMandate</a></li>
+    <li><a href="https://newsroom.sgit.ai/">Newsroom</a></li>
+  </ul>
+</details>
+<header class="deck-bar"><a class="brand" href="/tour/">Guided tour</a><h1 class="deck-t">Behind the scenes: how this site was made</h1><a class="d-pdf" href="/tour/behind-the-scenes.pdf" download>Download the PDF</a></header>
+<main id="main" class="deck-main"><section class="slide s-title" aria-label="1"><div class="frame"><p class="s-num" aria-hidden="true">1 / 8</p><div class="s-text"><p class="s-kicker">Behind the scenes</p><h2 class="s-h big">How this site was made</h2><p class="s-sub">lee-elle-horowitz.artist.sovereignweb.site</p><p class="s-note">Built on 25 November 2026 by a team of AI agents working for Dinis Cruz</p></div><div class="s-art"><img class="shot" src="/tour/img/stage.webp" alt="" width="1280" height="800" loading="lazy"></div></div></section><section class="slide s-flow" aria-label="2"><div class="frame"><p class="s-num" aria-hidden="true">2 / 8</p><div class="s-text wide"><p class="s-kicker">The team</p><h2 class="s-h">One request, a team of agents</h2><ol class="s-flow"><li><strong>sites.b</strong><span>takes the request and starts a keeper</span></li><li><strong>factory.b</strong><span>creates the repository and the address</span></li><li><strong>The keeper</strong><span>b.site.lee-elle-horowitz builds and keeps the site</span></li><li><strong>design.b</strong><span>writes the design brief</span></li><li><strong>design.b.rounds</strong><span>reviews each round with synthetic parents</span></li><li><strong>hub.b</strong><span>lists the site once she approves it</span></li></ol></div></div></section><section class="slide s-flow" aria-label="3"><div class="frame"><p class="s-num" aria-hidden="true">3 / 8</p><div class="s-text wide"><p class="s-kicker">The pipeline</p><h2 class="s-h">From request to live site</h2><ol class="s-flow"><li><strong>Request</strong><span>filed in the Sovereign Website factory</span></li><li><strong>Repository</strong><span>seeded with checks and a deploy workflow</span></li><li><strong>Own key</strong><span>the keeper signs every commit with its own key</span></li><li><strong>Build</strong><span>pages generated from JSON</span></li><li><strong>Checks</strong><span>run before every push</span></li><li><strong>Live</strong><span>a push to dev publishes in a minute or two</span></li></ol></div></div></section><section class="slide s-points" aria-label="4"><div class="frame"><p class="s-num" aria-hidden="true">4 / 8</p><div class="s-text wide"><p class="s-kicker">Content</p><h2 class="s-h">Every word lives in JSON</h2><ul class="s-points"><li>site/data/content/en.json: her words, as she supplied them.</li><li>site/data/content/he.json: the Hebrew translation, for her to check.</li><li>site.json, start.json, tour.json and admin.json: everything else.</li><li>tools/designs/build.py turns them into plain HTML pages, in both languages. It holds no words of its own.</li></ul><p class="s-code"><code>en.json + he.json  →  build.py  →  10 design pages, 2 home pages, 2 pickers</code></p></div></div></section><section class="slide s-points" aria-label="5"><div class="frame"><p class="s-num" aria-hidden="true">5 / 8</p><div class="s-text wide"><p class="s-kicker">Quality</p><h2 class="s-h">Checked before every push</h2><ul class="s-points"><li>Build, link previews and internal links.</li><li>HTML validity, and accessibility (axe) on every page, in light and in dark mode.</li><li>No em dashes, no family strip, a leak scan for secrets.</li><li>No page longer than 8,000 px on a phone, and no sideways scrolling.</li><li>Nothing loaded from another website: no fonts, scripts or trackers.</li></ul></div></div></section><section class="slide s-points" aria-label="6"><div class="frame"><p class="s-num" aria-hidden="true">6 / 8</p><div class="s-text wide"><p class="s-kicker">Design</p><h2 class="s-h">Five ideas, then review rounds</h2><ul class="s-points"><li>design.b's brief asked for five designs, each from its own idea, not colour skins of one layout.</li><li>design.b.rounds asked synthetic parents: would you book a Hebrew lesson for your child here?</li><li>Round 1 put Hebrew letters in every design, the facts parents look for higher up, and a light version of The stage.</li><li>Round 2 fixed the alphabet direction, removed empty placeholders and gave the site one voice: hers.</li></ul></div></div></section><section class="slide s-points" aria-label="7"><div class="frame"><p class="s-num" aria-hidden="true">7 / 8</p><div class="s-text wide"><p class="s-kicker">Trust</p><h2 class="s-h">Signed, and public</h2><ul class="s-points"><li>Each agent makes its own signing key; only the public half is published.</li><li>Every commit is signed and carries the agent's name and session.</li><li>The keeper's notes, open work and decisions are in the repository, for anyone to read.</li></ul></div></div></section><section class="slide s-end" aria-label="8"><div class="frame"><p class="s-num" aria-hidden="true">8 / 8</p><div class="s-text wide center"><p class="s-kicker">Sovereign</p><h2 class="s-h big">A website its owner controls</h2><p class="s-p">Static files in one repository: no server code, no cookies, no tracking. It belongs to Lee-Elle, and can move anywhere.</p><p class="s-links"><a href="/admin/">Admin</a><a href="https://github.com/SovereignWebsite/Site__Artist__Lee-Elle-Horowitz">The repository</a><a href="/tour/your-site/">The site tour</a></p></div></div></section></main>
+<footer class="foot">
+<p class="foot-name">Lee-Elle Horowitz <span>Private Hebrew tuition, in London and online</span></p>
+<nav class="site-links" lang="en-GB" dir="ltr" aria-label="About this site">
+  <a href="/start/">Start here</a>
+  <a href="/agents/">Use with your AI</a>
+  <a href="/admin/">Admin</a>
+  <a href="/tour/">Guided tour</a>
+  <a href="/policy/">How this site is governed</a>
+</nav>
+<p class="small" lang="en-GB" dir="ltr">A sovereign website, made with the <a href="https://sovereignwebsite.org/">open pattern</a>. Source: <a href="https://github.com/SovereignWebsite/Site__Artist__Lee-Elle-Horowitz">github.com/SovereignWebsite/Site__Artist__Lee-Elle-Horowitz</a>.</p>
+</footer>
+</body>
+</html>

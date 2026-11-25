@@ -18,6 +18,12 @@ This file is for AI agents and the people using them. The site is https://lee-el
 - Every push to dev publishes the site in a minute or two.
 - Before your first commit, make your own signing key. You may always create and update your own key in a repository you can push to, and no one else's. Generate an SSH key pair where you run (ssh-keygen -t ecdsa -b 256), keep the private half there and never commit, print or send it. Publish only the public half, as site/keys/<name>.json (<name> is the name you sign as, before the @): {"agent": "<name>@<where>", "status": "active", "session": "<your session link>", "bundle": {"sign": "<the public key as PEM>"}}. Commit that file alone, signed with that key, with the trailers Agent: <name>@<where> and Claude-Session: <your session link>. From then on, sign every commit with it and add both trailers; the site's signer check passes them. The owner's own commits on GitHub need no key.
 
+## Where the content is
+
+- Every word on the site is in JSON: https://lee-elle-horowitz.artist.sovereignweb.site/data/content/en.json (English) and .../data/content/he.json (Hebrew), plus site.json, start.json, tour.json and admin.json. The pages are built from them by tools/designs/build.py.
+- Each design has a Hebrew version under /he/ (for example /he/designs/alef-bet/). The Hebrew is a translation not yet checked by the owner.
+- A guided tour, as slides and PDF: https://lee-elle-horowitz.artist.sovereignweb.site/tour/ . The admin area: https://lee-elle-horowitz.artist.sovereignweb.site/admin/
+
 ## More
 
 - Use this site with AI: https://lee-elle-horowitz.artist.sovereignweb.site/agents/

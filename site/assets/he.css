@@ -1,0 +1,28 @@
+/* Hebrew pages: right to left, Hebrew system fonts, and the few places where a design used left/right instead of start/end. */
+body{font-family:var(--he-sans)}
+h1,h2,h3,.stats strong,.quote p{font-family:var(--he-serif)}
+.d-the-stage,.d-notebook{font-family:var(--he-serif)}
+.hero h1 span,.quote p,.with,.future .big,.scenes span,.conj{font-style:normal}
+.eyebrow,.sec-n,.presents,.act-n,.act h3,.interval,.rule,.label-k,.t-label,.tense h3,.journey strong{letter-spacing:.02em}
+/* Alef-bet */
+.hero-g{inset:-14% auto auto -24%}
+.band-track{animation-direction:reverse}
+.quote::before{content:"\201D";inset-inline-start:auto;inset-inline-end:4vw}
+/* Conversation: the speech tails follow the reading direction */
+.you p{border-radius:1.3rem;border-end-end-radius:.35rem}
+.en{border-radius:1.3rem;border-end-start-radius:.35rem}
+.chat-top .brand{padding:.7rem 1.25rem .7rem 7.5rem}
+/* Three tenses */
+.conj span+span::before{content:"\2190";margin-inline-end:1.2rem}
+.photo{transform:rotate(2.2deg)}
+/* The stage */
+.notes li{padding:.55rem 1.8rem .55rem 0}
+/* Notebook: margin line and binding on the right */
+.page{padding:1.5rem calc(1.2rem + 3rem) 3rem 1.2rem;background-image:linear-gradient(270deg,transparent 2.9rem,var(--margin) 2.9rem,var(--margin) 3.05rem,transparent 3.05rem),linear-gradient(transparent calc(1.9rem - 1px),var(--rule) calc(1.9rem - 1px))}
+.cover::before{inset:0 0 0 auto;border-radius:0 .6rem 0 0}
+.label-k{padding-inline-start:1rem}.label{margin:0 1rem 0 0}.cover-ab{margin:1.2rem 1rem 0 0}
+.polaroid{float:left;margin:0 1.2rem 1rem 0;transform:rotate(-3deg)}
+.sticky{margin:2rem auto 0 0;transform:rotate(2.5deg)}
+.ticks li{padding-inline-start:1.6rem}
+/* The Sovereign Website menu stays at the physical top right, so leave room for it at the start (right) in Hebrew */
+@media (min-width:52rem){.switch-in{padding-inline-end:1.25rem;padding-inline-start:11rem}}

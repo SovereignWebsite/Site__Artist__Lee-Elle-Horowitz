@@ -23,6 +23,12 @@ Fixed: Notebook cover alphabet right to left; Conversation's seven empty Hebrew 
 - Asked design.b for one more wow-factor pass ("since these are artists").
 - Languages: her Spotlight lists English and Hebrew only.
 
+## 25 Nov, later (Dinis, in this session)
+- "the home page should be in english, but can you allow all 5 designs to be translated?": every design now has a Hebrew version under /he/ (right to left, he.css); the Ivrit design is retired in their favour. English / עברית switch at the top of every page and a floating button in the corner.
+- "all content from the site is on json files and nothing is hardcoded into html": every word is in site/data/content/*.json (en, he, site, start, tour, admin); tools/designs/build.py builds every page and holds no words.
+- "add that admin section (like we did for kate)": /admin/, a back office built from admin.json and the repository (status, tasks from issues/, designs, content files, pages, photos and credits, quality, activity from git, agents, how it was made). Not copied: Kate's signed message page, which needs its own security review.
+- "some really nice presentations ... with option to download the PDF": /tour/ with two decks (your-site, behind-the-scenes) from tour.json; PDFs made with tools/tour/pdf.mjs.
+
 ## Open
 - Swap in the Spotlight portrait (credit Kim Hardy) when it arrives as a file; then her own photos.
 - /send/ enquiry form, with security.b's review.

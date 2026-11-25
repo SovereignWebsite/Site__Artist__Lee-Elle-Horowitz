@@ -147,5 +147,40 @@
    "Share card: made by the keeper from the portrait above and her words."
   ]
  ],
- "tour": "Prefer a walk through? See the <a href=\"/tour/\">guided tour</a>, as slides or PDF."
+ "tour": "Prefer a walk through? See the <a href=\"/tour/\">guided tour</a>, as slides or PDF.",
+ "labels": {
+  "nav": "Admin sections",
+  "tiles": [
+   "designs",
+   "languages",
+   "open tasks",
+   "changes"
+  ],
+  "designs_cols": [
+   "Design",
+   "Idea",
+   "Open"
+  ],
+  "content_cols": [
+   "File",
+   "What it holds",
+   "Size"
+  ],
+  "pages_cols": [
+   "Page",
+   "Size"
+  ],
+  "activity_cols": [
+   "Change",
+   "When (UTC)",
+   "What",
+   "By"
+  ],
+  "key": "public key",
+  "notes": "notes",
+  "missing": "missing",
+  "english": "English",
+  "hebrew": "עברית",
+  "nobody": "the keeper"
+ }
 }

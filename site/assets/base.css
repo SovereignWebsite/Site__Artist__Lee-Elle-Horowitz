@@ -71,3 +71,19 @@ figcaption a{color:inherit}
 .switch ul a{display:inline-block;padding:.3rem .8rem;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-weight:600;background:var(--bg);white-space:nowrap}
 .switch ul a[aria-current]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
 @media (min-width:52rem){.switch-in{padding-top:.65rem;padding-inline-end:11rem}}
+/* The language switch: both languages always shown, large, the current one filled. Plus a floating button. */
+.langs{display:inline-flex;margin:0;padding:3px;border-radius:999px;background:var(--fg);gap:2px;flex:none}
+.langs a{display:inline-block;padding:.45rem 1.05rem;border-radius:999px;font-weight:800;font-size:1.05rem;text-decoration:none;color:var(--bg);line-height:1.2}
+.langs a[lang=he]{font-family:var(--he-sans)}
+.langs a[aria-current]{background:var(--bg);color:var(--fg)}
+.langs a:not([aria-current]):hover{background:color-mix(in srgb,var(--bg) 22%,transparent)}
+.langs a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.switch .sw-d{margin:0;color:var(--muted)}.switch .sw-d strong{color:var(--fg)}.switch .sw-d a{font-weight:700}
+.lang-fab{position:fixed;z-index:60;bottom:1rem;inset-inline-end:1rem;display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1rem .55rem .55rem;border-radius:999px;
+  background:var(--fg);color:var(--bg);font-weight:800;font-size:1.05rem;text-decoration:none;box-shadow:0 10px 30px -10px rgba(0,0,0,.55);border:2px solid var(--bg)}
+.lang-fab span{display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--accent);color:var(--on-accent);font:800 1.15rem/1 var(--he-serif)}
+.lang-fab:hover{transform:translateY(-2px)}
+.lang-fab[lang=he]{font-family:var(--he-sans)}
+@media print{.lang-fab,.switch{display:none}}
+.draft-en{display:block;font-size:.85rem;color:var(--muted);margin-top:.3rem}
+.foot{padding-bottom:5rem}

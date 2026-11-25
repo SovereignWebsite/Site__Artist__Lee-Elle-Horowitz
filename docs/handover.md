@@ -13,7 +13,7 @@ For Lee-Elle Horowitz, and for Dinis Cruz until she takes it over. Kept by b.sit
 
 Your own text, as you supplied it: private Hebrew tuition for children, teenagers and adults as the main service, with music tuition as a smaller section. A few facts from your Spotlight profile appear in The stage design only (your training, three theatre credits, the Laurence Olivier Bursary nomination, and the instruments you play).
 
-It comes in six designs, each built around its own idea:
+It comes in five designs, each built around its own idea, and each in English and in Hebrew (right to left). The home page is in English; the switch at the top of every page, and the button in the corner, change the language.
 
 | Design | Idea | Address |
 |---|---|---|
@@ -22,14 +22,17 @@ It comes in six designs, each built around its own idea:
 | Three tenses | Past, present and future | /designs/three-tenses/ |
 | The stage | A theatre programme | /designs/the-stage/ |
 | Notebook | A plain, printable exercise book | /designs/notebook/ |
-| Ivrit (Hebrew) | The whole page in Hebrew, right to left, translated from your text for you to check | /designs/ivrit/ |
 
-Compare them at /designs/.
+Compare them at /designs/ (English) or /he/designs/ (Hebrew).
+
+Also on the site:
+- **/admin/**: the admin area: status, tasks, designs, content files, photos and credits, quality checks, every change, and the agents.
+- **/tour/**: two guided-tour presentations, as slides or PDF: a tour of your site, and how it was made.
 
 ## Decisions that are yours
 
 1. **Which design** becomes the home page, or which parts of which.
-2. **Hebrew.** At Dinis's request, the Ivrit design has the whole page in Hebrew: a translation of your text, marked on the page as not yet checked by you. Please correct it. The other designs use Hebrew letters only, no words, until you have checked them. Suggestions to correct or strike out are in `docs/hebrew-to-check.md`: your name, a verb in three tenses, a word for the Notebook cover, and your own Hebrew for the Conversation answers.
+2. **Hebrew.** At Dinis's request, every design has a Hebrew version: a translation of your text, marked on each page as not yet checked by you. Please correct it, in `site/data/content/he.json` or by sending corrections. Suggestions to correct or strike out are in `docs/hebrew-to-check.md`: your name, a verb in three tenses, a word for the Notebook cover, and your own Hebrew for the Conversation answers.
 3. **Photos.** The current photos are stand-ins, to show what can be done:
    - a portrait from the Guildford School of Acting graduates page, which does not name the photographer;
    - a cropped still from your showreel on Spotlight.
@@ -48,8 +51,11 @@ Compare them at /designs/.
 
 ## How it is built
 
-- Each page is one HTML file in `site/`. The five designs share `site/assets/base.css`; each has its own stylesheet in `site/assets/`.
-- `tools/designs/build.py` wrote the five designs, the design picker and the start page from one copy of your text. Once you choose a design and start editing pages directly, stop using it, or it will overwrite your edits.
+- **Every word is in JSON**, in `site/data/content/`: `en.json` (your words), `he.json` (the Hebrew), `site.json` (settings and links), `start.json`, `tour.json` and `admin.json`. Nothing is written into the HTML by hand.
+- `python3 tools/designs/build.py` builds every page from those files: ten design pages, two home pages, two pickers, the start page, the tour and the admin area. To change a word, change it in the JSON and rebuild.
+- The five designs share `site/assets/base.css`; each has its own stylesheet, and `he.css` turns any of them right to left.
+- The tour's screenshots and PDFs are made by `tools/tour/shots.mjs`, `tools/tour/build-images.py` and `tools/tour/pdf.mjs`.
+- Tasks are Markdown files in `issues/open`, `issues/blocked` and `issues/done`; the admin area shows them as a board.
 - Every change is checked before it goes live (`bash tools/check.sh`): links, link previews, HTML, and accessibility. A push to `dev` publishes in a minute or two. `main` is locked.
 
 ## Who looks after it

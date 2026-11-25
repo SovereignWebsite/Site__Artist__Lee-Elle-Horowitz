@@ -23,6 +23,6 @@ Rules for every change:
 - Plain British English, no em dashes.
 - Every new page needs the same Open Graph and Twitter tags as the existing pages (copy the `<head>` of one).
 
-How the pages were made: `tools/designs/build.py` generated the five designs, the picker and the start page from one copy of my text. If I have already edited pages directly, edit the HTML files instead of running it, or my edits are lost.
+How the pages are made: every word is in the JSON files in `site/data/content/` (`en.json` for my English, `he.json` for the Hebrew, and `site.json`, `start.json`, `tour.json`, `admin.json`). Never write words into the HTML. Change the JSON, then run `python3 tools/designs/build.py`, which rebuilds every page in both languages. If you change the look of a page, rebuild the tour too: see `docs/handover.md`. Keep the English and Hebrew files in step: a change to one needs the same change in the other.
 
 Tell me what you changed, in plain words, with the page links, once it is live.
