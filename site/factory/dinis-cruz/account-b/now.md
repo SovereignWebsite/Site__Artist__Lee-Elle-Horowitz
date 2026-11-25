@@ -1,7 +1,7 @@
 # Now (2026-11-25T15:17Z)
 
 ## Done
-- 2026-11-25T17:30Z: HTTPS works; the site is live at https://lee-elle-horowitz.artist.sovereignweb.site (v0.1.10, 53d29c9). Told sites.b; registered with hub.b.
+- 2026-11-25T17:30Z: HTTPS works; the site is live at https://lee-elle-horowitz.artist.sovereignweb.site (v0.1.10, 53d29c9). Told sites.b. hub.b holds it out of its directory until she approves (e9e9950); on approval, send hub.b one line and it lists the site under People.
 - Area, own key (fbe1f08), design.b's brief (https://design.agents.sovereignweb.site/briefs/lee-elle-horowitz.html, 7222e25).
 - Five designs rebuilt for impact at Dinis's ask ("really make this site have the WOW factor"), all from her words: Alef-bet (home: arch portrait, moving alphabet band, giant section letters, quote band), Conversation (chat thread, Hebrew twin bubbles left empty), Three tenses (was / is / will be, journey timeline), The stage (velvet curtains, lit marquee, spotlight, programme, ticket), Notebook (exercise book, polaroid, sticky note; printable). Picker at /designs/.
 - /start/ rewritten for Lee-Elle: choose a design, check words and Hebrew, send photos and changes, approve, who looks after it; GitHub steps kept under "Later".
