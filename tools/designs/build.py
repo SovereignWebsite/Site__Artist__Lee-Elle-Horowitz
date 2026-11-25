@@ -306,7 +306,7 @@ def slide(d, sl, n, total):
         inner = f'<div class="s-text">{k}<h2 class="s-h{" he-h" if t == "hebrew" else ""}">{sl["h"]}</h2><p class="s-p">{sl["p"]}</p>{extra}</div>{row}'
     elif t == 'capabilities':
         inner = (f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><ul class="s-caps">' +
-                 ''.join(f'<li>{img(x[2], "cap-img", 640, 400) if len(x) > 2 else ""}<strong>{x[0]}</strong><span>{x[1]}</span></li>' for x in sl['items']) + '</ul></div>')
+                 ''.join(f'<li>{img(x[2], "cap-img", 640, 400).replace(" loading=" + chr(34) + "lazy" + chr(34), "") if len(x) > 2 else ""}<strong>{x[0]}</strong><span>{x[1]}</span></li>' for x in sl['items']) + '</ul></div>')
     elif t == 'statement':
         inner = f'<div class="s-text wide">{k}<h2 class="s-h huge">{sl["h"]}</h2><p class="s-sub">{sl["sub"]}</p></div>'
     elif t == 'mirror':
