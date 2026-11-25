@@ -94,12 +94,20 @@ def langs(L, here, there):
             f'<a href="{en_href}" lang="en-GB" hreflang="en-GB"{cur if not he_on(L) else ""}>English</a>'
             f'<a href="{he_href}" lang="he" hreflang="he"{cur if he_on(L) else ""}>עברית</a></p>')
 
+def thumb(L, s): return SITE['thumbs'].replace('{slug}', s).replace('{lang}', L['code'])
+def card(L, s, i, cur=None, tag='li', lazy=True):
+    """One design as a card: a real screenshot of it, its number and name, and one line about it."""
+    p = pre(L); here = ' aria-current="page"' if s == cur else ''
+    return (f'<{tag} class="dc"><a href="{p}/designs/{s}/"{here}><img src="{thumb(L, s)}" width="640" height="400" alt=""{' loading="lazy"' if lazy else ''}>'
+            f'<strong>{i + 1}. {L["designs"][s][0]}</strong><span>{L["designs_short"][s]}</span></a></{tag}>')
+
 def switcher(L, cur, here, there):
-    """One line: the language switch, then all five designs (symbol and name; on a phone the symbol, and the name of the current one)."""
-    p = pre(L); cur_attr = ' aria-current="page"'
-    links = ''.join(f'<li><a href="{p}/designs/{s}/"{cur_attr if s == cur else ""} title="{L["designs"][s][0]}"><span class="pg" aria-hidden="true">{GLYPH[s]}</span><span class="pn">{L["designs"][s][0]}</span></a></li>' for s in SLUGS)
-    links += f'<li class="sw-all"><a href="{p}/designs/">{L["sw_compare"]}</a></li>'
-    return (f'<nav class="switch" aria-label="{L["sw_label"]}"><div class="switch-in">' + langs(L, here, there) + f'<ul>{links}</ul></div>'
+    """The language switch, and a "Choose a design" button that opens all five designs as screenshots (as on Emily's and Grace's sites)."""
+    p = pre(L)
+    cards = ''.join(card(L, s, i, cur) for i, s in enumerate(SLUGS))
+    return (f'<nav class="switch" aria-label="{L["sw_label"]}"><div class="switch-in">' + langs(L, here, there) +
+            f'<details class="chooser"><summary><span class="ch-ico" aria-hidden="true"></span>{L["sw_choose"]}</summary>'
+            f'<div class="ch-panel"><ul class="ch-grid">{cards}</ul><p class="ch-all"><a href="{p}/designs/">{L["sw_all"]}</a></p></div></details></div>'
             f'<a class="lang-fab" href="{there}" lang="{other(L)["lang"]}" hreflang="{other(L)["lang"]}" aria-label="{L["other_lang_long"]}">'
             f'<span aria-hidden="true">{"A" if he_on(L) else "א"}</span>{L["other_lang"]}</a></nav>\n')
 
@@ -249,16 +257,15 @@ def notebook(L):
 FN = {'alef-bet': alef, 'conversation': convo, 'three-tenses': tenses, 'the-stage': stage, 'notebook': notebook}
 
 def picker(L):
-    p = pre(L)
-    cards = ''.join(f'<li class="pc pc-{s}"><a href="{p}/designs/{s}/"><span class="pc-mark" aria-hidden="true">{GLYPH[s]}</span><strong>{i+1}. {L["designs"][s][0]}</strong><span>{L["designs"][s][1]}</span></a></li>' for i, s in enumerate(SLUGS))
+    cards = ''.join(card(L, s, i, lazy=False) for i, s in enumerate(SLUGS))
     return (brand(L) + '<main id="main">\n' + draft(L) + f'<p class="eyebrow">{L["pk_eyebrow"]}</p><h1>{L["pk_h"]}</h1>'
-      f'<p class="lead">{L["pk_lead"]}</p><ol class="picker">{cards}</ol></main>\n')
+      f'<p class="lead">{L["pk_lead"]}</p><ol class="ch-grid big">{cards}</ol></main>\n')
 def start():
     T = START; rep = lambda h: h.replace('{repo}', REPO)
-    picks = ''.join(f'<li class="pc pc-{s}"><a href="/designs/{s}/"><span class="pc-mark" aria-hidden="true">{GLYPH[s]}</span><strong>{i+1}. {EN["designs"][s][0]}</strong><span>{EN["designs"][s][1]}</span></a></li>' for i, s in enumerate(SLUGS))
+    picks = ''.join(card(EN, s, i, lazy=False) for i, s in enumerate(SLUGS))
     steps = ''
     for n, st in enumerate(T['steps'], 1):
-        inner = rep(st['html']) + (f'<ol class="picker">{picks}</ol>' if st.get('picker') else '') + rep(st.get('after', ''))
+        inner = rep(st['html']) + (f'<ol class="ch-grid big">{picks}</ol>' if st.get('picker') else '') + rep(st.get('after', ''))
         steps += f'<section class="step" aria-labelledby="st{n}"><p class="step-n" aria-hidden="true">{n}</p><div><h2 id="st{n}">{st["title"]}</h2>{inner}</div></section>'
     lt = T['later']
     later = (f'<section class="later" aria-labelledby="later"><h2 id="later">{lt["h2"]}</h2>' + rep(lt['intro']) +

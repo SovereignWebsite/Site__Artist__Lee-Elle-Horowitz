@@ -35,6 +35,11 @@ Fixed: Notebook cover alphabet right to left; Conversation's seven empty Hebrew 
 - Hebrew pages: Hebrew display type, heavier and larger; layout mirrored with logical CSS.
 - Dinis: "in the option to change the design I see all of them in one go" and "gain you one line from that top nav bar": the switcher is one line (languages and all five designs; symbols on a phone).
 
+## Design chooser (Dinis: "it should be like" Emily's and Grace's)
+- The top bar holds the language switch and one "Choose a design" button; it opens a panel of all five designs as real screenshots (number, name, one line), the current one outlined, and "All five, side by side". The compare page and /start/ use the same cards. Screenshots per language in site/assets/designs/, made by tools/designs/thumbs.mjs and thumbs.py.
+- Lesson sent to design.b, so other site keepers do not repeat it.
+- design.b.rounds' serious phone finding (Three tenses panels not focusable) fixed in d832576; tools/checks/axe-phone.mjs added.
+
 ## Open
 - Swap in the Spotlight portrait (credit Kim Hardy) when it arrives as a file; then her own photos.
 - /send/ enquiry form, with security.b's review.

@@ -205,5 +205,6 @@
     "Newsroom"
    ]
   ]
- }
+ },
+ "thumbs": "/assets/designs/{slug}.{lang}.webp"
 }

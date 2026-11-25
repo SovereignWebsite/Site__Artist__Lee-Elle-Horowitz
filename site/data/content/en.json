@@ -269,5 +269,15 @@
  "st_bill": "The bill",
  "cv_typing": "Lee-Elle is typing",
  "cv_quick": "Quick answers",
- "wall_label": "The Hebrew alphabet, from alef to tav"
+ "wall_label": "The Hebrew alphabet, from alef to tav",
+ "sw_choose": "Choose a design",
+ "sw_all": "All five, side by side",
+ "designs_short": {
+  "alef-bet": "An alphabet chart",
+  "conversation": "A chat with a parent",
+  "three-tenses": "Past, present and future",
+  "the-stage": "A theatre programme",
+  "notebook": "A ruled exercise book"
+ },
+ "sw_current": "This design"
 }
