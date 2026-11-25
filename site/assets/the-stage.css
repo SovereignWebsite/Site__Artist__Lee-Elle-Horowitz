@@ -14,7 +14,7 @@ body{position:relative}
 .presents{font-size:.95rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin:0 0 1.4rem}
 .marquee{position:relative;padding:2rem 1.2rem 1.6rem;border:3px solid var(--gold);border-radius:1rem;background:linear-gradient(#2a1310,#1a0b0a);box-shadow:0 0 0 6px var(--bg),0 0 0 8px var(--gold),0 0 60px -10px rgba(233,189,91,.5)}
 .marquee::before{content:"";position:absolute;inset:.5rem .8rem;pointer-events:none;
-  background:radial-gradient(circle,#ffe7a3 0 2.5px,transparent 3.5px) left top/22px 12px repeat-x,radial-gradient(circle,#ffe7a3 0 2.5px,transparent 3.5px) left bottom/22px 12px repeat-x;opacity:.95;animation:bulbs 1.6s steps(2) infinite}
+  background:radial-gradient(circle,#ffe7a3 0 2.5px,transparent 3.5px) left top/22px 12px repeat-x,radial-gradient(circle,#ffe7a3 0 2.5px,transparent 3.5px) left bottom/22px 12px repeat-x;opacity:.95}
 @keyframes bulbs{50%{opacity:.55}}
 .marquee h1{font-size:clamp(2.3rem,9vw,4.4rem);line-height:1;margin:0;color:#fff4dc;letter-spacing:.01em;text-shadow:0 0 18px rgba(233,189,91,.45)}
 .with{font-style:italic;font-size:clamp(1.2rem,4vw,1.7rem);color:#e9bd5b;margin:.6rem 0 0}
@@ -69,3 +69,25 @@ body{position:relative}
 @media (max-width:40rem){.ticket{padding-inline:2.4rem}.ticket .btn{font-size:.95rem}}
 .presents,.act-n,.act h3,.interval,.rule{font-size:1rem;letter-spacing:.18em}
 .switch{z-index:25}.switch ul a{background:var(--paper)}
+
+/* Wow pass: a dark stage first, her name like a poster, a pool of light, curtains that draw back once, a ticket stub. */
+.cover{position:relative;overflow:hidden;margin:0 calc(50% - 50vw);padding:2.4rem max(1.4rem,calc(50vw - 23rem)) 3rem;background:radial-gradient(ellipse at 50% 38%,#4a1c1f 0%,#14090b 62%);color:#f5ead8}
+.cover .presents{color:#e9bd5b}.cover .lead{color:#e8dcc6}
+.poster-name{font:700 clamp(2.6rem,12vw,5.6rem)/.95 var(--serif);color:#e9bd5b;margin:.4rem 0 1rem;letter-spacing:.01em;text-shadow:0 0 30px rgba(233,189,91,.35)}
+.cover .spot{margin:0 auto 1.6rem}
+.cover .spot::before{background:radial-gradient(ellipse at 50% 35%,rgba(255,236,180,.55),transparent 62%)}
+.cover .portrait figcaption{color:#cbb99a}.cover .portrait figcaption a{color:#e9bd5b}
+.cover .marquee h1{font-size:clamp(1.8rem,7vw,3rem)}
+.drape{position:absolute;top:0;bottom:0;width:51%;z-index:5;pointer-events:none;background:repeating-linear-gradient(90deg,#5c0f1b 0 .7rem,#8e1b2c 1.6rem,#5c0f1b 2.5rem);box-shadow:0 0 50px rgba(0,0,0,.8)}
+.drape.l{inset-inline-start:0;animation:open-l 1.4s .25s cubic-bezier(.7,0,.3,1) forwards}
+.drape.r{inset-inline-end:0;animation:open-r 1.4s .25s cubic-bezier(.7,0,.3,1) forwards}
+@keyframes open-l{to{transform:translateX(-102%)}}@keyframes open-r{to{transform:translateX(102%)}}
+[dir=rtl] .drape.l{animation-name:open-r}[dir=rtl] .drape.r{animation-name:open-l}
+@media (prefers-reduced-motion:reduce){.drape{display:none}}
+.stub .btn{position:relative;background:#f5e6c8;color:#2a1508;border-radius:.3rem;padding:1rem 1.6rem;box-shadow:none;border:2px dashed #8e1b2c}
+.stub .btn .soon{color:#5a3d26}
+.bill{margin:1rem 0 2.5rem}
+.running{list-style:none;padding:0;margin:0}
+.running li{display:flex;align-items:baseline;gap:.8rem;margin:0;padding:.7rem 0;border-bottom:1px dotted var(--line);font-size:1.2rem}
+.running span{font:700 .9rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);min-width:8.5rem}
+.facts{margin-top:0}

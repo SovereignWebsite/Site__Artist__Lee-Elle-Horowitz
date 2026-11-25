@@ -47,3 +47,26 @@ main{max-width:52rem;margin:0 auto;padding:0 1.25rem}
 /* round 2: no empty Hebrew boxes; the closing button is a plain row, not a fake text field */
 .her .en{max-width:min(40rem,92%)}
 .compose{position:static;justify-content:center;background:none;border:0;box-shadow:none;padding:0}
+/* Wow pass: no hero, start talking. A typing indicator, her photo as the avatar, quick replies, a reply box that stays. */
+.thread-title{font-size:clamp(1.05rem,3.5vw,1.3rem);text-align:center;color:var(--muted);margin:1.2rem 0 0;font-weight:700}
+.thread{margin-top:1rem}
+.her{display:grid;grid-template-columns:2.5rem minmax(0,1fr);gap:.6rem;align-items:end}
+.av{width:2.5rem;height:2.5rem;border-radius:50%;object-fit:cover;object-position:50% 18%;box-shadow:0 0 0 2px var(--paper)}
+.her .en{max-width:min(36rem,100%)}
+.typing{display:inline-flex;gap:.3rem;padding:.7rem .9rem;margin:0 0 0 3.1rem;background:var(--paper);border:1px solid var(--line);border-radius:1.2rem;width:max-content;
+  animation:typed .1s 1.6s forwards}
+.typing span{width:.5rem;height:.5rem;border-radius:50%;background:var(--muted);animation:dot .5s ease-in-out 3 alternate}
+.typing span:nth-child(2){animation-delay:.15s}.typing span:nth-child(3){animation-delay:.3s}
+@keyframes dot{to{transform:translateY(-.3rem);opacity:.5}}
+@keyframes typed{to{opacity:.35}}
+.quick{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.9rem}
+.quick details{flex:0 1 auto}
+.quick summary{display:inline-flex;align-items:center;gap:.4rem;cursor:pointer;list-style:none;padding:.45rem .85rem;border:1.5px solid var(--accent);color:var(--accent);background:var(--paper);border-radius:999px;font-weight:700;font-size:.9rem}
+.quick summary::-webkit-details-marker{display:none}
+.quick details[open] summary{background:var(--accent);color:var(--on-accent)}
+.quick details p{margin:.5rem 0 0;padding:.6rem .8rem;background:var(--bg);border-radius:.8rem;font-size:.95rem}
+.compose{position:sticky;bottom:.6rem;z-index:30;display:flex;align-items:center;gap:.6rem;margin:2rem 0 0;padding:.35rem .35rem .35rem 1.1rem;background:var(--paper);border:1.5px solid var(--accent);border-radius:999px;box-shadow:0 12px 30px -16px rgba(20,32,43,.55);justify-content:space-between}
+.compose .field{font-weight:700;color:var(--fg)}
+.compose .send{background:var(--accent);color:var(--on-accent);border-radius:999px;padding:.5rem .9rem;font-size:.85rem;font-weight:600}
+.d-conversation .lang-fab{bottom:4.6rem}
+@media (max-width:30rem){.compose .field{display:block;font-size:.95rem}.compose{justify-content:space-between;padding:.35rem .35rem .35rem 1rem}}

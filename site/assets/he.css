@@ -26,3 +26,13 @@ h1,h2,h3,.stats strong,.quote p{font-family:var(--he-serif)}
 .ticks li{padding-inline-start:1.6rem}
 /* The Sovereign Website menu stays at the physical top right, so leave room for it at the start (right) in Hebrew */
 @media (min-width:52rem){.switch-in{padding-inline-end:1.25rem;padding-inline-start:11rem}}
+/* Wow pass for the Hebrew pages: Hebrew as the display type, heavier and larger than any English heading. */
+.hero h1,.page h1,.marquee h1,.intro h1{font-family:var(--he-sans);font-weight:900;letter-spacing:-.01em}
+.d-alef-bet .hero h1{font-size:clamp(3rem,9vw,6.4rem);line-height:.98}
+.d-alef-bet .hero h1 span{font-family:var(--he-serif);font-weight:400}
+.poster-name{font-family:var(--serif)}
+.typing{margin:0 3.1rem 0 0}
+.compose{padding:.35rem 1.1rem .35rem .35rem}
+.cover{padding:2.5rem 2.4rem 2rem 1.6rem}
+.d-the-stage .cover{padding:2.4rem max(1.4rem,calc(50vw - 23rem)) 3rem}
+.hero .conj{font-style:normal;font-family:var(--he-sans);font-weight:900}

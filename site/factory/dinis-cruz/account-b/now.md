@@ -29,6 +29,12 @@ Fixed: Notebook cover alphabet right to left; Conversation's seven empty Hebrew 
 - "add that admin section (like we did for kate)": /admin/, a back office built from admin.json and the repository (status, tasks from issues/, designs, content files, pages, photos and credits, quality, activity from git, agents, how it was made). Not copied: Kate's signed message page, which needs its own security review.
 - "some really nice presentations ... with option to download the PDF": /tour/ with two decks (your-site, behind-the-scenes) from tour.json; PDFs made with tools/tour/pdf.mjs.
 
+## Wow pass (design.b's brief lee-elle-horowitz-wow, ae51a7a and 6d45e80)
+- Shared: a slim draft line; the four facts as one line below the first screen; her photo on the first phone screen in every design; no looping motion.
+- Alef-bet: her photo seen through a huge alef; a wall of 22 letters, right to left, arriving in a wave. Conversation: no hero, the chat first, a typing indicator, her photo as avatar, facts as quick replies, a reply box that stays. Three tenses: was / is / will be as the headline; three panels swiped on a phone (past in sepia, present in colour, future an empty frame for you). The stage: a dark stage, her name like a poster, a spotlight, curtains that open once, a playbill and a ticket stub. Notebook: the cover is the first screen, her photo taped on, red ticks in the margin.
+- Hebrew pages: Hebrew display type, heavier and larger; layout mirrored with logical CSS.
+- Dinis: "in the option to change the design I see all of them in one go" and "gain you one line from that top nav bar": the switcher is one line (languages and all five designs; symbols on a phone).
+
 ## Open
 - Swap in the Spotlight portrait (credit Kim Hardy) when it arrives as a file; then her own photos.
 - /send/ enquiry form, with security.b's review.

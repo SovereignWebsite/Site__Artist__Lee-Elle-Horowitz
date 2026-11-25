@@ -261,5 +261,13 @@
  "pk_lead": "אותן מילים, חמישה עמודים שונים, כל אחד באנגלית ובעברית. אפשר לפתוח כל אחד בטלפון ולספר איזה הכי אהבת, או אילו חלקים מכל אחד.",
  "skip": "דילוג לתוכן",
  "about_links_label": "על האתר",
- "_note": "The keeper's Hebrew translation of her words, for her to check. Edit here; then run python3 tools/designs/build.py."
+ "_note": "The keeper's Hebrew translation of her words, for her to check. Edit here; then run python3 tools/designs/build.py.",
+ "draft_line": "<strong>טיוטה:</strong> עדיין לא אושר על ידי <bdi lang=\"en\">Lee-Elle</bdi>, והתרגום טרם נבדק. <span lang=\"en-GB\" dir=\"ltr\" class=\"draft-en\">Draft: not yet approved; translation unchecked.</span>",
+ "facts_label": "במבט אחד",
+ "tn_you": "את/ה",
+ "tn_you_label": "מסגרת ריקה, בשבילך: התלמיד או התלמידה.",
+ "st_bill": "התוכנייה",
+ "cv_typing": "מקלידה",
+ "cv_quick": "תשובות מהירות",
+ "wall_label": "האלף־בית העברי, מא׳ ועד ת׳"
 }

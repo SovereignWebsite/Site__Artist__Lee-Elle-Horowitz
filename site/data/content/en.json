@@ -261,5 +261,13 @@
  "pk_lead": "The same words, five different pages, each in English and in Hebrew. Open each one on your phone, then say which you like best, or which parts of which.",
  "skip": "Skip to content",
  "about_links_label": "About this site",
- "_note": "Her words as she supplied them. Edit here; then run python3 tools/designs/build.py."
+ "_note": "Her words as she supplied them. Edit here; then run python3 tools/designs/build.py.",
+ "draft_line": "<strong>Draft:</strong> not yet approved by Lee-Elle.",
+ "facts_label": "At a glance",
+ "tn_you": "you",
+ "tn_you_label": "An empty frame, for you: the student.",
+ "st_bill": "The bill",
+ "cv_typing": "Lee-Elle is typing",
+ "cv_quick": "Quick answers",
+ "wall_label": "The Hebrew alphabet, from alef to tav"
 }

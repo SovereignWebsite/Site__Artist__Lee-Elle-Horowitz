@@ -95,10 +95,11 @@ def langs(L, here, there):
             f'<a href="{he_href}" lang="he" hreflang="he"{cur if he_on(L) else ""}>עברית</a></p>')
 
 def switcher(L, cur, here, there):
-    p = pre(L)
-    links = ''.join(f'<li><a href="{p}/designs/{s}/"{" aria-current=\"page\"" if s == cur else ""}>{L["designs"][s][0]}</a></li>' for s in SLUGS)
-    return (f'<nav class="switch" aria-label="{L["sw_label"]}"><div class="switch-in">' + langs(L, here, there) +
-            f'<p class="sw-d">{L["sw_draft"]} <a href="{p}/designs/">{L["sw_compare"]}</a></p><ul>{links}</ul></div>'
+    """One line: the language switch, then all five designs (symbol and name; on a phone the symbol, and the name of the current one)."""
+    p = pre(L); cur_attr = ' aria-current="page"'
+    links = ''.join(f'<li><a href="{p}/designs/{s}/"{cur_attr if s == cur else ""} title="{L["designs"][s][0]}"><span class="pg" aria-hidden="true">{GLYPH[s]}</span><span class="pn">{L["designs"][s][0]}</span></a></li>' for s in SLUGS)
+    links += f'<li class="sw-all"><a href="{p}/designs/">{L["sw_compare"]}</a></li>'
+    return (f'<nav class="switch" aria-label="{L["sw_label"]}"><div class="switch-in">' + langs(L, here, there) + f'<ul>{links}</ul></div>'
             f'<a class="lang-fab" href="{there}" lang="{other(L)["lang"]}" hreflang="{other(L)["lang"]}" aria-label="{L["other_lang_long"]}">'
             f'<span aria-hidden="true">{"A" if he_on(L) else "א"}</span>{L["other_lang"]}</a></nav>\n')
 
@@ -118,22 +119,35 @@ def brand(L, extra=''):
 def jump(L):
     return f'<nav class="jump" aria-label="{L["jump_label"]}">' + ''.join(f'<a href="#{i}">{t}</a>' for i, t in L['jump']) + '</nav>'
 
-# ---------- 1 Alef-bet ----------
+# ---------- shared by all five: a slim draft line, facts below the first screen ----------
+def draft(L): return f'<p class="draft-line" role="note">{L["draft_line"]}</p>'
+def facts(L):
+    return f'<ul class="facts" aria-label="{L["facts_label"]}">' + ''.join(f'<li>{icon(k)}{t}</li>' for k, t in zip(['one', 'pin', 'screen', 'check'], L['chips'])) + '</ul>'
+def hel(L, c, cls=''):
+    """A single Hebrew letter: marked as Hebrew on English pages; plain on Hebrew pages."""
+    c_ = f' class="{cls}"' if cls else ''
+    return f'<span{c_} lang="he" dir="rtl">{c}</span>' if not he_on(L) else f'<span{c_}>{c}</span>'
+def credit_line(L, i=1):
+    return f'<p class="credit-line" lang="en-GB" dir="ltr">{L["credit"] if i == 1 else L["credit2"]}</p>'
+def wall(L):
+    en = not he_on(L)
+    return (f'<div class="wall" dir="rtl" role="img" aria-label="{L["wall_label"]}">' + ''.join(
+        f'<span class="w" style="--i:{n}"><b lang="he">{c}</b>' + (f'<small lang="en-GB">{nm}</small>' if en else '') + '</span>' for n, (c, nm) in enumerate(ALEFBET)) + '</div>')
+
+# ---------- 1 Alef-bet: her photo seen through a huge alef ----------
 def alef(L):
     H = L['h']; en = not he_on(L)
-    def g(c, cls): return f'<span class="{cls}" lang="he" dir="rtl">{c}</span>' if en else f'<span class="{cls}">{c}</span>'
-    band = '<div class="band" aria-hidden="true"><div class="band-track">' + ''.join(f'<span class="band-l">{g(c, "band-g")}' + (f'<span class="band-n">{n}</span>' if en else '') + '</span>' for c, n in ALEFBET * 2) + '</div></div>'
     def sec(i, title, inner, cls=''):
         c, n = ALEFBET[i]
-        return f'<section class="sec {cls}" aria-labelledby="s{i}"><div class="sec-head">{g(c, "sec-g")}' + (f'<span class="sec-n">{n}</span>' if en else '') + f'</div><div class="sec-body"><h2 id="s{i}">{title}</h2>{inner}</div></section>'
-    tiles = '<ul class="tiles">' + ''.join(f'<li>{g(c, "tile-g")}' + (f'<span class="tile-n">{n}</span>' if en else '') + f'<span class="tile-t">{t}</span></li>' for (c, n), t in zip(ALEFBET, L['lessons'])) + '</ul>'
+        return f'<section class="sec {cls}" aria-labelledby="s{i}"><div class="sec-head">{hel(L, c, "sec-g")}' + (f'<span class="sec-n">{n}</span>' if en else '') + f'</div><div class="sec-body"><h2 id="s{i}">{title}</h2>{inner}</div></section>'
+    tiles = '<ul class="tiles">' + ''.join(f'<li>{hel(L, c, "tile-g")}' + (f'<span class="tile-n">{n}</span>' if en else '') + f'<span class="tile-t">{t}</span></li>' for (c, n), t in zip(ALEFBET, L['lessons'])) + '</ul>'
     stats = '<ul class="stats">' + ''.join(f'<li><strong>{a}</strong><span>{b}</span></li>' for a, b in L['stats']) + '</ul>'
     fmt = '<ul class="fmt">' + ''.join(f'<li>{icon(k)}<strong>{a}</strong><span>{b}</span></li>' for k, a, b in L['fmt']) + '</ul>'
     who = '<ul class="who">' + ''.join(f'<li><strong>{a}</strong><span>{b}</span></li>' for a, b in L['who']) + '</ul>'
     return (brand(L, jump(L)) + '<main id="main">\n' + draft(L) +
-      f'<section class="hero" aria-labelledby="h1"><div class="hero-text"><p class="eyebrow">{L["eyebrow"]}</p>'
-      f'<h1 id="h1">{L["title_a"]} <span>{L["title_b"]}</span></h1><p class="lead">{L["lead"]}</p>' + chips(L) + cta(L) + '</div>'
-      '<div class="hero-art"><span class="hero-g" lang="he" dir="rtl" aria-hidden="true">א</span>' + fig(L, 'arch') + '</div></section>\n' + band + stats +
+      f'<section class="hero" aria-labelledby="h1"><div class="alef-photo" role="img" aria-label="{L["alt"]}"><span class="alef-g" aria-hidden="true">א</span></div>'
+      f'<div class="hero-text"><p class="eyebrow">{L["eyebrow"]}</p><h1 id="h1">{L["title_a"]} <span>{L["title_b"]}</span></h1><p class="lead">{L["lead"]}</p>' + cta(L) + '</div></section>\n' +
+      credit_line(L) + facts(L) + wall(L) + stats +
       sec(0, H['about'], paras(L['about']) + who) +
       sec(1, H['lessons'], f'<p class="hint">{L["ab_hint"]}</p>' + tiles, 'wide') +
       f'<blockquote class="quote"><p>{L["quote"]}</p><footer>{L["name"]}</footer></blockquote>' +
@@ -143,59 +157,70 @@ def alef(L):
       sec(5, H['music'], f'<p>{L["music_note"]}</p>' + '<ul class="music">' + ''.join(f'<li>{icon("note")}{m}</li>' for m in L['music']) + '</ul>', 'music') +
       f'<section class="end" aria-labelledby="end"><span class="end-g" lang="he" dir="rtl" aria-hidden="true">ת</span><h2 id="end">{L["ab_end"]}</h2><p>{L["ab_end_p"]}</p>' + cta(L) + '</section></main>\n')
 
-# ---------- 2 Conversation ----------
+# ---------- 2 Conversation: no hero, start talking ----------
 def convo(L):
     n = [0]; en = not he_on(L)
+    av = f'<img class="av" src="{PHOTO["portrait"]["src"]}" width="40" height="53" alt="">'
     def you(t): return f'<li class="msg you"><p>{t}</p></li>'
     def her(inner):
         c, nm = ALEFBET[n[0]]; n[0] += 1
-        mk = f'<span class="mk-g" lang="he" dir="rtl">{c}</span> <span class="mk-n">{nm}</span>' if en else f'<span class="mk-g">{c}</span>'
-        return f'<li class="msg her"><div class="en"><p class="mk">{mk}</p>{inner}</div></li>'
+        mk = hel(L, c, 'mk-g') + (f' <span class="mk-n">{nm}</span>' if en else '')
+        return f'<li class="msg her">{av}<div class="en"><p class="mk">{mk}</p>{inner}</div></li>'
     q = L['cv_q']
+    answers = [L['lead'], L['fmt'][0][2], L['fmt'][1][2], L['quals'][5]]
+    quick = (f'<div class="quick" role="group" aria-label="{L["cv_quick"]}">' + ''.join(
+        f'<details><summary>{icon(k)}{t}</summary><p>{a}</p></details>' for k, t, a in zip(['one', 'pin', 'screen', 'check'], L['chips'], answers)) + '</div>')
     replies = '<ul class="replies">' + ''.join(f'<li>{l}</li>' for l in L['lessons']) + '</ul>'
-    return (f'<header class="chat-top"><a class="brand" href="{pre(L)}/"><img class="ava" src="/assets/photo/lee-elle-horowitz.webp" width="48" height="64" alt="">'
+    return (f'<header class="chat-top"><a class="brand" href="{pre(L)}/"><img class="ava" src="{PHOTO["portrait"]["src"]}" width="48" height="64" alt="">'
       f'<span><strong>{L["name"]}</strong><span class="status">{L["cv_status"]}</span></span></a></header>\n<main id="main">\n' + draft(L) +
-      f'<section class="intro" aria-labelledby="h1"><h1 id="h1">{L["title"]}</h1><p class="lead">{L["lead"]} {L["cv_lead_more"]}</p>' + chips(L) + cta(L) + '</section>'
-      f'<h2 class="vh">{L["cv_h"]}</h2><ol class="thread"><li class="day" aria-hidden="true">{L["cv_day"]}</li>' +
-      you(q[0]) + her(paras(L['about'][:1]) + fig(L, 'inline')) +
+      f'<h1 id="h1" class="thread-title">{L["title"]}</h1>'
+      f'<ol class="thread"><li class="day" aria-hidden="true">{L["cv_day"]}</li>' +
+      you(q[0]) + f'<li class="typing" aria-hidden="true"><span></span><span></span><span></span></li>' +
+      her(paras(L['about'][:1]) + fig(L, 'inline') + quick) +
       you(q[1]) + her(paras(L['about'][1:])) +
       you(q[2]) + her(f'<p>{L["cv_can"]}</p>' + replies) +
       you(q[3]) + her(f'<p>{L["approach"]} {L["quote"]}</p>') +
       you(q[4]) + her(ul(L['quals'], 'ticks')) +
       you(q[5]) + her(ul([b for _, _, b in L['fmt']])) +
       you(q[6]) + her(f'<p>{L["cv_music"]}</p>' + ul(L['music'])) +
-      f'</ol><p class="note">{L["cv_note"]}</p><div class="compose">' + cta(L) + '</div></main>\n')
+      f'</ol><p class="note">{L["cv_note"]}</p><div class="compose"><span class="field">{L["cta"]}</span><span class="send">{L["soon"]}</span></div></main>\n')
 
-# ---------- 3 Three tenses ----------
+# ---------- 3 Three tenses: three panels, one photo three ways ----------
 def tenses(L):
     lab, hh = L['tn_labels'], L['tn_h']; H = L['h']
     journey = '<ol class="journey">' + ''.join(f'<li><span class="dot" aria-hidden="true"></span><strong>{a}</strong><span>{b}</span></li>' for a, b in L['journey']) + '</ol>'
     grid = '<ul class="lgrid">' + ''.join(f'<li>{t}</li>' for t in L['lessons']) + '</ul>'
     fmt = '<ul class="fmt">' + ''.join(f'<li>{icon(k)}<span>{b}</span></li>' for k, _, b in L['fmt']) + '</ul>'
-    def he_l(c): return f' <span class="t-he" lang="he" dir="rtl">{c}</span>' if not he_on(L) else f' <span class="t-he">{c}</span>'
     w0, w1, w2 = L['tn_words']
     return (brand(L) + '<main id="main">\n' + draft(L) +
-      f'<section class="hero" aria-labelledby="h1"><p class="eyebrow">{L["eyebrow"]}</p><h1 id="h1">{L["title"]}</h1>'
-      f'<p class="conj" aria-hidden="true"><span class="p">{w0}</span><span class="n">{w1}</span><span class="f">{w2}</span></p>'
-      f'<p class="lead">{L["lead"]} {L["tn_lead_more"]}</p>' + chips(L) + cta(L) + '</section>'
+      f'<section class="hero" aria-labelledby="h1"><h1 id="h1"><span class="vh">{L["title"]}: </span>'
+      f'<span class="conj"><span class="p">{w0}</span><span class="n">{w1}</span><span class="f">{w2}</span></span></h1>'
+      f'<p class="lead">{L["lead"]} {L["tn_lead_more"]}</p></section>'
       f'<nav class="tabs" aria-label="{L["tn_tabs"]}"><a href="#past" class="p">{lab[0]}</a><a href="#present" class="n">{lab[1]}</a><a href="#future" class="f">{lab[2]}</a></nav>'
-      f'<section id="past" class="tense past" aria-labelledby="past-h"><p class="t-label">{lab[0]}{he_l("א")}</p><h2 id="past-h">{hh[0]}</h2><div class="split">' + fig(L, 'photo') +
-      '<div>' + paras(L['about'][:1]) + journey + '</div></div></section>'
-      f'<section id="present" class="tense present" aria-labelledby="present-h"><p class="t-label">{lab[1]}{he_l("ב")}</p><h2 id="present-h">{hh[1]}</h2>' + paras(L['about'][1:]) +
-      f'<h3>{H["lessons"]}</h3>' + grid + f'<h3>{H["approach"]}</h3><p>{L["approach"]}</p><h3>{H["fmt"]}</h3>' + fmt +
-      f'<h3>{H["quals"]}</h3>' + ul(L['quals'], 'ticks') +
-      f'<div class="music"><h3>{H["music"]}</h3><p>{L["music_note"]}</p>' + ul(L['music']) + '</div></section>'
-      f'<section id="future" class="tense future" aria-labelledby="future-h"><p class="t-label">{lab[2]}{he_l("ג")}</p><h2 id="future-h">{hh[2]}</h2><p class="big">{L["quote"]}</p>' + cta(L) + '</section></main>\n')
+      f'<div class="panels">'
+      f'<section id="past" class="tense past" aria-labelledby="past-h"><p class="t-label">{lab[0]} {hel(L, "א", "t-he")}</p><h2 id="past-h">{hh[0]}</h2>' + fig(L, 'photo') + paras(L['about'][:1]) + journey + '</section>'
+      f'<section id="present" class="tense present" aria-labelledby="present-h"><p class="t-label">{lab[1]} {hel(L, "ב", "t-he")}</p><h2 id="present-h">{hh[1]}</h2>' + fig(L, 'photo') + paras(L['about'][1:]) +
+      f'<h3>{H["lessons"]}</h3>' + grid + f'<h3>{H["fmt"]}</h3>' + fmt + '</section>'
+      f'<section id="future" class="tense future" aria-labelledby="future-h"><p class="t-label">{lab[2]} {hel(L, "ג", "t-he")}</p><h2 id="future-h">{hh[2]}</h2>'
+      f'<div class="you-frame" role="img" aria-label="{L["tn_you_label"]}"><span>{L["tn_you"]}</span></div><p class="big">{L["quote"]}</p>' + cta(L) + '</section></div>' +
+      facts(L) +
+      f'<section class="more" aria-labelledby="more-h"><h2 id="more-h">{H["quals"]}</h2>' + ul(L['quals'], 'ticks') +
+      f'<h3>{H["approach"]}</h3><p>{L["approach"]}</p><div class="music"><h3>{H["music"]}</h3><p>{L["music_note"]}</p>' + ul(L['music']) + '</div></section></main>\n')
 
-# ---------- 4 The stage ----------
+# ---------- 4 The stage: a spotlight, a curtain, a bill and a ticket ----------
 def stage(L):
-    a = L['st_acts']; H = L['h']; en = not he_on(L)
-    def ah(c): return f' <span class="act-he" lang="he" dir="rtl">{c}</span>' if en else f' <span class="act-he">{c}</span>'
-    scenes = '<ol class="scenes">' + ''.join(f'<li><span>' + (f'<span lang="he" dir="rtl">{c}</span>' if en else c) + f' {L["st_scene"]} {i+1}</span>{t}</li>' for i, ((c, _), t) in enumerate(zip(ALEFBET, L['lessons']))) + '</ol>'
+    a = L['st_acts']; H = L['h']
+    def ah(c): return ' ' + hel(L, c, 'act-he')
+    scenes = '<ol class="scenes">' + ''.join(f'<li><span>' + hel(L, c) + f' {L["st_scene"]} {i+1}</span>{t}</li>' for i, ((c, _), t) in enumerate(zip(ALEFBET, L['lessons']))) + '</ol>'
+    bill = (f'<section class="bill" aria-labelledby="bill-h"><h2 id="bill-h" class="rule">{L["st_bill"]}</h2><ol class="running">'
+            f'<li><span>{a[0]}</span>{L["st_a1"]}</li><li><span>{L["st_interval"]}</span></li><li><span>{a[1]}</span>{L["st_a2"]}</li><li><span>{a[2]}</span>{L["st_a3"]}</li></ol></section>')
+    stub = f'<p class="cta stub"><span class="btn" role="note">{L["cta"]} <span class="soon">{L["soon"]}</span></span></p>'
     return ('<main id="main">\n<div class="curtain l" aria-hidden="true"></div><div class="curtain r" aria-hidden="true"></div>\n' + draft(L) +
-      f'<section class="cover" aria-labelledby="h1"><p class="presents">{L["st_presents"]}</p>'
+      f'<section class="cover" aria-labelledby="h1"><div class="drape l" aria-hidden="true"></div><div class="drape r" aria-hidden="true"></div>'
+      f'<p class="presents">{L["st_presents"]}</p><p class="poster-name" aria-hidden="true">{L["name"]}</p>'
+      '<div class="spot">' + fig(L, 'portrait') + '</div>'
       f'<div class="marquee"><h1 id="h1">{L["title_a"]}</h1><p class="with">{L["title_b"]}</p></div>'
-      f'<p class="lead">{L["lead"]}</p>' + chips(L) + cta(L) + '<div class="spot">' + fig(L, 'portrait') + '</div></section>\n'
+      f'<p class="lead">{L["lead"]}</p>' + stub + '</section>\n' + facts(L) + bill +
       f'<section class="act" aria-labelledby="a1"><p class="act-n">{a[0]}{ah("א")}</p><h2 id="a1">{L["st_a1"]}</h2>'
       f'<h3>{H["lessons"]}</h3>' + scenes + paras(L['about']) +
       f'<h3>{H["approach"]}</h3><p>{L["approach"]} {L["quote"]}</p><h3>{H["fmt"]}</h3>' + ul([b for _, _, b in L['fmt']]) + '</section>'
@@ -207,16 +232,15 @@ def stage(L):
       f'<p><a class="reel" href="{SHOWREELS}" rel="noopener">{L["st_reel"]}</a> <span class="ext">{L["st_ext"]}</span></p></section>'
       f'<section class="ticket" aria-labelledby="tk"><h2 id="tk">{L["st_ticket"]}</h2><p>{L["st_ticket_p"]}</p>' + cta(L) + '</section></main>\n')
 
-# ---------- 5 Notebook ----------
+# ---------- 5 Notebook: the cover is the first screen ----------
 def notebook(L):
-    H = L['h']; en = not he_on(L)
-    def lg(c): return f'<span lang="he" dir="rtl">{c}</span>' if en else c
+    H = L['h']
     dl = '<dl class="label">' + ''.join(f'<div><dt>{a}</dt><dd>{b}</dd></div>' for a, b in L['nb_label']) + '</dl>'
     return ('<main id="main">\n' + draft(L) +
-      f'<div class="book"><div class="cover"><p class="label-k">{L["nb_book"]}</p>' + dl +
-      '<p class="cover-ab" dir="rtl" aria-hidden="true">' + ' '.join(lg(c) for c, _ in ALEFBET) + '</p></div>'
-      f'<section class="page" aria-labelledby="h1"><h1 id="h1">{L["title"]}</h1><p class="lead"><mark>{L["lead"]}</mark></p>' + chips(L) + cta(L) + fig(L, 'polaroid') +
-      f'<h2>{H["about"]}</h2>' + paras(L['about']) + f'<h2>{H["lessons"]}</h2><ol class="ex">' + ''.join(f'<li><span class="ex-g"' + (' lang="he" dir="rtl"' if en else '') + f'>{c}</span> {t}</li>' for (c, _), t in zip(ALEFBET, L['lessons'])) + '</ol>'
+      f'<div class="book"><div class="cover"><p class="label-k">{L["nb_book"]}</p><div class="cover-row">' + dl + fig(L, 'polaroid') + '</div>'
+      '<p class="cover-ab" dir="rtl" aria-hidden="true">' + ' '.join(hel(L, c) for c, _ in ALEFBET) + '</p><p class="open-hint" aria-hidden="true">↓</p></div>'
+      f'<section class="page" aria-labelledby="h1"><h1 id="h1">{L["title"]}</h1><p class="lead"><mark>{L["lead"]}</mark></p>' + cta(L) + facts(L) +
+      f'<h2>{H["about"]}</h2>' + paras(L['about']) + f'<h2>{H["lessons"]}</h2><ol class="ex">' + ''.join(f'<li>{hel(L, c, "ex-g")} {t}</li>' for (c, _), t in zip(ALEFBET, L['lessons'])) + '</ol>'
       f'<h2>{H["approach"]}</h2><p>{L["approach"]}</p><p><mark>{L["quote"]}</mark></p>'
       f'<h2>{H["quals"]}</h2>' + ul(L['quals'], 'ticks') + f'<h2>{H["fmt"]}</h2>' + ul([b for _, _, b in L['fmt']]) +
       f'<h2>{H["music"]}</h2><p>{L["music_note"]}</p>' + ul(L['music']) +
