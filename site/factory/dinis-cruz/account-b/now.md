@@ -1,6 +1,7 @@
 # Now (2026-11-25T11:57Z)
 
 ## Done
+- Showreels link from Dinis added to The stage as a plain outbound link (no embed: nothing is loaded from outside the site).
 - Spotlight profile text received from Dinis. Used only in The stage (On stage: training, credits, Olivier Bursary nomination, instruments). Not published anywhere: her agent's contact details, age, height, and the Spotlight link.
 - Photo received from Dinis in this session (one portrait, from the GSA UK 2026 BA (Hons) Actor Musician graduates page, not Spotlight; the page names no photographer). In all five designs with alt text and that credit, at site/assets/photo/lee-elle-horowitz.webp. Not used for the share card yet (still the seed's neutral card).
 - design.b's brief received (https://design.agents.sovereignweb.site/briefs/lee-elle-horowitz.html, 7222e25).
