@@ -1,10 +1,11 @@
 /* Design 4: The stage. A theatre programme, from her acting training: velvet, gold and a spotlight. Dark in both schemes. */
-:root{--bg:#f6ecd9;--fg:#2a1508;--muted:#5a3d26;--accent:#8e1b2c;--on-accent:#fff;--paper:#fffaf0;--line:#d9c3a0;--red:#8e1b2c;--red2:#5c0f1b;--gold:#8a5a0e;--head:#5c0f1b;--glow:#f6ecd9}
+:root{--bg:#f6ecd9;--fg:#2a1508;--muted:#5a3d26;--accent:#8e1b2c;--on-accent:#fff;--paper:#fffaf0;--line:#d9c3a0;--red:#8e1b2c;--red2:#5c0f1b;--gold:#6e4708;--head:#5c0f1b;--glow:#f6ecd9}
 @media (prefers-color-scheme:dark){:root{--bg:#14090b;--fg:#f5ead8;--muted:#d6c3a8;--accent:#e9bd5b;--on-accent:#1b0f05;--paper:#21110f;--line:#4a2a20;--gold:#e9bd5b;--head:#fff4dc;--glow:#3a1418}}
 body{font-family:var(--serif);background:radial-gradient(ellipse at 50% -10%,var(--glow) 0%,var(--bg) 55%) fixed,var(--bg)}
 
-main{max-width:46rem;margin:0 auto;padding:3rem 1.4rem 0;position:relative}
-.curtain{position:fixed;top:0;bottom:0;width:clamp(.8rem,5vw,4.5rem);z-index:20;pointer-events:none;
+main{max-width:46rem;margin:0 auto;padding:3rem 1.4rem 0}
+body{position:relative}
+.curtain{position:absolute;top:0;bottom:0;width:clamp(.8rem,5vw,4.5rem);z-index:20;pointer-events:none;
   background:repeating-linear-gradient(90deg,var(--red2) 0 .6rem,var(--red) 1.4rem,var(--red2) 2.2rem);box-shadow:0 0 40px rgba(0,0,0,.7)}
 .curtain.l{left:0}.curtain.r{right:0}
 .curtain::after{content:"";position:absolute;inset:0 0 auto;height:4rem;background:linear-gradient(var(--gold),transparent);opacity:.25}
@@ -64,3 +65,6 @@ main{max-width:46rem;margin:0 auto;padding:3rem 1.4rem 0;position:relative}
 .scenes li{grid-template-columns:7.5rem 1fr}.scenes span [lang=he]{font:700 1.15rem/1 var(--he-serif);font-style:normal}
 .cover .spot{margin-top:1.5rem}
 @media (prefers-color-scheme:light){.portrait img{box-shadow:0 30px 50px -25px rgba(60,20,10,.6)}.marquee{box-shadow:0 0 0 6px var(--bg),0 0 0 8px var(--gold),0 0 40px -10px rgba(140,90,14,.5)}}
+/* round 2: the ticket button clears the notches on a phone; bigger gold capitals */
+@media (max-width:40rem){.ticket{padding-inline:2.4rem}.ticket .btn{font-size:.95rem}}
+.presents,.act-n,.act h3,.interval,.rule{font-size:1rem;letter-spacing:.18em}

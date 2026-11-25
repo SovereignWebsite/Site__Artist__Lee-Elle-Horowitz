@@ -13,6 +13,9 @@
 ## Round 1 (design.b.rounds, 15:23 UTC, rated 3, M3)
 Done on the in-hand fixes: Hebrew letters in all five designs (no words until she checks: docs/hebrew-to-check.md); a fourth fact chip (children, teenagers and adults) high on every first screen; The stage leads with the lessons, programme list removed, light version added; low vision: stronger Conversation bars, no sticky button on phones, larger Notebook text over lighter rules with hanging ticks, larger Stage capitals; enquiry button near the top in Notebook and Three tenses. Photo reuse rights flagged in the handover. Still hers: Hebrew words, photos, price and availability.
 
+## Round 2 (design.b.rounds, holds at 3, M3)
+Fixed: Notebook cover alphabet right to left; Conversation's seven empty Hebrew boxes removed (a draft note says Hebrew versions can be added once she checks), its closing bar now a plain button; larger tense letters; The stage curtains run the full page, ticket button clears the notches on a phone, darker and larger gold capitals; one voice (hers, "I") across the designs. Waiting on her: price and availability if she wants them, photos, enquiry route.
+
 ## Open
 - HTTPS: DNS is right (CNAME to sovereignwebsite.github.io) and every Pages deploy succeeds, but GitHub still serves its *.github.io certificate for this address, so https fails. Needs an org admin to check the custom domain and Enforce HTTPS in the repository's Pages settings (this session cannot reach that API). http:// serves the latest build.
 - Swap in the Spotlight portrait (credit Kim Hardy) when it arrives as a file; then her own photos.

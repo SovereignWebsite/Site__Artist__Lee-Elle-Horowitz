@@ -44,3 +44,6 @@ main{max-width:52rem;margin:0 auto;padding:0 1.25rem}
 @media (prefers-color-scheme:dark){:root{--bar:#4f8f78}}
 .hl{font-size:.9rem;font-style:normal;font-weight:600}
 @media (max-width:44rem){.compose{position:static}}
+/* round 2: no empty Hebrew boxes; the closing button is a plain row, not a fake text field */
+.her .en{max-width:min(40rem,92%)}
+.compose{position:static;justify-content:center;background:none;border:0;box-shadow:none;padding:0}

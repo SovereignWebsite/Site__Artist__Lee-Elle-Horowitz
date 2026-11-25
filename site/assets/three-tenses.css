@@ -46,3 +46,5 @@ main{max-width:72rem;margin:0 auto;padding:0 1.25rem}
 /* round 1: a Hebrew letter per tense; button near the top */
 .t-he{font:700 .55em/1 var(--he-serif);font-style:normal;opacity:.75;margin-inline-start:.3em;vertical-align:.2em}
 .hero .cta{margin-top:0}
+/* round 2: larger letters beside each tense */
+.t-he{font-size:.8em;opacity:.9}
