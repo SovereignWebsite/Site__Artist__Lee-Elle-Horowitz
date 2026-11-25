@@ -9,7 +9,10 @@
   "open": "Open the slides",
   "pdf": "Download the PDF",
   "slides_word": "slides",
-  "keys": "On a computer, scroll or use the arrow keys; on a phone, swipe up."
+  "keys": "Use the arrows on each slide, or the left and right arrow keys; on a phone, swipe up or tap the arrows.",
+  "prev": "Previous",
+  "next": "Next",
+  "slide_of": "Slide {n} of {total}"
  },
  "decks": [
   {
@@ -162,7 +165,8 @@
       ]
      ]
     }
-   ]
+   ],
+   "pdf_name": "Lee-Elle-Horowitz-website-guided-tour.pdf"
   },
   {
    "id": "behind-the-scenes",
@@ -306,7 +310,8 @@
       ]
      ]
     }
-   ]
+   ],
+   "pdf_name": "Lee-Elle-Horowitz-website-how-it-was-made.pdf"
   }
  ]
 }

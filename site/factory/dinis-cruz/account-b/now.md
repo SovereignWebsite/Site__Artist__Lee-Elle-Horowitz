@@ -46,6 +46,12 @@ Fixed: Notebook cover alphabet right to left; Conversation's seven empty Hebrew 
 - Hebrew: degree and stage credits reworded so English names sit in bdi without brackets; photo credits and footer translated.
 - Each design's top strip in its own colours and type.
 
+## Slides and sharing (Dinis)
+- Previous / next arrows under every slide and arrow-key navigation (site/assets/tour.js, own script, nothing sent anywhere); the slides still work without it.
+- PDFs renamed for sharing: Lee-Elle-Horowitz-website-guided-tour.pdf and Lee-Elle-Horowitz-website-how-it-was-made.pdf; regenerated with every change.
+- Asked b.maestro for an earlier slide deck to align with.
+- learnings.md: all of Dinis's comments today, for every keeper; sent to design.b, sites.b and b.maestro.
+
 ## Open
 - Swap in the Spotlight portrait (credit Kim Hardy) when it arrives as a file; then her own photos.
 - /send/ enquiry form, with security.b's review.

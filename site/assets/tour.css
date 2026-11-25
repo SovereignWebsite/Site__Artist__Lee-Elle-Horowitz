@@ -60,3 +60,14 @@
   .frame{width:1280px;height:720px;border-radius:0;box-shadow:none;aspect-ratio:auto}}
 .d-deck .foot-name span{color:#c9c4b8}
 @media (prefers-color-scheme:dark){.d-for{color:var(--fg)!important}.deck{border-top-color:var(--deck)}}
+/* Slide navigation: previous and next arrows under every slide, and the arrow keys (tour.js). */
+.slide{grid-template-rows:auto auto;align-content:center;gap:.8rem;scroll-margin-top:3.4rem}
+.s-nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;width:min(100%,calc((100vh - 6rem) * 16 / 9),1280px)}
+.s-nav a{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.2rem;border-radius:999px;background:#f4f1ea;color:#14161c;font-weight:800;font-size:1.05rem;text-decoration:none;min-width:8.5rem;justify-content:center}
+.s-nav a:hover{background:var(--deck);color:#fff}.s-nav a:focus-visible{outline:3px solid #f0b99a;outline-offset:3px}
+.s-nav .off{min-width:8.5rem}
+.s-count{color:#c9c4b8;font:600 1rem/1 var(--sans)}
+.slide .frame{min-height:0}
+.slide{min-height:calc(100vh - 3.4rem)}
+@media print{.s-nav{display:none!important}}
+@media (max-width:44rem){.s-nav a{min-width:0;padding:.55rem .9rem;font-size:.95rem}.s-nav .off{min-width:0}}

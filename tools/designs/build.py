@@ -294,7 +294,11 @@ def slide(d, sl, n, total):
         inner = f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><ol class="s-flow">' + ''.join(f'<li><strong>{a}</strong><span>{b}</span></li>' for a, b in sl['steps']) + '</ol></div>'
     else:
         inner = f'<div class="s-text wide center">{k}<h2 class="s-h big">{sl["h"]}</h2><p class="s-p">{sl["p"]}</p><p class="s-links">' + ''.join(f'<a href="{h}">{x}</a>' for h, x in sl['links']) + '</p></div>'
-    return f'<section class="slide s-{t}" aria-label="{n}"><div class="frame">{num}{inner}</div></section>'
+    T = TOUR['index']; lbl = T['slide_of'].replace('{n}', str(n)).replace('{total}', str(total))
+    prev = f'<a class="s-prev" href="#slide-{n - 1}" rel="prev"><span aria-hidden="true">&#8592;</span> {T["prev"]}</a>' if n > 1 else '<span class="s-prev off" aria-hidden="true"></span>'
+    nxt = f'<a class="s-next" href="#slide-{n + 1}" rel="next">{T["next"]} <span aria-hidden="true">&#8594;</span></a>' if n < total else '<span class="s-next off" aria-hidden="true"></span>'
+    nav = f'<nav class="s-nav" aria-label="{lbl}">{prev}<span class="s-count">{n} / {total}</span>{nxt}</nav>'
+    return f'<section class="slide s-{t}" id="slide-{n}" aria-label="{lbl}"><div class="frame">{num}{inner}</div>{nav}</section>'
 
 def tour_head(path, title, desc):
     return head(EN, path, title, desc, ['/assets/base.css', '/assets/tour.css'], '#14161c', None)
@@ -303,16 +307,16 @@ def build_tour():
     T = TOUR['index']
     cards = ''.join(f'<li class="deck" style="--deck:{d["accent"]}"><p class="d-for">{d["for"]}</p><h2>{d["title"]}</h2><p>{d["desc"]}</p>'
                     f'<p class="d-meta">{len(d["slides"])} {T["slides_word"]}</p><p class="d-act"><a class="d-open" href="/tour/{d["id"]}/">{T["open"]}</a>'
-                    f'<a class="d-pdf" href="/tour/{d["id"]}.pdf" download>{T["pdf"]}</a></p></li>' for d in TOUR['decks'])
+                    f'<a class="d-pdf" href="/tour/{d["pdf_name"]}" download="{d["pdf_name"]}">{T["pdf"]}</a></p></li>' for d in TOUR['decks'])
     body = (brand(EN) + f'<main id="main" class="tour-index"><p class="eyebrow">{T["eyebrow"]}</p><h1>{T["h1"]}</h1><p class="lead">{T["lead"]}</p><ul class="decks">{cards}</ul><p class="hint">{T["keys"]}</p></main>\n')
     w('tour/index.html', tour_head('/tour/', T['title'], T['desc']) + f'<body class="d-tour">\n<a class="skip" href="#main">{EN["skip"]}</a>\n' + FAM + body + foot(EN) + '</body>\n</html>\n')
     for d in TOUR['decks']:
         n = len(d['slides'])
         bar = (f'<header class="deck-bar"><a class="brand" href="/tour/">{T["eyebrow"]}</a><h1 class="deck-t">{d["title"]}</h1>'
-               f'<a class="d-pdf" href="/tour/{d["id"]}.pdf" download>{T["pdf"]}</a></header>\n')
+               f'<a class="d-pdf" href="/tour/{d["pdf_name"]}" download="{d["pdf_name"]}">{T["pdf"]}</a></header>\n')
         slides = ''.join(slide(d, sl, i + 1, n) for i, sl in enumerate(d['slides']))
         w(f'tour/{d["id"]}/index.html', tour_head(f'/tour/{d["id"]}/', f'{d["title"]}: {EN["site_name"]}', d['desc']) +
-          f'<body class="d-deck" style="--deck:{d["accent"]}">\n<a class="skip" href="#main">{EN["skip"]}</a>\n' + FAM + bar + f'<main id="main" class="deck-main">{slides}</main>\n' + foot(EN) + '</body>\n</html>\n')
+          f'<body class="d-deck" style="--deck:{d["accent"]}">\n<a class="skip" href="#main">{EN["skip"]}</a>\n' + FAM + bar + f'<main id="main" class="deck-main">{slides}</main>\n' + foot(EN) + '<script src="/assets/tour.js" defer></script>\n</body>\n</html>\n')
 
 # ---------- Admin: labels from admin.json; figures read from the repository ----------
 import subprocess, glob, re, html as _html
