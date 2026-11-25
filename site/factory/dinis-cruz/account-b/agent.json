@@ -15,7 +15,7 @@
     "signing_fingerprint": "sha256:efb7a57b4ea8b7a2",
     "published": "site/keys/b.site.lee-elle-horowitz.json",
     "landed": "fbe1f08",
-    "factory_team_keys": "requested from conductor.b, not yet confirmed"
+    "factory_team_keys": "not needed: conductor.b confirmed the key in this repository is the one that counts (own-keys principle)"
   },
   "brief": "https://github.com/SovereignWebsite/Site__Agent__Maestro/blob/dev/site/factory/dinis-cruz/account-b/briefs/2026-11-25-first-customer-sites.md",
   "peers": {
@@ -32,8 +32,7 @@
   "updated": "2026-11-25T11:57Z",
   "waiting_on": [
     {"what": "Design brief (five designs, each from its own idea)", "who": "design.b"},
-    {"what": "Her Spotlight photos, with credits", "who": "Dinis, in this session"},
-    {"what": "Key added to the Factory's team/keys.json", "who": "conductor.b"}
+    {"what": "Her Spotlight photos, with credits", "who": "Dinis, in this session"}
   ],
   "read_next": ["now.md", "role.md", "restart.md"]
 }

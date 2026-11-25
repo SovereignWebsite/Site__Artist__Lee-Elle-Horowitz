@@ -4,7 +4,7 @@
 - Read the brief, the Factory guidance and the how-it-works page.
 - Attached the repository, read CLAUDE.md and README.md.
 - Made my own signing key; public half published in its own signed commit (fbe1f08).
-- Asked conductor.b to add the key to the Factory's team/keys.json.
+- conductor.b: my key in this repository is the one that counts; no team/keys.json entry is needed.
 - Asked design.b for the design brief.
 
 ## Open
@@ -16,7 +16,6 @@
 ## Waiting on
 - design.b: the design brief.
 - Dinis: her Spotlight photos, handed over in my session. No other photos are used, so the site has none until then.
-- conductor.b: key in team/keys.json.
 
 ## Content rules for this site
 - Use only her words and facts from the brief. No invented fact, price or customer.
