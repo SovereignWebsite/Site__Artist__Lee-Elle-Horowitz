@@ -243,11 +243,10 @@
      "type": "hebrew",
      "kicker": "Every design, in Hebrew",
      "h": "עברית, in every single design",
-     "p": "Not a translation pasted on: each of the five designs is rebuilt right to left, with Hebrew type, the layout mirrored, and the letters used as material. One switch at the top of every page changes the language, and the same design stays on screen.",
+     "p": "Each of the five designs is rebuilt right to left, with Hebrew type. One switch on every page changes the language, and the design stays.",
      "points": [
-      "Ten pages from one set of words: five designs, two languages",
-      "For Hebrew-speaking parents in the UK, and for children growing up between two languages",
-      "The translation is marked on every page as not yet checked by her, until she has corrected it"
+      "Ten pages from one set of words",
+      "Marked as not yet checked by her, until she has"
      ],
      "imgs": [
       "/tour/img/phone-alef-bet-he.webp",
@@ -262,13 +261,20 @@
      "type": "phones",
      "kicker": "On any screen",
      "h": "Five different first screens, on a phone",
-     "p": "Most parents arrive on a phone, so each design is made phone first, with her photo, the lessons and one button on the very first screen. Every page passes accessibility checks in light and dark mode.",
+     "p": "Each design opens differently on a phone, with her photo, the lessons and one button on the first screen.",
      "imgs": [
       "/tour/img/phone-alef-bet.webp",
       "/tour/img/phone-conversation.webp",
       "/tour/img/phone-three-tenses.webp",
       "/tour/img/phone-the-stage.webp",
       "/tour/img/phone-notebook.webp"
+     ],
+     "names": [
+      "Alef-bet",
+      "Conversation",
+      "Three tenses",
+      "The stage",
+      "Notebook"
      ]
     },
     {
@@ -379,7 +385,7 @@
     {
      "type": "team",
      "kicker": "The team",
-     "h": "One request, a team of agents, each with one job",
+     "h": "A team of AI helpers built your site, each with one job",
      "intro": "Each agent does one job and keeps its notes in public, so its thinking stays sharp and anyone can see who did what.",
      "steps": [
       [
@@ -532,7 +538,7 @@
     {
      "type": "flow",
      "kicker": "The pipeline",
-     "h": "From request to live site",
+     "h": "From your request to a live site, in checked steps",
      "steps": [
       [
        "Request",
@@ -592,26 +598,26 @@
     },
     {
      "type": "points",
-     "kicker": "Content",
-     "h": "Every word lives in JSON",
+     "kicker": "Content, in JSON",
+     "h": "Your words live in one place, so a change is made once",
      "points": [
       "site/data/content/en.json: her words, as she supplied them.",
       "site/data/content/he.json: the Hebrew translation, for her to check.",
       "site.json, start.json, tour.json and admin.json: everything else.",
       "tools/designs/build.py turns them into plain HTML pages, in both languages. It holds no words of its own."
      ],
-     "code": "en.json + he.json  →  build.py  →  10 design pages, 2 home pages, 2 pickers, the tour and the admin area",
+     "code": "en.json + he.json → build.py → 10 design pages, 2 home pages, 2 pickers, the start page, the tour (3 pages) and the admin page",
      "says": "Every word of Lee-Elle's is in a content file, one per language. The pages are built from those files, so the HTML holds none of her words."
     },
     {
      "type": "hebrew",
      "kicker": "Two languages",
-     "h": "Right to left, properly",
-     "p": "The Hebrew pages are not a mirror image of the English ones: the html element is marked lang=\"he\" dir=\"rtl\", the CSS uses start and end instead of left and right, English names inside Hebrew sit in their own direction, and Hebrew type is set heavier and larger.",
+     "h": "Your Hebrew pages read right to left, properly",
+     "p": "Not a mirror image: each Hebrew page is marked as Hebrew and right to left, and the layout follows.",
      "points": [
-      "One stylesheet per design, plus one that turns any of them right to left",
-      "A switch at the top of every page, and a button that appears as you scroll",
-      "Checked by a Hebrew-speaking persona in every round"
+      "One stylesheet turns any of the five designs right to left",
+      "English names keep their own direction inside Hebrew",
+      "Checked by a synthetic Hebrew-speaking persona, and by Lee-Elle once she reads it"
      ],
      "imgs": [
       "/tour/img/phone-alef-bet-he.webp",
@@ -627,7 +633,7 @@
      "points": [
       "No prices, pupils or reviews: she has not given us any yet",
       "No phone number or email until she chooses which to publish",
-      "Every fact comes from her own profile and her school's page; every photo is credited",
+      "Every fact comes from her own profile and her school's page; every photo is credited to its source",
       "The Hebrew is marked on every page as not yet checked by her"
      ],
      "says": "What we leave out matters as much as what we put in. Everything here can be traced to where it came from."
@@ -635,11 +641,11 @@
     {
      "type": "score",
      "kicker": "Checked before every push",
-     "h": "The numbers, every time",
+     "h": "Checked every time, before anything goes live",
      "items": [
       [
        "{pages}",
-       "pages built from JSON"
+       "pages built from JSON, in English and Hebrew"
       ],
       [
        "0",
@@ -658,8 +664,8 @@
     },
     {
      "type": "ladder",
-     "kicker": "Where this is going",
-     "h": "Maturity: M3 today, M4 next",
+     "kicker": "Maturity: M3 today, M4 next",
+     "h": "Where your site is: five designs, waiting for your choice",
      "levels": [
       [
        "M0",
@@ -709,7 +715,7 @@
     {
      "type": "points",
      "kicker": "Trust",
-     "h": "Signed, and public",
+     "h": "Every change is signed, so anyone can see who made it",
      "points": [
       "Each agent makes its own signing key; only the public half is published.",
       "Every commit is signed and carries the agent's name and session.",

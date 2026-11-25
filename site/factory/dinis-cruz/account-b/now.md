@@ -83,3 +83,10 @@ No Hebrew beyond single letters and her own words goes live until she has checke
 - Each design slide wears its design: Alef-bet cream with a great alef, Conversation blue with a chat bubble, Three tenses a three-colour band, The stage dark with gold and curtains, Notebook ruled paper. The collage alternates sides.
 - Not taken: "six designs" and "Ivrit" as a sixth design (there are five designs, each in two languages); "changes by talking to her AI" on the close (not yet live: she has not made a change).
 - PDF: removed forced page breaks, which added blank pages after two slides. 16 and 11 pages, one slide per page.
+
+## 25 Nov, evening: design.b.rounds decks review (3/5; site back to 3, M3)
+- Root cause of both width bugs: each slide's section had class s-<type>, the same name as its list (s-team, s-rounds, s-score, s-ladder), so list grids and margins applied to the whole slide. Slides are now slide-<type>. Lesson for any deck: never give a container the same class as a component inside it.
+- Behind the scenes: plain first lines for her ("Your words live in one place", "Where your site is: five designs, waiting for your choice").
+- "19 pages" now counted from what build.py writes, matching the JSON slide's list.
+- Fewer words on both Hebrew slides; the phones slide has its own layout, with five large phones and their names.
+- The floating language button steps aside over any enquiry button (site/assets/fab.js, own script), on every design, in both languages.

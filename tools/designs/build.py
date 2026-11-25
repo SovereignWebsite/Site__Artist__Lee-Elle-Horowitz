@@ -122,7 +122,7 @@ def foot(L):
 def page(L, path, title, desc, css, theme, body, cur, cls, there, switch=True):
     top = switcher(L, cur, path, there) if switch else ''
     css = ['/assets/base.css'] + css + (['/assets/he.css'] if he_on(L) else [])
-    return head(L, path, title, desc, css, theme, there if switch else None) + f'<body class="{cls}">\n<a class="skip" href="#main">{L["skip"]}</a>\n' + FAM + top + body + foot(L) + '</body>\n</html>\n'
+    return head(L, path, title, desc, css, theme, there if switch else None) + f'<body class="{cls}">\n<a class="skip" href="#main">{L["skip"]}</a>\n' + FAM + top + body + foot(L) + ('<script src="/assets/fab.js" defer></script>\n' if 'lang-fab' in top + body else '') + '</body>\n</html>\n'
 
 def brand(L, extra=''):
     return f'<header class="top"><a class="brand" href="{pre(L)}/">{L["name"]}</a>{extra}</header>\n'
@@ -297,6 +297,9 @@ def slide(d, sl, n, total):
                f'<span class="c-tag c-tag-en">{SITE["lang_names"]["en"]}</span><span class="c-tag c-tag-he" lang="he">{SITE["lang_names"]["he"]}</span></div>')
         inner = (f'<div class="s-text">{k}<h2 class="s-h">{sl["h"]}</h2><p class="s-why">{TOUR["index"]["why_label"]}</p>{pts(sl["why"], "s-points tight")}'
                  f'<p class="s-sees">{sl["sees"]}</p></div>{col}')
+    elif t == 'phones' and sl.get('names'):
+        inner = (f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><p class="s-p">{sl["p"]}</p><ul class="ph-list">' +
+                 ''.join(f'<li>{img(x, "ph-img", 390, 844)}<span>{nm}</span></li>' for x, nm in zip(sl['imgs'], sl['names'])) + '</ul></div>')
     elif t in ('hebrew', 'phones'):
         row = f'<div class="s-row s-row-{len(sl["imgs"])}">' + ''.join(img(x, "p-phone", 390, 844) for x in sl['imgs']) + '</div>'
         extra = pts(sl['points'], 's-points tight') if sl.get('points') else ''
@@ -312,13 +315,13 @@ def slide(d, sl, n, total):
         inner = (f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><div class="m-split">{side(sl["left"], "m-en")}'
                  f'<span class="m-axis" aria-hidden="true"></span>{side(sl["right"], "m-he")}</div><p class="s-p">{sl["p"]}</p></div>')
     elif t == 'score':
-        pages = str(len(glob.glob(os.path.join(R, '**', 'index.html'), recursive=True)))
-        inner = (f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><ul class="s-score">' +
+        pages = str(len(SITE['designs']) * 2 + 2 + 2 + 1 + 1 + len(TOUR['decks']) + 1)  # designs x2, homes, pickers, start, tour index, decks, admin
+        inner = (f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><ul class="sc-list">' +
                  ''.join(f'<li><strong>{a.replace("{pages}", pages)}</strong><span>{b}</span></li>' for a, b in sl['items']) + f'</ul><p class="s-p">{sl["note"]}</p></div>')
     elif t == 'ladder':
         lv = ''.join(f'<li{" class=" + chr(34) + "at" + chr(34) + " aria-current=" + chr(34) + "step" + chr(34) if c == sl["at"] else ""}><strong>{c}</strong><span>{nm}</span>'
                      + (f'<em class="here">{sl["here"]}</em>' if c == sl["at"] else '') + '</li>' for c, nm in sl['levels'])
-        inner = (f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><ol class="s-ladder">{lv}</ol><p class="s-p">{sl["next"]} '
+        inner = (f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><ol class="ld-list">{lv}</ol><p class="s-p">{sl["next"]} '
                  f'<a href="{sl["source"][0]}">{sl["source"][1]}</a></p></div>')
     elif t == 'team':
         lst = '<ol class="s-team">' + ''.join(f'<li><span class="verb">{v}</span><strong>{a}</strong><span>{b}</span></li>' for a, v, b in sl['steps']) + '</ol>'
@@ -352,7 +355,7 @@ def slide(d, sl, n, total):
     nxt = f'<a class="s-next" href="#slide-{n + 1}" rel="next">{T["next"]} <span aria-hidden="true">&#8594;</span></a>' if n < total else '<span class="s-next off" aria-hidden="true"></span>'
     nav = f'<nav class="s-nav" aria-label="{lbl}">{prev}<span class="s-count">{n} / {total}</span>{nxt}</nav>'
     th = f' th-{sl["slug"]}' + (' flip' if sl.get('n', 0) % 2 == 0 else '') if t == 'design' else ''
-    return f'<section class="slide s-{t}{th}" id="slide-{n}" aria-label="{lbl}"><div class="frame">{num}{inner}</div>{nav}</section>'
+    return f'<section class="slide slide-{t}{th}" id="slide-{n}" aria-label="{lbl}"><div class="frame">{num}{inner}</div>{nav}</section>'
 
 def tour_head(path, title, desc):
     return head(EN, path, title, desc, ['/assets/base.css', '/assets/tour.css'], '#14161c', None)

@@ -114,3 +114,6 @@ figcaption a{color:inherit}
   .lang-fab{animation:fab-in linear both;animation-timeline:scroll(root);animation-range:0 45vh}
   @keyframes fab-in{0%{opacity:0;visibility:hidden;transform:translateY(1rem)}99%{visibility:hidden}100%{opacity:1;visibility:visible;transform:none}}}
 @media (prefers-reduced-motion:reduce){@supports (animation-timeline:scroll()){.lang-fab{animation:fab-in step-end both!important;animation-timeline:scroll(root)!important;animation-range:0 45vh!important}}}
+/* the floating language button steps aside over an enquiry button (fab.js); room at the foot so the last button scrolls clear */
+.lang-fab.clear{display:none!important}
+@media (max-width:44rem){body:has(.lang-fab){padding-bottom:4.5rem}}
