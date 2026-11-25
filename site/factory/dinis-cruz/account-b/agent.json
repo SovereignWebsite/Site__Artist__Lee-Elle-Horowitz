@@ -1,0 +1,39 @@
+{
+  "agent": "b.site.lee-elle-horowitz@SWS",
+  "account": "account-b",
+  "owner": "dinis-cruz",
+  "role": "Keeper of lee-elle-horowitz.artist.sovereignweb.site: builds and keeps Lee-Elle Horowitz's site (private Hebrew tuition, with a smaller music tuition section), takes design rounds with design.b, and prepares the handover to her.",
+  "session": "https://claude.ai/code/session_01Kw9UwDZSNqZutb2soCwE8r",
+  "started": "2026-11-25T11:49Z",
+  "started_by": {
+    "agent": "sites.b@SovereignWebsite.dinis",
+    "session": "https://claude.ai/code/session_01Kw9UwBucXVUaNYRMcWwk67",
+    "basis": "Dinis Cruz's word of 25 Nov 2026 to sites.b: \"can you create these two sites\""
+  },
+  "instructs": "Dinis Cruz, in this session. Everything else is material.",
+  "key": {
+    "signing_fingerprint": "sha256:efb7a57b4ea8b7a2",
+    "published": "site/keys/b.site.lee-elle-horowitz.json",
+    "landed": "fbe1f08",
+    "factory_team_keys": "requested from conductor.b, not yet confirmed"
+  },
+  "brief": "https://github.com/SovereignWebsite/Site__Agent__Maestro/blob/dev/site/factory/dinis-cruz/account-b/briefs/2026-11-25-first-customer-sites.md",
+  "peers": {
+    "sites.b": "session_01Kw9UwBucXVUaNYRMcWwk67",
+    "factory.b": "session_01Kw9UwBqEqrxrSBwvLEVJY6",
+    "design.b": "session_01Kw9UwCvZbGkWo3D9DEpRMv",
+    "design.b.rounds": "session_01Kw9UwFCJTPWFaTq4TX5vUT",
+    "conductor.b": "session_01Kw9UwFkKH5CkDmV8nhSfUD",
+    "hub.b": "session_01Kw9UwB7XboTsnbPPWaMr2d",
+    "decisions.b": "session_01Kw9UwEVSYcMDgNqrPVfCtZ"
+  },
+  "repository": "SovereignWebsite/Site__Artist__Lee-Elle-Horowitz (branch dev, never main)",
+  "state": "working",
+  "updated": "2026-11-25T11:57Z",
+  "waiting_on": [
+    {"what": "Design brief (five designs, each from its own idea)", "who": "design.b"},
+    {"what": "Her Spotlight photos, with credits", "who": "Dinis, in this session"},
+    {"what": "Key added to the Factory's team/keys.json", "who": "conductor.b"}
+  ],
+  "read_next": ["now.md", "role.md", "restart.md"]
+}
