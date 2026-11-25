@@ -214,3 +214,5 @@
 .g-node{white-space:normal;max-width:15cqw}.g-node strong{font-size:1.3cqw;line-height:1.2}.g-node span{font-size:.9cqw;letter-spacing:.04em;text-transform:none;font-weight:600}
 .s-team .verb{text-transform:none;letter-spacing:.02em}
 @media (min-width:36rem) and (max-width:66rem){.s-caps{grid-template-columns:1fr 1fr}.ph-list{grid-template-columns:repeat(5,1fr)}.ph-list span{font-size:2.2cqw}}
+.s-pics{margin:1cqw 0 0;font:1.25cqw/1.4 var(--sans);color:inherit;opacity:.9}.th-the-stage .s-pics{color:#eadcc2;opacity:1}
+@media (max-width:66rem){.s-pics{font-size:3.4cqw}}

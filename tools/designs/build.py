@@ -296,7 +296,7 @@ def slide(d, sl, n, total):
                f'{img(im["he"], "c-he", 390, 844)}{img(im["detail"], "c-detail", 1200, 400)}'
                f'<span class="c-tag c-tag-en">{SITE["lang_names"]["en"]}</span><span class="c-tag c-tag-he" lang="he">{SITE["lang_names"]["he"]}</span></div>')
         inner = (f'<div class="s-text">{k}<h2 class="s-h">{sl["h"]}</h2><p class="s-why">{TOUR["index"]["why_label"]}</p>{pts(sl["why"], "s-points tight")}'
-                 f'<p class="s-sees">{sl["sees"]}</p></div>{col}')
+                 f'<p class="s-sees">{sl["sees"]}</p>' + (f'<p class="s-pics"><strong>{TOUR["index"]["pics_label"]}</strong> {sl["pics"]}</p>' if sl.get('pics') else '') + f'</div>{col}')
     elif t == 'phones' and sl.get('names'):
         inner = (f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><p class="s-p">{sl["p"]}</p><ul class="ph-list">' +
                  ''.join(f'<li>{img(x, "ph-img", 390, 844)}<span>{nm}</span></li>' for x, nm in zip(sl['imgs'], sl['names'])) + '</ul></div>')

@@ -14,7 +14,8 @@
   "next": "Next",
   "slide_of": "Slide {n} of {total}",
   "why_label": "Why it suits Lee-Elle",
-  "says_note": "The narrators are synthetic presenters from the team's videos: made by code, no real person. They never speak as Lee-Elle; her own words are always in quotation marks."
+  "says_note": "The narrators are synthetic presenters from the team's videos: made by code, no real person. They never speak as Lee-Elle; her own words are always in quotation marks.",
+  "pics_label": "In the pictures:"
  },
  "decks": [
   {
@@ -130,7 +131,8 @@
       "All 22 letters arrive across the page, right to left; every section opens on its own letter, with its English name."
      ],
      "sees": "A parent of a young beginner sees a teacher and the letters their child will learn.",
-     "says": "Lee-Elle teaches Hebrew from the very first letter, so every section of this page opens on one."
+     "says": "Lee-Elle teaches Hebrew from the very first letter, so every section of this page opens on one.",
+     "pics": "the page on a computer, on a phone, in Hebrew, and the alphabet wall."
     },
     {
      "type": "design",
@@ -150,7 +152,8 @@
       "The facts are quick replies (ages, London, Zoom, DBS), and the button is the reply box."
      ],
      "sees": "A parent with questions gets them answered in the order they would ask.",
-     "says": "Lee-Elle's lessons build conversation, so this page is one too."
+     "says": "Lee-Elle's lessons build conversation, so this page is one too.",
+     "pics": "the page on a computer, on a phone, in Hebrew, and the quick replies."
     },
     {
      "type": "design",
@@ -170,7 +173,8 @@
       "The headline is grammar itself; the page ends on the student's goal and the button."
      ],
      "sees": "A parent sees where their child would start, and where lessons lead.",
-     "says": "Past, present and future tenses are on her list of lessons. Here they shape the whole page."
+     "says": "Past, present and future tenses are on her list of lessons. Here they shape the whole page.",
+     "pics": "the page on a computer, on a phone, in Hebrew, and the three tenses side by side."
     },
     {
      "type": "design",
@@ -190,7 +194,8 @@
       "Hebrew is the main act; music and audition preparation are act two; a ticket stub asks about lessons."
      ],
      "sees": "A teenager who sings or acts, or their parent, sees a teacher who has been on stage.",
-     "says": "Lee-Elle trained on stage, so this page is a programme: Hebrew is the main act, and music comes after the interval."
+     "says": "Lee-Elle trained on stage, so this page is a programme: Hebrew is the main act, and music comes after the interval.",
+     "pics": "the page on a computer, on a phone, in Hebrew, and the bill."
     },
     {
      "type": "design",
@@ -210,7 +215,8 @@
       "One plain column, which prints cleanly."
      ],
      "sees": "A parent who wants facts, not effects, gets them on one page to print.",
-     "says": "No decoration. The facts, in the order a parent asks for them, on a page that prints."
+     "says": "No decoration. The facts, in the order a parent asks for them, on a page that prints.",
+     "pics": "the page on a computer, on a phone, in Hebrew, and the ticked list of lessons."
     },
     {
      "type": "points",
@@ -591,7 +597,7 @@
       ],
       [
        "Round 3",
-       "Conversation and Notebook rise to 3 out of 5 on the design rating; phone fixes"
+       "Conversation and Notebook rise to 3 out of 5 on the design rating (5 is a showcase); phone fixes"
       ]
      ],
      "says": "Synthetic parents read every version and said whether they would book. Their answers shaped the next round."
@@ -705,7 +711,7 @@
      ],
      "at": "M3",
      "here": "This site",
-     "next": "Next: the testing helper rates the design 4 out of 5. From M5 on, the steps are yours: approve it, take it over, grow it.",
+     "next": "Next: a design rating of 4 out of 5, which means ready to show you. From M5 on, the steps are yours: approve it, take it over, grow it.",
      "source": [
       "https://design.agents.sovereignweb.site/maturity.html",
       "design.b's maturity model"
