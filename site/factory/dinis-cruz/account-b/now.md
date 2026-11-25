@@ -76,3 +76,10 @@ No Hebrew beyond single letters and her own words goes live until she has checke
 - Moved the last hardcoded words out of build.py (language names, "Why it suits Lee-Elle") into JSON.
 - axe-phone.mjs now names the failing element and exits non-zero on a problem.
 - Waiting: Lee-Elle's consent to synthetic presenters, once, via Dinis.
+
+## 25 Nov, evening: design.b's deck brief (26b074e)
+- Fixed the defect design.b measured: team, pipeline and rounds slides rendered at 233 to 418 px at 1280 x 720 (the slide grid sized its column from a size-contained frame). All slides now fill the stage.
+- New layouts: statement, mirror (English and Hebrew side by side), team as a graph, scoreboard, maturity ladder (M3 today, M4 next, from design.b's model). The close is dark, each claim with a picture from her own site.
+- Each design slide wears its design: Alef-bet cream with a great alef, Conversation blue with a chat bubble, Three tenses a three-colour band, The stage dark with gold and curtains, Notebook ruled paper. The collage alternates sides.
+- Not taken: "six designs" and "Ivrit" as a sixth design (there are five designs, each in two languages); "changes by talking to her AI" on the close (not yet live: she has not made a change).
+- PDF: removed forced page breaks, which added blank pages after two slides. 16 and 11 pages, one slide per page.

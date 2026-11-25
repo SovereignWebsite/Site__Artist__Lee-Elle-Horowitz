@@ -62,6 +62,12 @@
      }
     },
     {
+     "type": "statement",
+     "kicker": "The idea",
+     "h": "One set of her words. Five ideas. Ten pages.",
+     "sub": "Each design is a different way of saying who she is, and each one exists in English and in Hebrew."
+    },
+    {
      "type": "map",
      "kicker": "The thinking",
      "h": "Five ideas, each taken from her own life",
@@ -220,6 +226,20 @@
      "says": "There is no wrong answer. Lee-Elle can pick one, or say which parts of which she likes."
     },
     {
+     "type": "mirror",
+     "kicker": "Both ways",
+     "h": "The same page, read both ways",
+     "left": {
+      "label": "English, left to right",
+      "img": "/assets/designs/alef-bet.en.webp"
+     },
+     "right": {
+      "label": "עברית, מימין לשמאל",
+      "img": "/assets/designs/alef-bet.he.webp"
+     },
+     "p": "Alef-bet in English and in Hebrew: the photo, the letters and the menu all move to the other side, and the letters run right to left."
+    },
+    {
      "type": "hebrew",
      "kicker": "Every design, in Hebrew",
      "h": "עברית, in every single design",
@@ -258,27 +278,33 @@
      "items": [
       [
        "Five ideas from one text",
-       "Five designs, each from a different part of her life, all from the words she supplied"
+       "Five designs, each from a different part of her life, all from the words she supplied",
+       "/assets/designs/three-tenses.en.webp"
       ],
       [
        "Two languages, both directions",
-       "Every design in English and Hebrew, right to left, with a switch on every page"
+       "Every design in English and Hebrew, right to left, with a switch on every page",
+       "/assets/designs/notebook.he.webp"
       ],
       [
        "Every word in one place",
-       "All content in JSON files; the pages are built from them, so a change is made once"
+       "All content in JSON files; the pages are built from them, so a change is made once",
+       "/tour/img/proof-json.webp"
       ],
       [
        "An admin area",
-       "Status, tasks, photos and credits, quality checks and every change, at /admin/"
+       "Status, tasks, photos and credits, quality checks and every change, at /admin/",
+       "/tour/img/proof-admin.webp"
       ],
       [
-       "Checked before it goes live",
-       "Links, accessibility in light and dark, phone and desktop, every time"
+       "Guided tours, with PDFs",
+       "These two decks, built from the same JSON, as slides on the site and as PDFs to share",
+       "/tour/img/proof-tour.webp"
       ],
       [
        "Hers, and portable",
-       "No server, no cookies, no tracking; plain files she owns and can move anywhere"
+       "No server, no cookies, no tracking; plain files she owns and can move anywhere",
+       "/tour/img/proof-start.webp"
       ]
      ]
     },
@@ -386,7 +412,121 @@
        "Lists the site in the hub once she approves it."
       ]
      ],
-     "says": "Each agent does one job, writes it down in public, and hands on to the next."
+     "says": "Each agent does one job, writes it down in public, and hands on to the next.",
+     "graph": {
+      "nodes": [
+       [
+        "dinis",
+        "Dinis Cruz",
+        "asks",
+        8,
+        50
+       ],
+       [
+        "sites",
+        "sites.b",
+        "routes",
+        27,
+        22
+       ],
+       [
+        "factory",
+        "factory.b",
+        "creates",
+        27,
+        78
+       ],
+       [
+        "design",
+        "design.b",
+        "briefs",
+        50,
+        14
+       ],
+       [
+        "keeper",
+        "The keeper",
+        "builds",
+        50,
+        50
+       ],
+       [
+        "rounds",
+        "design.b.rounds",
+        "tests",
+        73,
+        14
+       ],
+       [
+        "security",
+        "security.b",
+        "rules",
+        50,
+        86
+       ],
+       [
+        "lee",
+        "Lee-Elle",
+        "approves",
+        73,
+        72
+       ],
+       [
+        "hub",
+        "hub.b",
+        "lists",
+        92,
+        50
+       ]
+      ],
+      "edges": [
+       [
+        "dinis",
+        "sites"
+       ],
+       [
+        "dinis",
+        "keeper"
+       ],
+       [
+        "sites",
+        "factory"
+       ],
+       [
+        "sites",
+        "keeper"
+       ],
+       [
+        "factory",
+        "keeper"
+       ],
+       [
+        "design",
+        "keeper"
+       ],
+       [
+        "keeper",
+        "rounds"
+       ],
+       [
+        "rounds",
+        "design"
+       ],
+       [
+        "security",
+        "keeper"
+       ],
+       [
+        "keeper",
+        "lee"
+       ],
+       [
+        "lee",
+        "hub"
+       ]
+      ],
+      "alt": "Diagram: Dinis Cruz asks sites.b, which routes to factory.b and starts the keeper; design.b briefs the keeper; design.b.rounds tests each version; security.b rules on questions; Lee-Elle approves; hub.b lists the site once she does."
+     }
     },
     {
      "type": "flow",
@@ -489,15 +629,77 @@
      "says": "What we leave out matters as much as what we put in. Everything here can be traced to where it came from."
     },
     {
-     "type": "points",
-     "kicker": "Quality",
-     "h": "Checked before every push",
-     "points": [
-      "Build, link previews and internal links.",
-      "HTML validity, and accessibility (axe) on every page, at desktop and phone width, in light and in dark mode.",
-      "No em dashes, a leak scan for secrets.",
-      "No page longer than 8,000 px on a phone, and no sideways scrolling.",
-      "Nothing loaded from another website: no fonts, scripts or trackers."
+     "type": "score",
+     "kicker": "Checked before every push",
+     "h": "The numbers, every time",
+     "items": [
+      [
+       "{pages}",
+       "pages built from JSON"
+      ],
+      [
+       "0",
+       "accessibility problems: light and dark, desktop and phone"
+      ],
+      [
+       "390 px",
+       "phone width, with no sideways scroll"
+      ],
+      [
+       "5",
+       "checks the deploy runs: build, link previews, quality, HTML, accessibility"
+      ]
+     ],
+     "note": "The push stops if any number is wrong."
+    },
+    {
+     "type": "ladder",
+     "kicker": "Where this is going",
+     "h": "Maturity: M3 today, M4 next",
+     "levels": [
+      [
+       "M0",
+       "Requested"
+      ],
+      [
+       "M1",
+       "Scaffold"
+      ],
+      [
+       "M2",
+       "First pass"
+      ],
+      [
+       "M3",
+       "Five designs"
+      ],
+      [
+       "M4",
+       "Deliverable"
+      ],
+      [
+       "M5",
+       "Owner-approved"
+      ],
+      [
+       "M6",
+       "Handed over"
+      ],
+      [
+       "M7",
+       "Owner-grown"
+      ],
+      [
+       "M8",
+       "Professional"
+      ]
+     ],
+     "at": "M3",
+     "here": "This site",
+     "next": "Next: a design rating of 4 from design.b.rounds. From M5 on, the steps are hers.",
+     "source": [
+      "https://design.agents.sovereignweb.site/maturity.html",
+      "design.b's maturity model"
      ]
     },
     {

@@ -302,10 +302,34 @@ def slide(d, sl, n, total):
         extra = pts(sl['points'], 's-points tight') if sl.get('points') else ''
         inner = f'<div class="s-text">{k}<h2 class="s-h{" he-h" if t == "hebrew" else ""}">{sl["h"]}</h2><p class="s-p">{sl["p"]}</p>{extra}</div>{row}'
     elif t == 'capabilities':
-        inner = f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><ul class="s-caps">' + ''.join(f'<li><strong>{a}</strong><span>{b}</span></li>' for a, b in sl['items']) + '</ul></div>'
+        inner = (f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><ul class="s-caps">' +
+                 ''.join(f'<li>{img(x[2], "cap-img", 640, 400) if len(x) > 2 else ""}<strong>{x[0]}</strong><span>{x[1]}</span></li>' for x in sl['items']) + '</ul></div>')
+    elif t == 'statement':
+        inner = f'<div class="s-text wide">{k}<h2 class="s-h huge">{sl["h"]}</h2><p class="s-sub">{sl["sub"]}</p></div>'
+    elif t == 'mirror':
+        side = lambda c, cls: (f'<figure class="m-side {cls}">{img(c["img"], "m-img", 640, 400)}'
+                               f'<figcaption{" lang=" + chr(34) + "he" + chr(34) if any("֐" <= ch <= "׿" for ch in c["label"]) else ""}>{c["label"]}</figcaption></figure>')
+        inner = (f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><div class="m-split">{side(sl["left"], "m-en")}'
+                 f'<span class="m-axis" aria-hidden="true"></span>{side(sl["right"], "m-he")}</div><p class="s-p">{sl["p"]}</p></div>')
+    elif t == 'score':
+        pages = str(len(glob.glob(os.path.join(R, '**', 'index.html'), recursive=True)))
+        inner = (f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><ul class="s-score">' +
+                 ''.join(f'<li><strong>{a.replace("{pages}", pages)}</strong><span>{b}</span></li>' for a, b in sl['items']) + f'</ul><p class="s-p">{sl["note"]}</p></div>')
+    elif t == 'ladder':
+        lv = ''.join(f'<li{" class=" + chr(34) + "at" + chr(34) + " aria-current=" + chr(34) + "step" + chr(34) if c == sl["at"] else ""}><strong>{c}</strong><span>{nm}</span>'
+                     + (f'<em class="here">{sl["here"]}</em>' if c == sl["at"] else '') + '</li>' for c, nm in sl['levels'])
+        inner = (f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><ol class="s-ladder">{lv}</ol><p class="s-p">{sl["next"]} '
+                 f'<a href="{sl["source"][0]}">{sl["source"][1]}</a></p></div>')
     elif t == 'team':
-        inner = (f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><p class="s-p">{sl["intro"]}</p><ol class="s-team">' +
-                 ''.join(f'<li><span class="verb">{v}</span><strong>{a}</strong><span>{b}</span></li>' for a, v, b in sl['steps']) + '</ol></div>')
+        lst = '<ol class="s-team">' + ''.join(f'<li><span class="verb">{v}</span><strong>{a}</strong><span>{b}</span></li>' for a, v, b in sl['steps']) + '</ol>'
+        g = sl.get('graph'); graph = ''
+        if g:
+            pos = {n[0]: (n[3], n[4]) for n in g['nodes']}
+            lines = ''.join(f'<line x1="{pos[a][0]}" y1="{pos[a][1]}" x2="{pos[b][0]}" y2="{pos[b][1]}"/>' for a, b in g['edges'])
+            nodes = ''.join(f'<span class="g-node{" g-me" if i == "keeper" else ""}" style="left:{x}%;top:{y}%"><strong>{nm}</strong><span>{v}</span></span>' for i, nm, v, x, y in g['nodes'])
+            graph = (f'<div class="s-graph" role="img" aria-label="{g["alt"]}"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">{lines}</svg>'
+                     f'<div aria-hidden="true">{nodes}</div></div>')
+        inner = f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><p class="s-p">{sl["intro"]}</p>{graph}{lst}</div>'
     elif t == 'rounds':
         inner = (f'<div class="s-text wide">{k}<h2 class="s-h">{sl["h"]}</h2><p class="s-p">{sl["intro"]}</p><ol class="s-rounds">' +
                  ''.join(f'<li><strong>{a}</strong><span>{b}</span></li>' for a, b in sl['rounds']) + '</ol></div>')
@@ -320,12 +344,15 @@ def slide(d, sl, n, total):
         nr = d['narrator']
         says = (f'<div class="s-says" role="note"><p class="s-who"><span class="s-av" aria-hidden="true">{nr["initial"]}</span>'
                 f'<strong>{nr["name"]}</strong> <span class="s-lbl">{nr["label"]}</span></p><p class="s-line">{sl["says"]}</p></div>')
-        inner = inner.replace('</div>', says + '</div>', 1) if inner.startswith('<div class="s-text') else inner + says
+        if inner.startswith('<div class="s-text wide'): inner = inner[:inner.rindex('</div>')] + says + '</div>'
+        elif inner.startswith('<div class="s-text'): inner = inner.replace('</div>', says + '</div>', 1)
+        else: inner += says
     T = TOUR['index']; lbl = T['slide_of'].replace('{n}', str(n)).replace('{total}', str(total))
     prev = f'<a class="s-prev" href="#slide-{n - 1}" rel="prev"><span aria-hidden="true">&#8592;</span> {T["prev"]}</a>' if n > 1 else '<span class="s-prev off" aria-hidden="true"></span>'
     nxt = f'<a class="s-next" href="#slide-{n + 1}" rel="next">{T["next"]} <span aria-hidden="true">&#8594;</span></a>' if n < total else '<span class="s-next off" aria-hidden="true"></span>'
     nav = f'<nav class="s-nav" aria-label="{lbl}">{prev}<span class="s-count">{n} / {total}</span>{nxt}</nav>'
-    return f'<section class="slide s-{t}" id="slide-{n}" aria-label="{lbl}"><div class="frame">{num}{inner}</div>{nav}</section>'
+    th = f' th-{sl["slug"]}' + (' flip' if sl.get('n', 0) % 2 == 0 else '') if t == 'design' else ''
+    return f'<section class="slide s-{t}{th}" id="slide-{n}" aria-label="{lbl}"><div class="frame">{num}{inner}</div>{nav}</section>'
 
 def tour_head(path, title, desc):
     return head(EN, path, title, desc, ['/assets/base.css', '/assets/tour.css'], '#14161c', None)
