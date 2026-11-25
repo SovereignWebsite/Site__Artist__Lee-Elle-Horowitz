@@ -109,3 +109,8 @@ figcaption a{color:inherit}
 .ch-all{margin:1rem .3rem 0}.ch-all a{font-weight:700}
 .switch{position:relative}
 @media (max-width:30rem){.chooser summary{padding:.45rem .8rem;font-size:.95rem}.ch-grid{grid-template-columns:1fr 1fr;gap:.6rem}.dc strong{font-size:.95rem}.dc span{font-size:.82rem}}
+/* Round 3: the floating language button appears once you scroll, so it never covers a first-screen button. */
+@supports (animation-timeline:scroll()){
+  .lang-fab{animation:fab-in linear both;animation-timeline:scroll(root);animation-range:0 45vh}
+  @keyframes fab-in{0%{opacity:0;visibility:hidden;transform:translateY(1rem)}99%{visibility:hidden}100%{opacity:1;visibility:visible;transform:none}}}
+@media (prefers-reduced-motion:reduce){@supports (animation-timeline:scroll()){.lang-fab{animation:fab-in step-end both!important;animation-timeline:scroll(root)!important;animation-range:0 45vh!important}}}

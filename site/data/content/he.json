@@ -40,7 +40,7 @@
   "גדלתי בישראל",
   "שנתיים של ניסיון בהוראה פרטית",
   "ניסיון בהוראת ילדים בגילאי 7 עד 11",
-  "תואר ראשון בהצטיינות (<bdi lang=\"en\">First Class Honours BA</bdi>) מ־<bdi lang=\"en\">Guildford School of Acting, University of Surrey</bdi>",
+  "תואר ראשון בהצטיינות יתרה, <bdi lang=\"en\">First Class Honours BA</bdi>, מ־<bdi lang=\"en\">Guildford School of Acting, University of Surrey</bdi>",
   "עברתי בדיקת <bdi lang=\"en\">Enhanced DBS</bdi>"
  ],
  "fmt": [
@@ -74,7 +74,7 @@
  "music_note": "חלק קטן יותר ממה שאני מלמדת.",
  "stage": [
   "למדתי משחק ומוזיקה (<bdi lang=\"en\">Actor-Musicianship</bdi>) ב־<bdi lang=\"en\">Guildford School of Acting</bdi>",
-  "בין ההפקות שהשתתפתי בהן: <bdi lang=\"en\">Stephen Sondheim's Saturday Night</bdi>, <bdi lang=\"en\">She Loves Me</bdi> ו־<bdi lang=\"en\">Vinegar Tom</bdi>",
+  "בין ההפקות שהשתתפתי בהן: <bdi lang=\"en\">Saturday Night</bdi> מאת סטיבן סונדהיים, <bdi lang=\"en\">She Loves Me</bdi> ו־<bdi lang=\"en\">Vinegar Tom</bdi>",
   "הייתי מועמדת ל־<bdi lang=\"en\">Laurence Olivier Bursary Award</bdi> במהלך הלימודים",
   "מנגנת בטרומבון, בבס ובגיטרה"
  ],
@@ -230,8 +230,8 @@
  "other_lang": "English",
  "other_lang_long": "Read this page in English",
  "foot_line": "שיעורים פרטיים בעברית, בלונדון ואונליין",
- "credit": "Photo: from the Guildford School of Acting page for its 2026 BA (Hons) Actor Musician graduates, <a href=\"https://gsauk.org/2026-ba-hons-actor-musician-graduates\">gsauk.org</a>, which does not name the photographer. A stand-in until she adds her own.",
- "credit2": "Still from her showreel on Spotlight, cropped. A stand-in until she adds her own.",
+ "credit": "צילום: מתוך עמוד הבוגרים של מחזור 2026 בתוכנית <bdi lang=\"en\">BA (Hons) Actor Musician</bdi> ב־<bdi lang=\"en\">Guildford School of Acting</bdi>, <a href=\"https://gsauk.org/2026-ba-hons-actor-musician-graduates\"><bdi lang=\"en\">gsauk.org</bdi></a>, שאינו מציין את שם הצלם. תמונה זמנית, עד שתוסיף תמונות משלה.",
+ "credit2": "סטילס מתוך סרטון התדמית שלה ב־<bdi lang=\"en\">Spotlight</bdi>, חתוך. תמונה זמנית, עד שתוסיף תמונות משלה.",
  "alt": "Lee-Elle Horowitz: אישה צעירה ומחייכת עם שיער ארוך וגלי בצבע חום בהיר, בסוודר סרוג בצבע בורדו, על רקע אפור.",
  "alt2": "Lee-Elle Horowitz עומדת עם קונטרבס מול וילון שחור, יד אחת על החזה.",
  "designs": {
@@ -279,5 +279,28 @@
   "the-stage": "תוכנייה של הצגה",
   "notebook": "מחברת שורות"
  },
- "sw_current": "העיצוב הזה"
+ "sw_current": "העיצוב הזה",
+ "footer_links": [
+  [
+   "/start/",
+   "להתחיל כאן (באנגלית)"
+  ],
+  [
+   "/agents/",
+   "שימוש עם בינה מלאכותית (באנגלית)"
+  ],
+  [
+   "/admin/",
+   "ניהול (באנגלית)"
+  ],
+  [
+   "/tour/",
+   "סיור מודרך (באנגלית)"
+  ],
+  [
+   "/policy/",
+   "איך האתר מנוהל (באנגלית)"
+  ]
+ ],
+ "footer_small": "אתר ריבוני, שנבנה לפי <a href=\"https://sovereignwebsite.org/\">הדפוס הפתוח</a>. קוד המקור: <a href=\"https://github.com/SovereignWebsite/Site__Artist__Lee-Elle-Horowitz\"><bdi lang=\"en\">github.com/SovereignWebsite/Site__Artist__Lee-Elle-Horowitz</bdi></a>."
 }

@@ -53,3 +53,6 @@ mark{background:linear-gradient(100deg,transparent .2em,var(--hi) .3em,var(--hi)
 .ex li::after{content:"\2713";position:absolute;inset-inline-start:-3.1rem;top:0;font:700 1.3rem/1.9rem var(--hand);color:#c0262e;transform:rotate(-8deg)}
 @media (prefers-color-scheme:dark){.ex li::after{color:#ff8f8f}}
 .page .facts{justify-content:flex-start;border:0;padding:0;margin:0 0 1.9rem;font-size:.95rem}
+.switch{background:#1d3358;border-color:#2c4a7a}.switch .langs{background:#fdfcf7}.switch .langs a{color:#1d3358}.switch .langs a[aria-current]{background:#1d3358;color:#fdfcf7}
+.switch .chooser summary{background:#ffe76b;color:#3a2f00;border-color:#ffe76b;font-family:var(--hand);border-radius:.2rem;transform:rotate(-1deg)}.switch .chooser[open] summary,.switch .chooser summary:hover{background:#fff07a;color:#3a2f00}
+.d-notebook .family-credit{--family-fg:#e8eef8;--family-fg-strong:#fff;--family-bg:#1d3358}

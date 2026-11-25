@@ -70,3 +70,4 @@ main{max-width:52rem;margin:0 auto;padding:0 1.25rem}
 .compose .send{background:var(--accent);color:var(--on-accent);border-radius:999px;padding:.5rem .9rem;font-size:.85rem;font-weight:600}
 .d-conversation .lang-fab{bottom:4.6rem}
 @media (max-width:30rem){.compose .field{display:block;font-size:.95rem}.compose{justify-content:space-between;padding:.35rem .35rem .35rem 1rem}}
+.switch{background:color-mix(in srgb,var(--paper) 92%,var(--accent));font-family:var(--sans)}.switch .chooser summary{border-radius:1.2rem 1.2rem .35rem 1.2rem}

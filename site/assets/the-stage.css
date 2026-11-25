@@ -91,3 +91,8 @@ body{position:relative}
 .running li{display:flex;align-items:baseline;gap:.8rem;margin:0;padding:.7rem 0;border-bottom:1px dotted var(--line);font-size:1.2rem}
 .running span{font:700 .9rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);min-width:8.5rem}
 .facts{margin-top:0}
+.switch{background:#14090b;border-color:#e9bd5b}.switch .langs{background:#e9bd5b}.switch .langs a{color:#14090b}.switch .langs a[aria-current]{background:#14090b;color:#e9bd5b}
+.switch .chooser summary{background:transparent;border-color:#e9bd5b;color:#e9bd5b;letter-spacing:.08em;text-transform:uppercase;font-size:.9rem}.switch .chooser[open] summary,.switch .chooser summary:hover{background:#e9bd5b;color:#14090b}
+.d-the-stage .family-credit{--family-fg:#e8dcc6;--family-fg-strong:#fff;--family-bg:#21110f}
+.ch-panel{background:#fffaf0;color:#2a1508}.ch-panel .dc a{color:#2a1508;background:#f6ecd9}.ch-panel .dc span{color:#5a3d26}.ch-panel .ch-all a{color:#8e1b2c}
+@media (max-width:30rem){.switch .chooser summary{letter-spacing:0;text-transform:none;font-size:.95rem}}

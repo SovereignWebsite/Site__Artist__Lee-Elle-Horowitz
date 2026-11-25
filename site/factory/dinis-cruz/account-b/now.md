@@ -40,6 +40,12 @@ Fixed: Notebook cover alphabet right to left; Conversation's seven empty Hebrew 
 - Lesson sent to design.b, so other site keepers do not repeat it.
 - design.b.rounds' serious phone finding (Three tenses panels not focusable) fixed in d832576; tools/checks/axe-phone.mjs added.
 
+## Round 3 (design.b.rounds 373d40d; design.b's notes)
+- Three tenses fault fixed (d832576); now the tenses stack on phones, side by side from 900 px.
+- The floating language button appears only once you scroll, so it no longer covers Alef-bet's button.
+- Hebrew: degree and stage credits reworded so English names sit in bdi without brackets; photo credits and footer translated.
+- Each design's top strip in its own colours and type.
+
 ## Open
 - Swap in the Spotlight portrait (credit Kim Hardy) when it arrives as a file; then her own photos.
 - /send/ enquiry form, with security.b's review.

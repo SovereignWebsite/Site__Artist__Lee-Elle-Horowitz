@@ -96,3 +96,7 @@ h1,h2,.stats strong,.quote p,.sec-g,.tile-g,.hero-g,.end-g,.band-g{font-family:v
 .w:hover small{opacity:1}.w:hover{background:var(--ink);}.w:hover b{color:var(--gold)}.w:hover small{color:var(--ink-fg)}
 @media (hover:none){.w small{opacity:.85}}
 .stats{margin-top:2rem}
+/* Round 3: the top strip in this design's own colours and type */
+.switch{background:var(--ink);border-color:var(--gold)}.switch .langs{background:var(--ink-fg)}.switch .langs a{color:var(--ink)}.switch .langs a[aria-current]{background:var(--ink);color:var(--ink-fg)}
+.switch .chooser summary{background:transparent;border-color:var(--gold);color:var(--gold);font-family:var(--serif)}.switch .chooser[open] summary,.switch .chooser summary:hover{background:var(--gold);color:var(--ink)}
+.d-alef-bet .family-credit{--family-fg:#e8dcc6;--family-fg-strong:#fff;--family-bg:#1b2744}

@@ -44,7 +44,7 @@ def ph(L, i=1):
     return f'<img src="{ph_["src"]}" width="{ph_["width"]}" height="{ph_["height"]}" alt="{alt}">'
 def fig(L, cls, i=1):
     cap = L['credit'] if i == 1 else L['credit2']
-    return f'<figure class="{cls}">{ph(L, i)}<figcaption lang="en-GB" dir="ltr">{cap}</figcaption></figure>'
+    return f'<figure class="{cls}">{ph(L, i)}<figcaption>{cap}</figcaption></figure>'
 def cta(L): return f'<p class="cta"><span class="btn" role="note">{L["cta"]} <span class="soon">{L["soon"]}</span></span></p>'
 def draft(L): return f'<p class="draft" role="note">{L["draft"]}</p>'
 def chips(L):
@@ -112,10 +112,12 @@ def switcher(L, cur, here, there):
             f'<span aria-hidden="true">{"A" if he_on(L) else "א"}</span>{L["other_lang"]}</a></nav>\n')
 
 def foot(L):
-    links = ''.join(f'  <a href="{h}">{t}</a>\n' for h, t in SITE['footer_links'])
+    fl = L.get('footer_links', SITE['footer_links']); small = L.get('footer_small', SITE['footer_small'])
+    attrs = '' if he_on(L) else ' lang="en-GB" dir="ltr"'
+    links = ''.join(f'  <a href="{h}">{t}</a>\n' for h, t in fl)
     return (f'<footer class="foot">\n<p class="foot-name">{L["name"]} <span>{L["foot_line"]}</span></p>\n'
-            f'<nav class="site-links" lang="en-GB" dir="ltr" aria-label="{EN["about_links_label"]}">\n{links}</nav>\n'
-            f'<p class="small" lang="en-GB" dir="ltr">{SITE["footer_small"]}</p>\n</footer>\n')
+            f'<nav class="site-links"{attrs} aria-label="{L["about_links_label"]}">\n{links}</nav>\n'
+            f'<p class="small"{attrs}>{small}</p>\n</footer>\n')
 
 def page(L, path, title, desc, css, theme, body, cur, cls, there, switch=True):
     top = switcher(L, cur, path, there) if switch else ''
@@ -136,7 +138,7 @@ def hel(L, c, cls=''):
     c_ = f' class="{cls}"' if cls else ''
     return f'<span{c_} lang="he" dir="rtl">{c}</span>' if not he_on(L) else f'<span{c_}>{c}</span>'
 def credit_line(L, i=1):
-    return f'<p class="credit-line" lang="en-GB" dir="ltr">{L["credit"] if i == 1 else L["credit2"]}</p>'
+    return f'<p class="credit-line">{L["credit"] if i == 1 else L["credit2"]}</p>'
 def wall(L):
     en = not he_on(L)
     return (f'<div class="wall" dir="rtl" role="img" aria-label="{L["wall_label"]}">' + ''.join(

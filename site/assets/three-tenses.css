@@ -69,3 +69,9 @@ main{max-width:72rem;margin:0 auto;padding:0 1.25rem}
 .hero .conj{font-size:clamp(2.6rem,12.5vw,9.5rem);flex-wrap:nowrap;white-space:nowrap}
 @media (max-width:30rem){.hero .lead{font-size:1rem;margin-bottom:.5rem}.tabs{padding:.4rem 0}.tabs a{padding:.35rem .3rem}}
 .panels:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+/* Round 3 (design.b): on phones the three tenses stack, no sideways scroller; side by side from 900 px. */
+.panels{display:grid;grid-template-columns:1fr;gap:1rem;overflow:visible;margin:1rem 0 0;padding:0;scroll-snap-type:none}
+.panels .tense{flex:none;width:auto}
+@media (min-width:56.25rem){.panels{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.tabs{display:none}@media (min-width:56.25rem){.tabs{display:flex}}
+.switch{background:linear-gradient(90deg,var(--past-bg),var(--now-bg),var(--fut-bg))}.switch .chooser summary{color:var(--fut);border-color:var(--fut);font-style:italic;font-family:var(--serif)}.switch .chooser[open] summary,.switch .chooser summary:hover{background:var(--fut);color:#fff}
